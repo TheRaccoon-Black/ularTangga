@@ -11,7 +11,7 @@ const selectLevelPanel = document.querySelector(
   ".game_userlevel_select_interface"
 );
 const selectLevelForm = document.querySelector(".select-level-form");
-const image = document.querySelector(".attachment_image_ani");
+// const image = document.querySelector(".attachment_image_ani");
 const thrree_circle = document.querySelector(".circle_for_select_options");
 const restartBtn = document.querySelector(".restart-btn");
 const colseBtn = document.querySelector(".home-btn");
@@ -145,8 +145,8 @@ selectLevelForm.addEventListener("submit", function (event) {
   thrree_circle.style.display = "none";
   const inGameContainer = document.querySelector(".in-game-container");
   inGameContainer.style.display = "flex";
-  const image = document.querySelector(".attachment_image_ani");
-  image.style.display = "none";
+  // const image = document.querySelector(".attachment_image_ani");
+  // image.style.display = "none";
   const resetCloseBtns = document.querySelector(".close-restart-btns");
   resetCloseBtns.style.display = "flex";
   game.createGameBoard();
