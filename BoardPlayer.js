@@ -6,6 +6,7 @@ export class Player {
     this.color = color;
     this.image = image;
     this.id = id;
+    this.score = 0;
   }
 }
 

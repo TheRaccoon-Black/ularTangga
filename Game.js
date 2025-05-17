@@ -155,7 +155,7 @@ export class Game {
       );
       playerDisc.classList.add("active");
     } else if (player.position != 0) {
-      if (this.checkWin(player)) {
+      if (await this.checkWin(player)) {
         this.board.addPlayers(
           player,
           this.currentPlayerNumber,
@@ -178,7 +178,7 @@ export class Game {
 
         let tileType = "";
         if (snakeOrLadderEnd) {
-          tileType = snakeOrLadderEnd < player.position ? "snake" : "ladder";
+          tileType = snakeOrLadderEnd < player.position ? "ular" : "tangga";
         }
 
         const correct = await this.askQuestion(player.position, tileType);
@@ -262,7 +262,7 @@ export class Game {
       // Clear previous content & disable submit
       questionForm.innerHTML = "";
       submitBtn.disabled = true;
-      tileInfoEl.textContent = tileType ? `You are on a ${tileType} tile.` : "";
+      tileInfoEl.textContent = tileType ? `Kamu berada di kotak ${tileType}.` : "";
 
       // Pick a random question from board's soalJawabPilihan
       const questions = this.board.soalJawabPilihan;
@@ -307,80 +307,120 @@ export class Game {
       };
     });
   }
-showFeedbackModal(isCorrect, explanation) {
-  return new Promise((resolve) => {
-    const feedbackModal = document.getElementById("feedbackModal");
-    const feedbackTitle = document.getElementById("feedbackTitle");
-    const feedbackExplanation = document.getElementById("feedbackExplanation");
-    const closeBtn = document.getElementById("closeFeedback");
+  showFeedbackModal(isCorrect, explanation) {
+    return new Promise((resolve) => {
+      const feedbackModal = document.getElementById("feedbackModal");
+      const feedbackTitle = document.getElementById("feedbackTitle");
+      const feedbackExplanation = document.getElementById(
+        "feedbackExplanation"
+      );
+      const closeBtn = document.getElementById("closeFeedback");
 
-    feedbackTitle.textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
-    feedbackExplanation.textContent = explanation;
+      feedbackTitle.textContent = isCorrect
+        ? "Jawaban Benar!"
+        : "Jawaban Salah!";
+      feedbackExplanation.textContent = explanation;
 
-    // Clear previous classes
-    feedbackTitle.classList.remove("correct", "incorrect");
-    feedbackModal.classList.remove("correct-bg", "incorrect-bg");
+      // Clear previous classes
+      feedbackTitle.classList.remove("correct", "incorrect");
+      feedbackModal.classList.remove("correct-bg", "incorrect-bg");
 
-    // Add styles based on correctness
-    if (isCorrect) {
-      feedbackTitle.classList.add("correct");
-      feedbackModal.classList.add("correct-bg");
-    } else {
-      feedbackTitle.classList.add("incorrect");
-      feedbackModal.classList.add("incorrect-bg");
-    }
+      // Add styles based on correctness
+      if (isCorrect) {
+        feedbackTitle.classList.add("correct");
+        feedbackModal.classList.add("correct-bg");
+      } else {
+        feedbackTitle.classList.add("incorrect");
+        feedbackModal.classList.add("incorrect-bg");
+      }
 
-    feedbackModal.style.display = "flex";
+      feedbackModal.style.display = "flex";
 
-    closeBtn.onclick = () => {
-      feedbackModal.style.display = "none";
-      resolve();
-    };
-
-    window.onclick = (event) => {
-      if (event.target === feedbackModal) {
+      closeBtn.onclick = () => {
         feedbackModal.style.display = "none";
         resolve();
-      }
-    };
-  });
-}
+      };
 
+      window.onclick = (event) => {
+        if (event.target === feedbackModal) {
+          feedbackModal.style.display = "none";
+          resolve();
+        }
+      };
+    });
+  }
 
-  checkWin(player) {
+  showFinalScores() {
+    return new Promise((resolve) => {
+      const finalScoreModal = document.getElementById("finalScoreModal");
+      const scoreListEl = document.getElementById("finalScoreList");
+      const closeBtn = document.getElementById("closeFinalScore");
+
+      // Clear previous scores
+      scoreListEl.innerHTML = "";
+
+      // Populate scores list
+      this.players.forEach((player) => {
+        const li = document.createElement("li");
+        li.textContent = `${player.name}: ${player.score} point${
+          player.score !== 1 ? "s" : ""
+        }`;
+        scoreListEl.appendChild(li);
+      });
+
+      finalScoreModal.style.display = "flex";
+
+      closeBtn.onclick = () => {
+        finalScoreModal.style.display = "none";
+        resolve();
+      };
+
+      window.onclick = (event) => {
+        if (event.target === finalScoreModal) {
+          finalScoreModal.style.display = "none";
+          resolve();
+        }
+      };
+    });
+  }
+
+  async checkWin(player) {
     const newPosition = player.position + player.rolledNumber;
+    let won = false;
+
     if (this.level === "E") {
-      if (newPosition === 100 || newPosition > 100) {
+      if (newPosition >= 100) {
         player.position = 100;
-        alert(`${player.name} won the game!!`);
-        return true;
+        won = true;
       } else {
         player.position = newPosition;
-        return false;
       }
     } else if (this.level === "M") {
       if (newPosition === 100) {
         player.position = 100;
-        alert(`${player.name} won the game!!`);
-        return true;
+        won = true;
       } else if (newPosition < 100) {
         player.position = newPosition;
       }
-      return false;
     } else {
       if (newPosition === 100) {
         player.position = 100;
-        alert(`${player.name} won the game!!`);
-        return true;
+        won = true;
       } else if (newPosition > 100) {
-        const owerflow = newPosition - 100;
-        player.position = 100 - owerflow;
-        return false;
+        const overflow = newPosition - 100;
+        player.position = 100 - overflow;
       } else {
         player.position = newPosition;
-        return false;
       }
     }
+
+    if (won) {
+      alert(`${player.name} won the game!!`);
+      await this.showFinalScores();
+      this.resetPlayers();
+    }
+
+    return won;
   }
 
   checkForLaddersOrSnakes(player) {
