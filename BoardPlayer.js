@@ -24,21 +24,19 @@ export class Board {
     this.first = null;
     this.last = null;
     this.snakesarray = [
-      [30, 7],
-      [47, 15],
-      [56, 19],
-      [73, 51],
-      [82, 42],
-      [92, 75],
-      [98, 55],
+      [38, 19],
+      [51, 33],
+      [66, 58],
+      [95, 73],
     ];
     this.laddersArray = [
-      [4, 25],
-      [21, 39],
-      [29, 74],
-      [43, 76],
-      [63, 80],
-      [71, 89],
+      [5, 16],
+      [12, 31],
+      [25, 44],
+      [48, 69],
+      [59, 83],
+      [70, 92],
+      [76, 97], 
     ];
     this.soalJawabPilihan = [
       {
@@ -72,14 +70,14 @@ export class Board {
   }
 
   handleInsertSquare(index) {
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 4; i++) {
       if (index == this.snakesarray[i][0]) {
         this.insertSquare(index, this.snakesarray[i][1]);
         return;
       }
     }
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 7; i++) {
       if (index == this.laddersArray[i][0]) {
         this.insertSquare(index, this.laddersArray[i][1]);
         return;
