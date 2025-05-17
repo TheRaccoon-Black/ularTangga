@@ -148,6 +148,20 @@ export class Board {
     ];
   }
 
+  isQuestionTile(tile) {
+    return tile >= 2 && tile <= 99;
+  }
+
+  getSnakeOrLadderEnd(tile) {
+    for (const [start, end] of this.snakesarray) {
+      if (start === tile) return end;
+    }
+    for (const [start, end] of this.laddersArray) {
+      if (start === tile) return end;
+    }
+    return null;
+  }
+
   insertSquare(Square, endSquare) {
     const newSquare = new SnakesladdersLink(Square, endSquare);
     if (this.first == null) {

@@ -114,7 +114,7 @@ export class Game {
     this.players = players;
   }
 
-  handlePlayerMove() {
+  async handlePlayerMove() {
     const playerAt100 = this.players.filter(
       (player) => player.position === 100
     );
@@ -169,7 +169,46 @@ export class Game {
         return;
       }
 
-      this.checkForLaddersOrSnakes(player);
+      console.log(`${player.name} is now on tile ${player.position}`);
+
+      if (this.board.isQuestionTile(player.position)) {
+        // Step 2: Ask question and wait for answer
+        const correct = this.askQuestion(player.position);
+
+        if (correct) {
+          console.log(`${player.name} answered correctly.`);
+
+          // Step 3: Check snake or ladder start
+          const snakeOrLadderEnd = this.board.getSnakeOrLadderEnd(
+            player.position
+          );
+
+          if (snakeOrLadderEnd) {
+            // Step 4: Move player
+            player.position = snakeOrLadderEnd;
+            console.log(
+              `${player.name} moved to tile ${player.position} due to snake/ladder.`
+            );
+          }
+        } else {
+          console.log(
+            `${player.name} answered incorrectly and stays on tile ${player.position}.`
+          );
+          // Step 5: Stay put, do not move on snake/ladder
+        }
+      } else {
+        // If NOT a question tile, just move on snakes/ladders automatically
+        const snakeOrLadderEnd = this.board.getSnakeOrLadderEnd(
+          player.position
+        );
+        if (snakeOrLadderEnd) {
+          player.position = snakeOrLadderEnd;
+          console.log(
+            `${player.name} moved automatically to tile ${player.position} due to snake/ladder.`
+          );
+        }
+      }
+
       this.board.addPlayers(player, this.currentPlayerNumber, previousPosition);
 
       const square = document.getElementById(`${player.position}`);
@@ -206,6 +245,57 @@ export class Game {
         diceRollBtn.classList.remove("disable");
       }, 800);
     }
+  }
+
+  askQuestion(tile) {
+    return new Promise((resolve) => {
+      const modal = document.getElementById("questionModal");
+      const questionTextEl = document.getElementById("questionText");
+      const questionForm = document.getElementById("questionForm");
+      const submitBtn = document.getElementById("submitAnswer");
+
+      // Clear previous content & disable submit
+      questionForm.innerHTML = "";
+      submitBtn.disabled = true;
+
+      // Pick a random question from board's soalJawabPilihan
+      const questions = this.board.soalJawabPilihan;
+      const questionObj =
+        questions[Math.floor(Math.random() * questions.length)];
+
+      questionTextEl.textContent = questionObj.soal;
+
+      // Add options as radio buttons
+      questionObj.pilihan.forEach((option, index) => {
+        const label = document.createElement("label");
+        label.style.display = "block";
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "answer";
+        radio.value = index;
+
+        radio.addEventListener("change", () => {
+          submitBtn.disabled = false;
+        });
+
+        label.appendChild(radio);
+        label.appendChild(document.createTextNode(option));
+        questionForm.appendChild(label);
+      });
+
+      modal.style.display = "flex";
+
+      submitBtn.onclick = () => {
+        const selected = questionForm.answer.value;
+        const isCorrect = parseInt(selected, 10) === questionObj.jawaban;
+        modal.style.display = "none";
+
+        if (!isCorrect) alert("Jawaban salah! Anda tetap di petak ini.");
+        else alert("Jawaban benar! Anda boleh lanjut.");
+
+        resolve(isCorrect);
+      };
+    });
   }
 
   checkWin(player) {
