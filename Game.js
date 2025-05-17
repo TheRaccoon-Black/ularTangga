@@ -1,5 +1,10 @@
 import { diceData } from "./diceData.js";
 
+const naikSound = new Audio("assets/sounds/naik.mp3");
+const turunSound = new Audio("assets/sounds/turun.mp3");
+const correctSound = new Audio("assets/sounds/correct.mp3");
+const wrongSound = new Audio("assets/sounds/wrong.mp3");
+const finishSound = new Audio("assets/sounds/finish.mp3");
 export class Game {
   players = [];
 
@@ -190,19 +195,31 @@ export class Game {
           if (isSnake) {
             if (!correct) {
               player.position = snakeOrLadderEnd;
+              turunSound.play().catch((error) => {
+                console.error("Gagal memutar suara:", error);
+              });
               console.log(
                 `${player.name} answered wrong and slides down snake to tile ${player.position}`
               );
             } else {
+              correctSound.play().catch((error) => {
+                console.error("Gagal memutar suara:", error);
+              });
               console.log(`${player.name} answered right and avoids snake.`);
             }
           } else if (isLadder) {
             if (correct) {
               player.position = snakeOrLadderEnd;
+              naikSound.play().catch((error) => {
+                console.error("Gagal memutar suara:", error);
+              });
               console.log(
                 `${player.name} answered right and climbs ladder to tile ${player.position}`
               );
             } else {
+              wrongSound.play().catch((error) => {
+                console.error("Gagal memutar suara:", error);
+              });
               console.log(
                 `${player.name} answered wrong and stays on ladder tile.`
               );
@@ -210,6 +227,9 @@ export class Game {
           }
         } else {
           console.log(`${player.name} answered question on normal tile.`);
+          wrongSound.play().catch((error) => {
+            console.error("Gagal memutar suara:", error);
+          });
         }
       }
 
@@ -307,45 +327,48 @@ export class Game {
       };
     });
   }
-showFeedbackModal(isCorrect, explanation) {
-  return new Promise((resolve) => {
-    const feedbackModal = document.getElementById("feedbackModal");
-    const feedbackTitle = document.getElementById("feedbackTitle");
-    const feedbackExplanation = document.getElementById("feedbackExplanation");
-    const closeBtn = document.getElementById("closeFeedback");
+  showFeedbackModal(isCorrect, explanation) {
+    return new Promise((resolve) => {
+      const feedbackModal = document.getElementById("feedbackModal");
+      const feedbackTitle = document.getElementById("feedbackTitle");
+      const feedbackExplanation = document.getElementById(
+        "feedbackExplanation"
+      );
+      const closeBtn = document.getElementById("closeFeedback");
 
-    feedbackTitle.textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
-    feedbackExplanation.textContent = explanation;
+      feedbackTitle.textContent = isCorrect
+        ? "Jawaban Benar!"
+        : "Jawaban Salah!";
+      feedbackExplanation.textContent = explanation;
 
-    // Clear previous classes
-    feedbackTitle.classList.remove("correct", "incorrect");
-    feedbackModal.classList.remove("correct-bg", "incorrect-bg");
+      // Clear previous classes
+      feedbackTitle.classList.remove("correct", "incorrect");
+      feedbackModal.classList.remove("correct-bg", "incorrect-bg");
 
-    // Add styles based on correctness
-    if (isCorrect) {
-      feedbackTitle.classList.add("correct");
-      feedbackModal.classList.add("correct-bg");
-    } else {
-      feedbackTitle.classList.add("incorrect");
-      feedbackModal.classList.add("incorrect-bg");
-    }
+      // Add styles based on correctness
+      if (isCorrect) {
+        feedbackTitle.classList.add("correct");
+        feedbackModal.classList.add("correct-bg");
+      } else {
+        feedbackTitle.classList.add("incorrect");
+        feedbackModal.classList.add("incorrect-bg");
+      }
 
-    feedbackModal.style.display = "flex";
+      feedbackModal.style.display = "flex";
 
-    closeBtn.onclick = () => {
-      feedbackModal.style.display = "none";
-      resolve();
-    };
-
-    window.onclick = (event) => {
-      if (event.target === feedbackModal) {
+      closeBtn.onclick = () => {
         feedbackModal.style.display = "none";
         resolve();
-      }
-    };
-  });
-}
+      };
 
+      window.onclick = (event) => {
+        if (event.target === feedbackModal) {
+          feedbackModal.style.display = "none";
+          resolve();
+        }
+      };
+    });
+  }
 
   checkWin(player) {
     const newPosition = player.position + player.rolledNumber;
