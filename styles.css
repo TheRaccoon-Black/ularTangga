@@ -1008,7 +1008,6 @@ input[type="text"] {
     font-size: 14px;
   }
 }
-
 /* Modal backdrop */
 #questionModal {
   position: fixed;
@@ -1065,8 +1064,10 @@ input[type="text"] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
+  height: 20px;
+  width: 20px;
+  left: 0;
+  top: 3px;
 }
 
 /* Custom radio button */
@@ -1081,9 +1082,10 @@ input[type="text"] {
   border-radius: 50%;
   background: white;
   transition: background-color 0.3s, border-color 0.3s;
+  box-sizing: border-box;
 }
 
-/* Checked state */
+/* Checked state - use sibling selector for input:checked + label::before */
 #questionModal #questionForm input[type="radio"]:checked + label::before {
   background-color: #007bff;
   border-color: #007bff;
@@ -1116,7 +1118,7 @@ input[type="text"] {
   background-color: #0056b3;
 }
 
-/* Optional: smooth fade in/out */
+/* Show modal */
 #questionModal.show {
   display: flex;
   animation: fadeIn 0.25s ease forwards;
@@ -1127,12 +1129,36 @@ input[type="text"] {
   to {opacity: 1;}
 }
 
+/* Dim and disable background when modal open */
 .modal-open .in-game-container {
   filter: brightness(0.5);
   pointer-events: none; /* prevent clicks */
   user-select: none; /* prevent text selection */
 }
 
-.modal-open .question-modal {
-  pointer-events: auto; /* enable interaction with modal */
+/* Enable interaction inside modal */
+.modal-open #questionModal {
+  pointer-events: auto;
+}
+#questionModal #questionForm label input[type="radio"]:checked + span::before {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Feedback modal title colors */
+#feedbackTitle.correct {
+  color: #007bff; /* Blue for correct */
+}
+
+#feedbackTitle.incorrect {
+  color: #dc3545; /* Red for incorrect */
+}
+
+/* Optional: modal background or border color */
+#feedbackModal.correct-bg .modal-content {
+  border: 3px solid #007bff;
+}
+
+#feedbackModal.incorrect-bg .modal-content {
+  border: 3px solid #dc3545;
 }

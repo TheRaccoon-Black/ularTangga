@@ -171,46 +171,47 @@ export class Game {
 
       console.log(`${player.name} is now on tile ${player.position}`);
 
-if (this.board.isQuestionTile(player.position)) {
-  const snakeOrLadderEnd = this.board.getSnakeOrLadderEnd(player.position);
-
-  let tileType = "";
-  if (snakeOrLadderEnd) {
-    tileType = snakeOrLadderEnd < player.position ? "snake" : "ladder";
-  }
-
-  const correct = await this.askQuestion(player.position, tileType);
-
-  if (snakeOrLadderEnd) {
-    const isSnake = snakeOrLadderEnd < player.position;
-    const isLadder = snakeOrLadderEnd > player.position;
-
-    if (isSnake) {
-      if (!correct) {
-        player.position = snakeOrLadderEnd;
-        console.log(
-          `${player.name} answered wrong and slides down snake to tile ${player.position}`
+      if (this.board.isQuestionTile(player.position)) {
+        const snakeOrLadderEnd = this.board.getSnakeOrLadderEnd(
+          player.position
         );
-      } else {
-        console.log(`${player.name} answered right and avoids snake.`);
+
+        let tileType = "";
+        if (snakeOrLadderEnd) {
+          tileType = snakeOrLadderEnd < player.position ? "snake" : "ladder";
+        }
+
+        const correct = await this.askQuestion(player.position, tileType);
+
+        if (snakeOrLadderEnd) {
+          const isSnake = snakeOrLadderEnd < player.position;
+          const isLadder = snakeOrLadderEnd > player.position;
+
+          if (isSnake) {
+            if (!correct) {
+              player.position = snakeOrLadderEnd;
+              console.log(
+                `${player.name} answered wrong and slides down snake to tile ${player.position}`
+              );
+            } else {
+              console.log(`${player.name} answered right and avoids snake.`);
+            }
+          } else if (isLadder) {
+            if (correct) {
+              player.position = snakeOrLadderEnd;
+              console.log(
+                `${player.name} answered right and climbs ladder to tile ${player.position}`
+              );
+            } else {
+              console.log(
+                `${player.name} answered wrong and stays on ladder tile.`
+              );
+            }
+          }
+        } else {
+          console.log(`${player.name} answered question on normal tile.`);
+        }
       }
-    } else if (isLadder) {
-      if (correct) {
-        player.position = snakeOrLadderEnd;
-        console.log(
-          `${player.name} answered right and climbs ladder to tile ${player.position}`
-        );
-      } else {
-        console.log(
-          `${player.name} answered wrong and stays on ladder tile.`
-        );
-      }
-    }
-  } else {
-    console.log(`${player.name} answered question on normal tile.`);
-  }
-}
-
 
       this.board.addPlayers(player, this.currentPlayerNumber, previousPosition);
 
@@ -250,58 +251,97 @@ if (this.board.isQuestionTile(player.position)) {
     }
   }
 
-askQuestion(tile, tileType = "") {
-  return new Promise((resolve) => {
-    const modal = document.getElementById("questionModal");
-    const questionTextEl = document.getElementById("questionText");
-    const questionForm = document.getElementById("questionForm");
-    const submitBtn = document.getElementById("submitAnswer");
-    const tileInfoEl = document.getElementById("tileInfo"); // new element to show snake/ladder info
+  askQuestion(tile, tileType = "") {
+    return new Promise((resolve) => {
+      const modal = document.getElementById("questionModal");
+      const questionTextEl = document.getElementById("questionText");
+      const questionForm = document.getElementById("questionForm");
+      const submitBtn = document.getElementById("submitAnswer");
+      const tileInfoEl = document.getElementById("tileInfo");
 
-    // Clear previous content & disable submit
-    questionForm.innerHTML = "";
-    submitBtn.disabled = true;
-    tileInfoEl.textContent = tileType ? `You are on a ${tileType} tile.` : "";
+      // Clear previous content & disable submit
+      questionForm.innerHTML = "";
+      submitBtn.disabled = true;
+      tileInfoEl.textContent = tileType ? `You are on a ${tileType} tile.` : "";
 
-    // Pick a random question from board's soalJawabPilihan
-    const questions = this.board.soalJawabPilihan;
-    const questionObj =
-      questions[Math.floor(Math.random() * questions.length)];
+      // Pick a random question from board's soalJawabPilihan
+      const questions = this.board.soalJawabPilihan;
+      const questionObj =
+        questions[Math.floor(Math.random() * questions.length)];
 
-    questionTextEl.textContent = questionObj.soal;
+      questionTextEl.textContent = questionObj.soal;
 
-    // Add options as radio buttons
-    questionObj.pilihan.forEach((option, index) => {
-      const label = document.createElement("label");
-      label.style.display = "block";
-      const radio = document.createElement("input");
-      radio.type = "radio";
-      radio.name = "answer";
-      radio.value = index;
+      questionObj.pilihan.forEach((option, index) => {
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "answer";
+        input.value = index;
+        input.id = `answer${index}`;
 
-      radio.addEventListener("change", () => {
-        submitBtn.disabled = false;
+        const label = document.createElement("label");
+        label.htmlFor = input.id;
+        label.textContent = option;
+
+        input.addEventListener("change", () => {
+          submitBtn.disabled = false;
+        });
+
+        questionForm.appendChild(input);
+        questionForm.appendChild(label);
       });
 
-      label.appendChild(radio);
-      label.appendChild(document.createTextNode(option));
-      questionForm.appendChild(label);
+      modal.style.display = "flex";
+      document.querySelector(".main-container").classList.add("modal-open");
+
+      submitBtn.onclick = () => {
+        const selected = questionForm.answer.value;
+        const isCorrect = parseInt(selected, 10) === questionObj.jawaban;
+        modal.style.display = "none";
+
+        this.showFeedbackModal(isCorrect, questionObj.penjelasan).then(() => {
+          document
+            .querySelector(".main-container")
+            .classList.remove("modal-open");
+          resolve(isCorrect);
+        });
+      };
     });
+  }
+showFeedbackModal(isCorrect, explanation) {
+  return new Promise((resolve) => {
+    const feedbackModal = document.getElementById("feedbackModal");
+    const feedbackTitle = document.getElementById("feedbackTitle");
+    const feedbackExplanation = document.getElementById("feedbackExplanation");
+    const closeBtn = document.getElementById("closeFeedback");
 
-    // Show modal and add modal-open class to dim board
-    modal.style.display = "flex";
-    document.querySelector(".main-container").classList.add("modal-open");
+    feedbackTitle.textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
+    feedbackExplanation.textContent = explanation;
 
-    submitBtn.onclick = () => {
-      const selected = questionForm.answer.value;
-      const isCorrect = parseInt(selected, 10) === questionObj.jawaban;
-      modal.style.display = "none";
-      document.querySelector(".main-container").classList.remove("modal-open");
+    // Clear previous classes
+    feedbackTitle.classList.remove("correct", "incorrect");
+    feedbackModal.classList.remove("correct-bg", "incorrect-bg");
 
-      if (!isCorrect) alert("Jawaban salah! Anda tetap di petak ini.");
-      else alert("Jawaban benar! Anda boleh lanjut.");
+    // Add styles based on correctness
+    if (isCorrect) {
+      feedbackTitle.classList.add("correct");
+      feedbackModal.classList.add("correct-bg");
+    } else {
+      feedbackTitle.classList.add("incorrect");
+      feedbackModal.classList.add("incorrect-bg");
+    }
 
-      resolve(isCorrect);
+    feedbackModal.style.display = "flex";
+
+    closeBtn.onclick = () => {
+      feedbackModal.style.display = "none";
+      resolve();
+    };
+
+    window.onclick = (event) => {
+      if (event.target === feedbackModal) {
+        feedbackModal.style.display = "none";
+        resolve();
+      }
     };
   });
 }

@@ -304,20 +304,36 @@
         loading="lazy"
       /> -->
     </div>
+
+    <!-- Feedback Modal -->
+    <div
+      id="feedbackModal"
+      class="modal"
+      style="display: none; align-items: center; justify-content: center"
+    >
+      <div class="modal-content">
+        <span id="closeFeedback" class="close-button">&times;</span>
+        <h2 id="feedbackTitle"></h2>
+        <p id="feedbackExplanation"></p>
+      </div>
+    </div>
+
     <!-- Question Modal -->
-<div id="questionModal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <h2 id="questionTitle">Question</h2>
-    <div id="tileInfo" style="font-weight:bold; margin-bottom: 10px; color: #d35400;"></div>
+    <div id="questionModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2 id="questionTitle">Question</h2>
+        <div
+          id="tileInfo"
+          style="font-weight: bold; margin-bottom: 10px; color: #d35400"
+        ></div>
 
-    <p id="questionText"></p>
-    <form id="questionForm">
-      <!-- Options will be added dynamically here -->
-    </form>
-    <button id="submitAnswer" disabled>Submit Answer</button>
-  </div>
-</div>
-
+        <p id="questionText"></p>
+        <form id="questionForm">
+          <!-- Options will be added dynamically here -->
+        </form>
+        <button id="submitAnswer" disabled>Submit Answer</button>
+      </div>
+    </div>
 
     <!-- Modal -->
     <div id="infoModal" class="modal">
