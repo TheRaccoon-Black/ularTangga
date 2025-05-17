@@ -170,12 +170,17 @@ selectLevelForm.addEventListener("submit", function (event) {
 
     const playerNameEl = document.createElement("p");
     playerNameEl.textContent = game.players[i].name;
+
+    // Create score span with unique ID
+    const playerScoreEl = document.createElement("span");
+    playerScoreEl.classList.add("player-score");
+    playerScoreEl.id = `player-score-${game.players[i].id}`; // unique id per player
+    playerScoreEl.textContent = ` - Score: 0`;
+
+    playerNameEl.appendChild(playerScoreEl);
     playerDiv.appendChild(playerNameEl);
 
     playersDiv.appendChild(playerDiv);
-
-    const playersInGame = document.querySelectorAll(".player-in-game");
-    playersInGame[0].classList.add("current");
   }
 
   game.players.forEach((player) => {
@@ -198,17 +203,17 @@ colseBtn.addEventListener("click", () => {
 });
 // ------------------------------------------------------------------------------------------------------------
 // Modal open and close logic
-document.querySelector('.circle').addEventListener('click', () => {
-  document.getElementById('infoModal').style.display = 'block';
+document.querySelector(".circle").addEventListener("click", () => {
+  document.getElementById("infoModal").style.display = "block";
 });
 
-document.querySelector('.close-button').addEventListener('click', () => {
-  document.getElementById('infoModal').style.display = 'none';
+document.querySelector(".close-button").addEventListener("click", () => {
+  document.getElementById("infoModal").style.display = "none";
 });
 
-window.addEventListener('click', function (e) {
-  const modal = document.getElementById('infoModal');
+window.addEventListener("click", function (e) {
+  const modal = document.getElementById("infoModal");
   if (e.target === modal) {
-    modal.style.display = 'none';
+    modal.style.display = "none";
   }
 });

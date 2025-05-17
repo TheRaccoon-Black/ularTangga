@@ -183,6 +183,16 @@ export class Game {
 
         const correct = await this.askQuestion(player.position, tileType);
 
+        if (correct) {
+          // Add score based on tile type
+          if (tileType === "ular" || tileType === "tangga") {
+            player.score = (player.score || 0) + 10;
+          } else {
+            player.score = (player.score || 0) + 5;
+          }
+          this.updatePlayerScores(this.players);
+        }
+
         if (snakeOrLadderEnd) {
           const isSnake = snakeOrLadderEnd < player.position;
           const isLadder = snakeOrLadderEnd > player.position;
@@ -262,7 +272,9 @@ export class Game {
       // Clear previous content & disable submit
       questionForm.innerHTML = "";
       submitBtn.disabled = true;
-      tileInfoEl.textContent = tileType ? `Kamu berada di kotak ${tileType}.` : "";
+      tileInfoEl.textContent = tileType
+        ? `Kamu berada di kotak ${tileType}.`
+        : "";
 
       // Pick a random question from board's soalJawabPilihan
       const questions = this.board.soalJawabPilihan;
@@ -307,48 +319,52 @@ export class Game {
       };
     });
   }
-  showFeedbackModal(isCorrect, explanation) {
-    return new Promise((resolve) => {
-      const feedbackModal = document.getElementById("feedbackModal");
-      const feedbackTitle = document.getElementById("feedbackTitle");
-      const feedbackExplanation = document.getElementById(
-        "feedbackExplanation"
-      );
-      const closeBtn = document.getElementById("closeFeedback");
 
-      feedbackTitle.textContent = isCorrect
-        ? "Jawaban Benar!"
-        : "Jawaban Salah!";
-      feedbackExplanation.textContent = explanation;
+showFeedbackModal(isCorrect, explanation) {
+  return new Promise((resolve) => {
+    const feedbackModal = document.getElementById("feedbackModal");
+    const feedbackTitle = document.getElementById("feedbackTitle");
+    const feedbackExplanation = document.getElementById("feedbackExplanation");
+    const closeBtn = document.getElementById("closeFeedback");
+    const okBtn = document.getElementById("okFeedbackBtn");
 
-      // Clear previous classes
-      feedbackTitle.classList.remove("correct", "incorrect");
-      feedbackModal.classList.remove("correct-bg", "incorrect-bg");
+    feedbackTitle.textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
+    feedbackExplanation.textContent = explanation;
 
-      // Add styles based on correctness
-      if (isCorrect) {
-        feedbackTitle.classList.add("correct");
-        feedbackModal.classList.add("correct-bg");
-      } else {
-        feedbackTitle.classList.add("incorrect");
-        feedbackModal.classList.add("incorrect-bg");
+    // Clear previous classes
+    feedbackTitle.classList.remove("correct", "incorrect");
+    feedbackModal.classList.remove("correct-bg", "incorrect-bg");
+    okBtn.classList.remove("correct", "incorrect");
+
+    // Add styles based on correctness
+    if (isCorrect) {
+      feedbackTitle.classList.add("correct");
+      feedbackModal.classList.add("correct-bg");
+      okBtn.classList.add("correct");
+    } else {
+      feedbackTitle.classList.add("incorrect");
+      feedbackModal.classList.add("incorrect-bg");
+      okBtn.classList.add("incorrect");
+    }
+
+    feedbackModal.style.display = "flex";
+
+    const closeModal = () => {
+      feedbackModal.style.display = "none";
+      resolve();
+    };
+
+    closeBtn.onclick = closeModal;
+    okBtn.onclick = closeModal;
+
+    window.onclick = (event) => {
+      if (event.target === feedbackModal) {
+        closeModal();
       }
+    };
+  });
+}
 
-      feedbackModal.style.display = "flex";
-
-      closeBtn.onclick = () => {
-        feedbackModal.style.display = "none";
-        resolve();
-      };
-
-      window.onclick = (event) => {
-        if (event.target === feedbackModal) {
-          feedbackModal.style.display = "none";
-          resolve();
-        }
-      };
-    });
-  }
 
   showFinalScores() {
     return new Promise((resolve) => {
@@ -446,6 +462,15 @@ export class Game {
         }
       }
     }
+  }
+
+  updatePlayerScores(players) {
+    players.forEach((player) => {
+      const scoreSpan = document.getElementById(`player-score-${player.id}`);
+      if (scoreSpan) {
+        scoreSpan.textContent = ` - Score: ${player.score}`;
+      }
+    });
   }
 
   resetPlayers() {

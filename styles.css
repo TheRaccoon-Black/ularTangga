@@ -1172,3 +1172,39 @@ input[type="text"] {
 #finalScoreModal ul li {
   margin: 8px 0;
 }
+
+.modal-ok-button {
+  display: block;
+  margin: 20px auto 0 auto; /* top margin 20px, auto left/right for center */
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  user-select: none;
+}
+
+.modal-ok-button:hover {
+  background-color: #0056b3;
+}
+
+.modal-ok-button.correct {
+  background-color: #007bff; /* Blue for correct */
+}
+
+.modal-ok-button.correct:hover {
+  background-color: #0056b3;
+}
+
+.modal-ok-button.incorrect {
+  background-color: #e74c3c; /* Red for incorrect */
+}
+
+.modal-ok-button.incorrect:hover {
+  background-color: #c0392b;
+}
