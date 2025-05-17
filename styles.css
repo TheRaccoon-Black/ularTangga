@@ -150,6 +150,7 @@ body {
   width: 90%;
   position: relative;
   display: flex;
+  justify-content: center;
   gap: 40px;
 }
 .players {
