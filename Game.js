@@ -171,43 +171,46 @@ export class Game {
 
       console.log(`${player.name} is now on tile ${player.position}`);
 
-      if (this.board.isQuestionTile(player.position)) {
-        // Step 2: Ask question and wait for answer
-        const correct = this.askQuestion(player.position);
+if (this.board.isQuestionTile(player.position)) {
+  const snakeOrLadderEnd = this.board.getSnakeOrLadderEnd(player.position);
 
-        if (correct) {
-          console.log(`${player.name} answered correctly.`);
+  let tileType = "";
+  if (snakeOrLadderEnd) {
+    tileType = snakeOrLadderEnd < player.position ? "snake" : "ladder";
+  }
 
-          // Step 3: Check snake or ladder start
-          const snakeOrLadderEnd = this.board.getSnakeOrLadderEnd(
-            player.position
-          );
+  const correct = await this.askQuestion(player.position, tileType);
 
-          if (snakeOrLadderEnd) {
-            // Step 4: Move player
-            player.position = snakeOrLadderEnd;
-            console.log(
-              `${player.name} moved to tile ${player.position} due to snake/ladder.`
-            );
-          }
-        } else {
-          console.log(
-            `${player.name} answered incorrectly and stays on tile ${player.position}.`
-          );
-          // Step 5: Stay put, do not move on snake/ladder
-        }
-      } else {
-        // If NOT a question tile, just move on snakes/ladders automatically
-        const snakeOrLadderEnd = this.board.getSnakeOrLadderEnd(
-          player.position
+  if (snakeOrLadderEnd) {
+    const isSnake = snakeOrLadderEnd < player.position;
+    const isLadder = snakeOrLadderEnd > player.position;
+
+    if (isSnake) {
+      if (!correct) {
+        player.position = snakeOrLadderEnd;
+        console.log(
+          `${player.name} answered wrong and slides down snake to tile ${player.position}`
         );
-        if (snakeOrLadderEnd) {
-          player.position = snakeOrLadderEnd;
-          console.log(
-            `${player.name} moved automatically to tile ${player.position} due to snake/ladder.`
-          );
-        }
+      } else {
+        console.log(`${player.name} answered right and avoids snake.`);
       }
+    } else if (isLadder) {
+      if (correct) {
+        player.position = snakeOrLadderEnd;
+        console.log(
+          `${player.name} answered right and climbs ladder to tile ${player.position}`
+        );
+      } else {
+        console.log(
+          `${player.name} answered wrong and stays on ladder tile.`
+        );
+      }
+    }
+  } else {
+    console.log(`${player.name} answered question on normal tile.`);
+  }
+}
+
 
       this.board.addPlayers(player, this.currentPlayerNumber, previousPosition);
 
@@ -247,56 +250,62 @@ export class Game {
     }
   }
 
-  askQuestion(tile) {
-    return new Promise((resolve) => {
-      const modal = document.getElementById("questionModal");
-      const questionTextEl = document.getElementById("questionText");
-      const questionForm = document.getElementById("questionForm");
-      const submitBtn = document.getElementById("submitAnswer");
+askQuestion(tile, tileType = "") {
+  return new Promise((resolve) => {
+    const modal = document.getElementById("questionModal");
+    const questionTextEl = document.getElementById("questionText");
+    const questionForm = document.getElementById("questionForm");
+    const submitBtn = document.getElementById("submitAnswer");
+    const tileInfoEl = document.getElementById("tileInfo"); // new element to show snake/ladder info
 
-      // Clear previous content & disable submit
-      questionForm.innerHTML = "";
-      submitBtn.disabled = true;
+    // Clear previous content & disable submit
+    questionForm.innerHTML = "";
+    submitBtn.disabled = true;
+    tileInfoEl.textContent = tileType ? `You are on a ${tileType} tile.` : "";
 
-      // Pick a random question from board's soalJawabPilihan
-      const questions = this.board.soalJawabPilihan;
-      const questionObj =
-        questions[Math.floor(Math.random() * questions.length)];
+    // Pick a random question from board's soalJawabPilihan
+    const questions = this.board.soalJawabPilihan;
+    const questionObj =
+      questions[Math.floor(Math.random() * questions.length)];
 
-      questionTextEl.textContent = questionObj.soal;
+    questionTextEl.textContent = questionObj.soal;
 
-      // Add options as radio buttons
-      questionObj.pilihan.forEach((option, index) => {
-        const label = document.createElement("label");
-        label.style.display = "block";
-        const radio = document.createElement("input");
-        radio.type = "radio";
-        radio.name = "answer";
-        radio.value = index;
+    // Add options as radio buttons
+    questionObj.pilihan.forEach((option, index) => {
+      const label = document.createElement("label");
+      label.style.display = "block";
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "answer";
+      radio.value = index;
 
-        radio.addEventListener("change", () => {
-          submitBtn.disabled = false;
-        });
-
-        label.appendChild(radio);
-        label.appendChild(document.createTextNode(option));
-        questionForm.appendChild(label);
+      radio.addEventListener("change", () => {
+        submitBtn.disabled = false;
       });
 
-      modal.style.display = "flex";
-
-      submitBtn.onclick = () => {
-        const selected = questionForm.answer.value;
-        const isCorrect = parseInt(selected, 10) === questionObj.jawaban;
-        modal.style.display = "none";
-
-        if (!isCorrect) alert("Jawaban salah! Anda tetap di petak ini.");
-        else alert("Jawaban benar! Anda boleh lanjut.");
-
-        resolve(isCorrect);
-      };
+      label.appendChild(radio);
+      label.appendChild(document.createTextNode(option));
+      questionForm.appendChild(label);
     });
-  }
+
+    // Show modal and add modal-open class to dim board
+    modal.style.display = "flex";
+    document.querySelector(".main-container").classList.add("modal-open");
+
+    submitBtn.onclick = () => {
+      const selected = questionForm.answer.value;
+      const isCorrect = parseInt(selected, 10) === questionObj.jawaban;
+      modal.style.display = "none";
+      document.querySelector(".main-container").classList.remove("modal-open");
+
+      if (!isCorrect) alert("Jawaban salah! Anda tetap di petak ini.");
+      else alert("Jawaban benar! Anda boleh lanjut.");
+
+      resolve(isCorrect);
+    };
+  });
+}
+
 
   checkWin(player) {
     const newPosition = player.position + player.rolledNumber;

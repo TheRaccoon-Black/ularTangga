@@ -1126,3 +1126,13 @@ input[type="text"] {
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+.modal-open .in-game-container {
+  filter: brightness(0.5);
+  pointer-events: none; /* prevent clicks */
+  user-select: none; /* prevent text selection */
+}
+
+.modal-open .question-modal {
+  pointer-events: auto; /* enable interaction with modal */
+}
