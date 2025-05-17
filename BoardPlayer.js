@@ -40,7 +40,23 @@ export class Board {
       [63, 80],
       [71, 89],
     ];
-    
+    this.soalJawabPilihan = [
+      {
+        soal: "Apa ibukota Indonesia?",
+        pilihan: ["Jakarta", "Bandung", "Surabaya", "Medan"],
+        jawaban: 0,
+      },
+      {
+        soal: "Siapa presiden pertama Indonesia?",
+        pilihan: ["Soekarno", "Soeharto", "Jokowi", "Habibie"],
+        jawaban: 0,
+      },
+      {
+        soal: "Apa mata uang Indonesia?",
+        pilihan: ["Dollar", "Rupiah", "Yen", "Euro"],
+        jawaban: 1,
+      },
+    ];
   }
 
   insertSquare(Square, endSquare) {

@@ -678,7 +678,90 @@ input[type="text"] {
   background-color: rgba(4, 183, 192, 0.199);
   border: 5px solid black;
 }
+/* ------------------------------------------------------------------------------------------------ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  width: 70%;
+  max-width: 800px;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-title {
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.rules-list {
+  padding-left: 20px;
+  line-height: 1.8;
+  color: #333;
+  font-size: 16px;
+}
+
+.points-title {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #2c3e50;
+  border-bottom: 1px dashed #aaa;
+  padding-bottom: 5px;
+}
+
+.points-list {
+  padding-left: 20px;
+  line-height: 1.6;
+  color: #444;
+  font-size: 16px;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------- */
 #dice-player1 {
   position: absolute;
   top: 30px;
@@ -722,6 +805,7 @@ input[type="text"] {
   border-radius: 50%;
   z-index: 2;
 }
+
 
 #dice-player1.remove,
 #dice-player2.remove,

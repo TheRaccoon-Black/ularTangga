@@ -196,3 +196,19 @@ restartBtn.addEventListener("click", () => {
 colseBtn.addEventListener("click", () => {
   game.existGame();
 });
+// ------------------------------------------------------------------------------------------------------------
+// Modal open and close logic
+document.querySelector('.circle').addEventListener('click', () => {
+  document.getElementById('infoModal').style.display = 'block';
+});
+
+document.querySelector('.close-button').addEventListener('click', () => {
+  document.getElementById('infoModal').style.display = 'none';
+});
+
+window.addEventListener('click', function (e) {
+  const modal = document.getElementById('infoModal');
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
