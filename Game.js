@@ -5,6 +5,8 @@ const turunSound = new Audio("assets/sounds/turun.mp3");
 const correctSound = new Audio("assets/sounds/correct.mp3");
 const wrongSound = new Audio("assets/sounds/wrong.mp3");
 const finishSound = new Audio("assets/sounds/finish.mp3");
+const backsound = new Audio("assets/sounds/backsound.mp3");
+backsound.loop = true;
 export class Game {
   players = [];
 
@@ -87,6 +89,9 @@ export class Game {
   displayGameBoard() {
     document.querySelector(".board").style.display = "block";
     document.querySelector(".dice").style.display = "block";
+    backsound.play().catch((error) => {
+      console.error("Gagal memutar backsound:", error);
+    });
   }
 
   generateBoardSquaresPattern() {
@@ -161,6 +166,12 @@ export class Game {
       playerDisc.classList.add("active");
     } else if (player.position != 0) {
       if (await this.checkWin(player)) {
+        backsound.pause();
+        backsound.currentTime = 0;
+        finishSound.play().catch((error) => {
+          console.error("Gagal memutar suara kemenangan:", error);
+        });
+
         this.board.addPlayers(
           player,
           this.currentPlayerNumber,
@@ -340,51 +351,54 @@ export class Game {
     });
   }
 
-showFeedbackModal(isCorrect, explanation) {
-  return new Promise((resolve) => {
-    const feedbackModal = document.getElementById("feedbackModal");
-    const feedbackTitle = document.getElementById("feedbackTitle");
-    const feedbackExplanation = document.getElementById("feedbackExplanation");
-    const closeBtn = document.getElementById("closeFeedback");
-    const okBtn = document.getElementById("okFeedbackBtn");
+  showFeedbackModal(isCorrect, explanation) {
+    return new Promise((resolve) => {
+      const feedbackModal = document.getElementById("feedbackModal");
+      const feedbackTitle = document.getElementById("feedbackTitle");
+      const feedbackExplanation = document.getElementById(
+        "feedbackExplanation"
+      );
+      const closeBtn = document.getElementById("closeFeedback");
+      const okBtn = document.getElementById("okFeedbackBtn");
 
-    feedbackTitle.textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
-    feedbackExplanation.textContent = explanation;
+      feedbackTitle.textContent = isCorrect
+        ? "Jawaban Benar!"
+        : "Jawaban Salah!";
+      feedbackExplanation.textContent = explanation;
 
-    // Clear previous classes
-    feedbackTitle.classList.remove("correct", "incorrect");
-    feedbackModal.classList.remove("correct-bg", "incorrect-bg");
-    okBtn.classList.remove("correct", "incorrect");
+      // Clear previous classes
+      feedbackTitle.classList.remove("correct", "incorrect");
+      feedbackModal.classList.remove("correct-bg", "incorrect-bg");
+      okBtn.classList.remove("correct", "incorrect");
 
-    // Add styles based on correctness
-    if (isCorrect) {
-      feedbackTitle.classList.add("correct");
-      feedbackModal.classList.add("correct-bg");
-      okBtn.classList.add("correct");
-    } else {
-      feedbackTitle.classList.add("incorrect");
-      feedbackModal.classList.add("incorrect-bg");
-      okBtn.classList.add("incorrect");
-    }
-
-    feedbackModal.style.display = "flex";
-
-    const closeModal = () => {
-      feedbackModal.style.display = "none";
-      resolve();
-    };
-
-    closeBtn.onclick = closeModal;
-    okBtn.onclick = closeModal;
-
-    window.onclick = (event) => {
-      if (event.target === feedbackModal) {
-        closeModal();
+      // Add styles based on correctness
+      if (isCorrect) {
+        feedbackTitle.classList.add("correct");
+        feedbackModal.classList.add("correct-bg");
+        okBtn.classList.add("correct");
+      } else {
+        feedbackTitle.classList.add("incorrect");
+        feedbackModal.classList.add("incorrect-bg");
+        okBtn.classList.add("incorrect");
       }
-    };
-  });
-}
 
+      feedbackModal.style.display = "flex";
+
+      const closeModal = () => {
+        feedbackModal.style.display = "none";
+        resolve();
+      };
+
+      closeBtn.onclick = closeModal;
+      okBtn.onclick = closeModal;
+
+      window.onclick = (event) => {
+        if (event.target === feedbackModal) {
+          closeModal();
+        }
+      };
+    });
+  }
 
   showFinalScores() {
     return new Promise((resolve) => {
