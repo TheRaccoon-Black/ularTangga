@@ -1,6 +1,10 @@
 import { Board, Player } from "./BoardPlayer.js";
 import { Game } from "./Game.js";
 
+const backsound = new Audio("assets/sounds/backsound.mp3");
+backsound.volume = 0.05;
+backsound.loop = true;
+
 const startButton = document.querySelector(".start-button");
 const selectModePanel = document.querySelector(".game_selectmode_interface");
 const selectModeForm = document.querySelector(".select-mode-form");
@@ -27,7 +31,18 @@ const playerColors = [
   "rgb(0, 103, 229)",
 ];
 
-startButton.addEventListener("click", () => startTheGame());
+startButton.addEventListener("click", () => {
+  backsound.play()
+    .then(() => {
+      console.log("Backsound diputar");
+      startTheGame(); // Setelah audio bisa diputar, baru mulai game
+    })
+    .catch((error) => {
+      console.error("Gagal memutar backsound:", error);
+      startTheGame(); // Lanjutkan game meskipun audio gagal
+    });
+    startTheGame()
+});
 
 function startTheGame() {
   board = new Board();

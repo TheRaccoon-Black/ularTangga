@@ -1,12 +1,12 @@
 import { diceData } from "./diceData.js";
 
+// const backsound = new Audio("assets/sounds/backsound.mp3");
+// backsound.loop = true;
 const naikSound = new Audio("assets/sounds/naik.mp3");
 const turunSound = new Audio("assets/sounds/turun.mp3");
 const correctSound = new Audio("assets/sounds/correct.mp3");
 const wrongSound = new Audio("assets/sounds/wrong.mp3");
-const finishSound = new Audio("assets/sounds/finish.mp3");
-const backsound = new Audio("assets/sounds/backsound.mp3");
-backsound.loop = true;
+const finishSound = new Audio("assets/sounds/finish100.mp3");
 export class Game {
   players = [];
 
@@ -89,9 +89,10 @@ export class Game {
   displayGameBoard() {
     document.querySelector(".board").style.display = "block";
     document.querySelector(".dice").style.display = "block";
-    backsound.play().catch((error) => {
-      console.error("Gagal memutar backsound:", error);
-    });
+    // backsound.play().catch((error) => {
+    //   console.error("Gagal memutar backsound:", error);
+    // });
+    // console.log("backsound playing");
   }
 
   generateBoardSquaresPattern() {
@@ -248,7 +249,8 @@ export class Game {
           }
         } else {
           console.log(`${player.name} answered question on normal tile.`);
-          wrongSound.play().catch((error) => {
+          // correctSound.loop = true;
+          correctSound.play().catch((error) => {
             console.error("Gagal memutar suara:", error);
           });
         }

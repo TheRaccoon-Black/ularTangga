@@ -156,7 +156,8 @@ body {
 .players {
   width: 100px;
   height: 100px;
-  background-color: rgba(27, 118, 35, 0.618);
+  background-color: #BE4409;
+  /* background-color: rgba(27, 118, 35, 0.618); */
   position: relative;
   display: flex;
   align-items: center;
