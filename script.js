@@ -32,7 +32,8 @@ const playerColors = [
 ];
 
 startButton.addEventListener("click", () => {
-  backsound.play()
+  backsound
+    .play()
     .then(() => {
       console.log("Backsound diputar");
       startTheGame(); // Setelah audio bisa diputar, baru mulai game
@@ -41,7 +42,7 @@ startButton.addEventListener("click", () => {
       console.error("Gagal memutar backsound:", error);
       startTheGame(); // Lanjutkan game meskipun audio gagal
     });
-    startTheGame()
+  startTheGame();
 });
 
 function startTheGame() {
@@ -177,23 +178,39 @@ selectLevelForm.addEventListener("submit", function (event) {
   for (let i = 0; i < game.players.length; i++) {
     const playerDiv = document.createElement("div");
     playerDiv.classList.add("player-in-game");
+    playerDiv.style.display = "flex";
+    playerDiv.style.alignItems = "center";
+    playerDiv.style.marginBottom = "10px";
 
+    // Player image with rounded border
     const playerImage = document.createElement("img");
     playerImage.src = game.players[i].image;
     playerImage.classList.add("playerImage");
+    playerImage.style.width = "40px";
+    playerImage.style.height = "40px";
+    playerImage.style.borderRadius = "50%";
+    playerImage.style.objectFit = "cover";
+    playerImage.style.marginRight = "12px";
+    playerImage.style.border = `3px solid ${game.players[i].color}`; // border color matches player color
+
     playerDiv.appendChild(playerImage);
+
+    // Name and score container
+    const nameScoreContainer = document.createElement("div");
+    nameScoreContainer.style.display = "inline-block";
 
     const playerNameEl = document.createElement("p");
     playerNameEl.textContent = game.players[i].name;
+    playerNameEl.style.margin = "0";
 
-    // Create score span with unique ID
     const playerScoreEl = document.createElement("span");
     playerScoreEl.classList.add("player-score");
-    playerScoreEl.id = `player-score-${game.players[i].id}`; // unique id per player
+    playerScoreEl.id = `player-score-${game.players[i].id}`;
     playerScoreEl.textContent = ` - Score: 0`;
 
     playerNameEl.appendChild(playerScoreEl);
-    playerDiv.appendChild(playerNameEl);
+    nameScoreContainer.appendChild(playerNameEl);
+    playerDiv.appendChild(nameScoreContainer);
 
     playersDiv.appendChild(playerDiv);
   }
