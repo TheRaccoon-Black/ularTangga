@@ -138,7 +138,7 @@ export class Game {
     const player = this.players[this.currentPlayerNumber - 1];
 
     // const randNum = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-    const weightedNumbers = [1, 2, 3, 4, 5, 6, 6, 6]; 
+    const weightedNumbers = [1, 2, 3, 4, 5, 6, 6, 6];
     const randIndex = Math.floor(Math.random() * weightedNumbers.length);
     const randNum = weightedNumbers[randIndex];
     document.querySelector(".dice .dice-img").innerHTML = randNum;
@@ -470,8 +470,72 @@ export class Game {
     }
 
     if (won) {
-      alert(`${player.name} won the game!!`);
-      await this.showFinalScores();
+      const finalScoreModal = document.getElementById("finalScoreModal");
+      const scoreListEl = document.getElementById("finalScoreList");
+      scoreListEl.innerHTML = ""; // Clear previous scores
+
+      this.players.forEach((p) => {
+        const li = document.createElement("li");
+        li.style.display = "flex";
+        li.style.alignItems = "center";
+        li.style.marginBottom = "8px";
+
+        // Create player color indicator (a small circle)
+        const colorIndicator = document.createElement("div");
+        colorIndicator.style.width = "20px";
+        colorIndicator.style.height = "20px";
+        colorIndicator.style.borderRadius = "50%";
+        colorIndicator.style.backgroundColor = p.color;
+        colorIndicator.style.marginRight = "10px";
+        li.appendChild(colorIndicator);
+
+        // Create player image element
+        const img = document.createElement("img");
+        img.src = p.image;
+        img.alt = `${p.name} avatar`;
+        img.style.width = "30px";
+        img.style.height = "30px";
+        img.style.borderRadius = "50%";
+        img.style.marginRight = "10px";
+        li.appendChild(img);
+
+        // Player name and score text
+        const textSpan = document.createElement("span");
+        textSpan.textContent = `${p.name}: ${p.score} point${
+          p.score !== 1 ? "s" : ""
+        }`;
+        li.appendChild(textSpan);
+
+        if (p.id === player.id) {
+          li.style.fontWeight = "bold"; // Highlight winner
+          li.style.color = "green";
+          textSpan.textContent += " ← Pemenang!";
+        }
+
+        scoreListEl.appendChild(li);
+      });
+
+      finalScoreModal.style.display = "flex";
+
+      await new Promise((resolve) => {
+        const closeBtn = document.getElementById("closeFinalScore");
+
+        function closeHandler() {
+          finalScoreModal.style.display = "none";
+          closeBtn.removeEventListener("click", closeHandler);
+          resolve();
+        }
+
+        closeBtn.addEventListener("click", closeHandler);
+
+        window.onclick = (event) => {
+          if (event.target === finalScoreModal) {
+            finalScoreModal.style.display = "none";
+            resolve();
+          }
+        };
+      });
+
       this.resetPlayers();
     }
 
