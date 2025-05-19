@@ -137,7 +137,10 @@ export class Game {
 
     const player = this.players[this.currentPlayerNumber - 1];
 
-    const randNum = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+    // const randNum = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+    const weightedNumbers = [1, 2, 3, 4, 5, 6, 6, 6]; 
+    const randIndex = Math.floor(Math.random() * weightedNumbers.length);
+    const randNum = weightedNumbers[randIndex];
     document.querySelector(".dice .dice-img").innerHTML = randNum;
     player.rolledNumber = randNum;
 
