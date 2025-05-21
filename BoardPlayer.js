@@ -530,25 +530,7 @@ export class Board {
   },
   // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   {
-    "soal": "Hai teman-teman! 
-Waktu: 10 
-detik 
-Coba bayangin deh… kalau kamu punya balon berisi gas, terus balon itu kamu panaskan. Kira
-kira apa yang terjadi? 
-✅ Balonnya bakal ngembang! 
-Kenapa? Karena volume gas di dalam balon itu bertambah seiring suhu naik, asalkan 
-tekanannya tetap (gak ditambah atau dikurangi). 
-Nah, ini nih yang disebut Hukum Gay-Lussac (versi Volume-Tetapnya Charles juga mirip sih 
-konsepnya). 
-Intinya: 
-✅ Volume gas berbanding lurus sama suhu mutlak (Kelvin) 
-Rumusnya: 
-✅ Contoh Kasus: 
-Di laboratorium, ada gas dalam tabung 4 liter pada suhu 200 K. 
-Kalau tabung dipanaskan sampai 400 K, berapa volume gasnya kalau tekanannya gak berubah? 
-Jawab: 
-Karena suhunya naik 2× (200 K → 400 K), maka volumenya juga 2× 
-Jadi: .Di sebuah percobaan digital, sebuah gas memiliki volume 2 liter pada suhu 300 K. Ketika suhu dinaikkan jadi 600 K tanpa mengubah tekanan, berapakah volume gas itu sekarang? Selain menghitung, tentukan juga hukum dasar kimia yang berlaku di peristiwa ini.",
+    "soal": "Hai teman-teman! Coba bayangin deh… kalau kamu punya balon berisi gas, terus balon itu kamu panaskan. Kira-kira apa yang terjadi? ✅ Balonnya bakal ngembang! Kenapa? Karena volume gas di dalam balon itu bertambah seiring suhu naik, asalkan tekanannya tetap. Nah, ini nih yang disebut Hukum Gay-Lussac. Intinya: ✅ Volume gas berbanding lurus sama suhu mutlak (Kelvin). Rumusnya: V1/T1 = V2/T2. Contoh kasus: Di laboratorium, ada gas dalam tabung 4 liter pada suhu 200 K. Kalau tabung dipanaskan sampai 400 K, berapa volume gasnya kalau tekanannya gak berubah? Jawab: Karena suhunya naik 2× (200 K → 400 K), maka volumenya juga 2×. Jadi: Di sebuah percobaan digital, sebuah gas memiliki volume 2 liter pada suhu 300 K. Ketika suhu dinaikkan jadi 600 K tanpa mengubah tekanan, berapakah volume gas itu sekarang? Selain menghitung, tentukan juga hukum dasar kimia yang berlaku di peristiwa ini.",
     "pilihan": [
       "1 liter, Hukum Dalton",
       "2 liter, Hukum Lavoisier",
@@ -556,21 +538,10 @@ Jadi: .Di sebuah percobaan digital, sebuah gas memiliki volume 2 liter pada suhu
       "4 liter, Hukum Gay-Lussac"
     ],
     "jawaban": 3,
-    "penjelasan": "Suhu naik 2× (300 K → 600 K), volume gas di tekanan tetap ikut naik 2×.\nKarena volume gas berubah sebanding dengan suhu mutlak saat tekanan tetap, ini sesuai Hukum Gay-Lussac.\nJawaban: D. 4 liter, Hukum Gay-Lussac"
+    "penjelasan": "Suhu naik 2× (300 K → 600 K), volume gas di tekanan tetap ikut naik 2×. Karena volume gas berubah sebanding dengan suhu mutlak saat tekanan tetap, ini sesuai Hukum Gay-Lussac. Jawaban: D. 4 liter, Hukum Gay-Lussac."
   },
   {
-    "soal": "Hai teman-teman, coba bayangin nih… 
-Kamu punya tiga balon kecil, masing-masing isinya gas A, gas B, dan gas C. Terus ketiga gas 
-itu kamu masukin bareng-bareng ke dalam satu wadah tertutup. Nah, setiap gas itu tetap 
-“nyumbang” tekanan ke dalam wadah sesuai tekanannya masing-masing. 
-Inilah yang disebut Hukum Dalton. 
-✅ Intinya: 
-Tekanan total dalam campuran gas yang gak saling bereaksi = jumlah dari tekanan parsial 
-masing-masing gas. 
-Rumusnya: 
-Dengan: 
-Ptotal = tekanan total campuran gas 
-P1,P2,P3= tekanan parsial masing-masing gas.Dalam sebuah wadah tertutup, terdapat gas A dengan tekanan parsial 180 mmHg, gas B dengan 220 mmHg, dan gas C dengan 150 mmHg. Tekanan total gas tersebut adalah …",
+    "soal": "Dalam sebuah wadah tertutup, terdapat gas A dengan tekanan parsial 180 mmHg, gas B dengan 220 mmHg, dan gas C dengan 150 mmHg. Tekanan total gas tersebut adalah …",
     "pilihan": [
       "550 mmHg",
       "600 mmHg",
@@ -578,27 +549,10 @@ P1,P2,P3= tekanan parsial masing-masing gas.Dalam sebuah wadah tertutup, terdapa
       "500 mmHg"
     ],
     "jawaban": 1,
-    "penjelasan": "Berdasarkan Hukum Dalton, tekanan total gas campuran adalah jumlah tekanan parsialnya.\nTekanan total = 180 mmHg + 220 mmHg + 150 mmHg = 600 mmHg."
+    "penjelasan": "Berdasarkan Hukum Dalton, tekanan total gas campuran adalah jumlah tekanan parsialnya. Tekanan total = 180 mmHg + 220 mmHg + 150 mmHg = 600 mmHg."
   },
   {
-    "soal": "Halo teman-teman! 
-Coba bayangin kamu bikin sirup manis di dua gelas. 
-Di gelas pertama kamu pakai 3 sendok gula dan 9 sendok air. 
-Di gelas kedua kamu pakai 6 sendok gula dan 18 sendok air. 
-Nah, rasanya kira-kira bakal sama gak? 
-Pasti sama dong! Karena perbandingan gulanya ke air tetap, yaitu 1:3. 
-Nah di dunia kimia juga gitu. Kalau kamu bikin senyawa yang sama, kayak air atau garam, 
-perbandingan massa unsur penyusunnya bakal selalu tetap — itulah yang disebut Hukum 
-Proust. 
-✅ Intinya: 
-Dalam senyawa yang sama, perbandingan massa unsur-unsurnya gak bakal berubah meskipun 
-jumlah senyawanya beda. 
-✅ Contoh Kasus: 
-Misal: 
-4 g hidrogen bereaksi dengan 32 g oksigen → perbandingan 4:32 = 1:8 
-8 g hidrogen dengan 64 g oksigen → 8:64 = 1:8 
-Perbandingannya tetap 1:8 kan? 
-Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 terdiri dari 3 g unsur A dan 9 g unsur B, Percobaan 2 terdiri dari 6 g unsur A dan 18 g unsur B. Maka perbandingan massa A dan B pada kedua percobaan tersebut adalah …",
+    "soal": "Ada dua percobaan pembuatan senyawa AB: Percobaan 1 terdiri dari 3 g unsur A dan 9 g unsur B, Percobaan 2 terdiri dari 6 g unsur A dan 18 g unsur B. Maka perbandingan massa A dan B pada kedua percobaan tersebut adalah …",
     "pilihan": [
       "Tidak tetap",
       "Sama",
@@ -606,9 +560,9 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Acak"
     ],
     "jawaban": 1,
-    "penjelasan": "Perbandingan massa A:B pada percobaan pertama = 3:9 = 1:3.\nPerbandingan massa A:B pada percobaan kedua = 6:18 = 1:3.\nKarena perbandingan massa tetap, ini membuktikan Hukum Proust."
+    "penjelasan": "Perbandingan massa A:B pada percobaan pertama = 3:9 = 1:3. Perbandingan massa A:B pada percobaan kedua = 6:18 = 1:3. Karena perbandingan massa tetap, ini membuktikan Hukum Proust."
   },
-   {
+  {
     "soal": "Bayangin kamu bakar 100 gram kayu di ruang tertutup. Hasilnya, keluar 80 gram gas dan 20 gram abu. Supaya Hukum Kekekalan Massa tetap berlaku, apa yang seharusnya dipastikan dari hasil pembakaran itu?",
     "pilihan": [
       "Massa gas yang terbentuk lebih besar dari massa bahan bakar",
@@ -617,10 +571,10 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Massa abu lebih kecil dari massa bahan bakar"
     ],
     "jawaban": 1,
-    "penjelasan": "Hukum Kekekalan Massa itu intinya jumlah massa nggak boleh berkurang atau bertambah. Di soal ini, 80 g gas + 20 g abu = 100 g, artinya sama kayak massa bahan bakar di awal. Nah, itu tandanya hukum ini sudah jalan dengan benar."
+    "penjelasan": "Hukum Kekekalan Massa menyatakan bahwa jumlah massa tidak boleh berkurang atau bertambah. Di soal ini, 80 g gas + 20 g abu = 100 g, artinya sama seperti massa bahan bakar awal. Jadi hukum ini berlaku."
   },
   {
-    "soal": "Seorang siswa bernama Fikri menyimpulkan bahwa data berikut ini tidak mendukung Hukum Proust karena massa total di tiap percobaan berbeda. Percobaan Massa A (g) Massa B (g) 1: 4 8 2: 6 12. Menurut pendapat kamu, apakah kesimpulan Fikri sudah tepat? Pilih alasan yang paling benar di bawah ini!",
+    "soal": "Seorang siswa bernama Fikri menyimpulkan bahwa data berikut ini tidak mendukung Hukum Proust karena massa total di tiap percobaan berbeda. Percobaan 1: Massa A = 4 g, Massa B = 8 g. Percobaan 2: Massa A = 6 g, Massa B = 12 g. Menurut pendapat kamu, apakah kesimpulan Fikri sudah tepat? Pilih alasan yang paling benar di bawah ini!",
     "pilihan": [
       "Tepat, karena jumlah massa total di tiap percobaan memang harus sama menurut Hukum Proust.",
       "Tidak tepat, karena yang penting perbandingan massa A dan B di tiap percobaan tetap sama.",
@@ -628,10 +582,10 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Tidak tepat, karena Hukum Proust tidak berlaku kalau massa totalnya berbeda."
     ],
     "jawaban": 1,
-    "penjelasan": "Hukum Proust fokusnya bukan di jumlah total massanya, tapi di perbandingan massa antar unsur penyusun senyawa. Selama perbandingan A : B tetap sama di tiap percobaan, berapa pun massanya, hukum ini tetap berlaku. Fikri keliru karena dia salah paham ke total massa, bukan ke perbandingan."
+    "penjelasan": "Hukum Proust fokusnya bukan pada jumlah total massa, tapi pada perbandingan massa antar unsur penyusun senyawa. Selama perbandingan A:B tetap, hukum ini tetap berlaku. Fikri keliru karena salah paham terhadap konsep perbandingan."
   },
   {
-    "soal": "Dina melakukan percobaan kayak gini: Wadah 1: 1 liter gas di suhu 300 K, Wadah 2: 2 liter gas di suhu 600 K. Dina bilang: “Kayaknya hasil ini nggak sesuai Hukum Gay-Lussac deh, soalnya volumenya beda.” Menurut kamu gimana?",
+    "soal": "Dina melakukan percobaan sebagai berikut: Wadah 1: 1 liter gas di suhu 300 K. Wadah 2: 2 liter gas di suhu 600 K. Dina bilang: “Kayaknya hasil ini nggak sesuai Hukum Gay-Lussac deh, soalnya volumenya beda.” Menurut kamu gimana?",
     "pilihan": [
       "Dina benar, harusnya volumenya selalu sama.",
       "Dina salah, karena perbandingan volume dan suhu harus sebanding.",
@@ -639,10 +593,10 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Dina salah, karena volume dan suhu nggak ada hubungannya."
     ],
     "jawaban": 1,
-    "penjelasan": "Karena sesuai Hukum Gay-Lussac, kalau suhu gas dinaikkan dua kali lipat (dari 300 K ke 600 K) dan tekanan tetap, maka volumenya juga naik dua kali lipat (dari 1 liter jadi 2 liter). Jadi, perbandingan volume dan suhu harus sebanding. Dina keliru, makanya jawabannya B."
+    "penjelasan": "Sesuai Hukum Gay-Lussac, jika suhu gas dinaikkan 2× (300 K ke 600 K) dan tekanan tetap, maka volume juga naik 2× (1 liter jadi 2 liter). Dina keliru. Maka jawabannya B."
   },
   {
-    "soal": "Data percobaan gas: Wadah Suhu (K) Volume (L) 1: 300, 3 2: 600, 6. Bagaimana hasil percobaan ini menurut Hukum Gay-Lussac?",
+    "soal": "Data percobaan gas: Wadah 1: Suhu = 300 K, Volume = 3 L. Wadah 2: Suhu = 600 K, Volume = 6 L. Bagaimana hasil percobaan ini menurut Hukum Gay-Lussac?",
     "pilihan": [
       "Sesuai, karena perbandingan volume dan suhu sebanding.",
       "Tidak sesuai, karena volume tidak berubah.",
@@ -650,10 +604,10 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Tidak ada hubungan volume dan suhu."
     ],
     "jawaban": 0,
-    "penjelasan": "Coba cek: Sama kan? Berarti sesuai."
+    "penjelasan": "Coba cek perbandingan volume dan suhu: V1/T1 = 3/300 = 0.01, V2/T2 = 6/600 = 0.01. Sama, berarti sesuai dengan Hukum Gay-Lussac."
   },
   {
-    "soal": "Data percobaan gas: Wadah Suhu (K) Volume (L) 1: 300, 3 2: 600, 4. Bagaimana hasil percobaan ini menurut Hukum Gay-Lussac?",
+    "soal": "Data percobaan gas: Wadah 1: Suhu = 300 K, Volume = 3 L. Wadah 2: Suhu = 600 K, Volume = 4 L. Bagaimana hasil percobaan ini menurut Hukum Gay-Lussac?",
     "pilihan": [
       "Sesuai, karena perbandingan volume dan suhu sebanding.",
       "Tidak sesuai, karena volume tidak bertambah sesuai kenaikan suhu.",
@@ -661,21 +615,21 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Tidak ada hubungan volume dan suhu."
     ],
     "jawaban": 1,
-    "penjelasan": "Coba cek: Beda, berarti tidak sesuai."
+    "penjelasan": "Jika suhu naik 2×, volume juga seharusnya naik 2× agar sesuai hukum Gay-Lussac. Tapi dari 3 L ke 4 L tidak sesuai. Jadi jawabannya B."
   },
   {
-    "soal": "Dalam percobaan laboratorium, gas A punya tekanan 120 mmHg, gas B 200 mmHg, dan gas C 80 mmHg dalam wadah tertutup, dan ketiga gas tersebut tidak saling bereaksi. Menurut analisis kamu, apakah Hukum Dalton bisa digunakan untuk menentukan tekanan total campuran gas ini?",
+    "soal": "Halo penjelajah gas di Laboratorium Ular Tangga! Kalau kamu punya beberapa jenis gas dalam satu wadah, tapi gas-gas itu nggak saling bereaksi, kira-kira berapa total tekanannya? Nah, Hukum Dalton bilang: \"Tekanan total campuran gas = jumlah tekanan parsial masing-masing gas.\" Tapi ini cuma berlaku kalau gas-gas tersebut tidak bereaksi, wadah tertutup, dan suhu serta volumenya tetap.\nDi percobaan, gas A tekanannya 120 mmHg, gas B 200 mmHg, dan gas C 80 mmHg. Ketiga gas itu tidak bereaksi dan berada di wadah tertutup. Apakah Hukum Dalton bisa digunakan untuk menentukan tekanan total campuran gas ini?",
     "pilihan": [
       "Ya, hukum Dalton bisa dipakai karena tekanan total = jumlah tekanan parsial, syaratnya gas tidak bereaksi.",
       "Tidak, karena tekanan gas A paling rendah.",
-      "Ya, tapi cuma buat gas B dan C karena tekanannya lebih besar.",
-      "Tidak, karena hukum Dalton hanya untuk gas tunggal."
+      "Ya, tapi cuma untuk gas B dan C karena tekanannya lebih besar.",
+      "Tidak, karena hukum Dalton hanya berlaku untuk gas tunggal."
     ],
     "jawaban": 0,
-    "penjelasan": "Karena semua gas ada di wadah tertutup dan tidak saling bereaksi, maka sesuai syarat hukum Dalton. Tekanan total = 120 + 200 + 80 = 400 mmHg. Hukum Dalton berlaku untuk semua gas dalam wadah itu, bukan hanya yang tekanannya besar saja."
+    "penjelasan": "Semua gas ada di wadah tertutup dan tidak bereaksi, jadi syarat Hukum Dalton terpenuhi. Tekanan total = 120 + 200 + 80 = 400 mmHg. Hukum Dalton berlaku untuk semua gas dalam wadah, bukan hanya yang tekanannya besar."
   },
   {
-    "soal": "Tiga percobaan menghasilkan senyawa AB dengan hasil sebagai berikut: Percobaan 1: 3 g A dan 9 g B Percobaan 2: 6 g A dan 18 g B Percobaan 3: 9 g A dan 27 g B Apakah hasil percobaan ini sesuai dengan Hukum Proust?",
+    "soal": "Hukum Proust menyatakan bahwa perbandingan massa unsur dalam senyawa selalu tetap, apapun jumlah senyawanya.\nTiga percobaan menghasilkan senyawa AB sebagai berikut:\nPercobaan 1: 3 g A dan 9 g B\nPercobaan 2: 6 g A dan 18 g B\nPercobaan 3: 9 g A dan 27 g B\nApakah hasil percobaan ini sesuai dengan Hukum Proust?",
     "pilihan": [
       "Ya, karena perbandingan massa A dan B tetap.",
       "Tidak, karena perbandingan massa A dan B tidak tetap.",
@@ -683,23 +637,23 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Tidak, karena massa A selalu lebih besar."
     ],
     "jawaban": 0,
-    "penjelasan": "Pada setiap percobaan, perbandingan massa A:B selalu sama yaitu 1:3 (3:9, 6:18, dan 9:27). Ini sesuai dengan Hukum Proust yang menyatakan perbandingan massa unsur dalam senyawa selalu tetap.",
+    "penjelasan": "Perbandingan massa A:B di semua percobaan sama, yaitu 1:3 (3:9, 6:18, 9:27). Ini sesuai Hukum Proust yang menyatakan perbandingan massa unsur dalam senyawa selalu tetap.",
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Di sebuah percobaan laboratorium, suhu gas dalam tabung tertutup dinaikkan dari 300 K menjadi 600 K, sementara volumenya tidak berubah. Menurut hasil analisis kamu, apa yang akan terjadi pada tekanan gas tersebut?",
+    "soal": "Halo, Sahabat Ular Tangga Kimia! Bayangkan kamu punya balon gas di ruangan tertutup. Ketika dipanaskan, partikel gas bergerak makin cepat karena suhu naik. Kalau volumenya tetap (balon nggak mengembang), energi tambahan itu ke mana?\nYup, tekanannya naik karena partikel makin sering dan kuat menabrak dinding balon. Itu inti Hukum Gay-Lussac: \"Pada volume tetap, tekanan gas berbanding lurus dengan suhu mutlak (Kelvin).\"\nDi percobaan, suhu gas dinaikkan dari 300 K ke 600 K, volume tetap. Apa yang terjadi pada tekanannya?",
     "pilihan": [
-      "Tekanan gas akan menurun karena partikel jadi jarang bertabrakan.",
-      "Tekanan gas tetap saja, karena volumenya tidak berubah.",
-      "Tekanan gas meningkat karena suhu naik, partikel makin cepat, dan makin sering nabrak dinding.",
-      "Tekanan tidak dipengaruhi suhu, hanya dipengaruhi jumlah gas."
+      "Tekanan gas menurun karena partikel jadi jarang bertabrakan.",
+      "Tekanan gas tetap karena volumenya tidak berubah.",
+      "Tekanan gas meningkat karena suhu naik, partikel makin cepat dan sering nabrak dinding.",
+      "Tekanan tidak dipengaruhi suhu, hanya jumlah gas."
     ],
     "jawaban": 2,
-    "penjelasan": "Karena suhu meningkat dan volume tetap, maka partikel gas jadi makin cepat geraknya → makin sering & makin kuat nabrak dinding wadah → tekanan meningkat. Sesuai dengan Hukum Gay-Lussac.",
+    "penjelasan": "Suhu naik dan volume tetap, sehingga partikel gas makin cepat dan sering menabrak dinding, menyebabkan tekanan meningkat. Ini sesuai Hukum Gay-Lussac.",
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Di sebuah eksperimen, massa bahan bakar sebelum dibakar adalah 20 g. Setelah dibakar di wadah tertutup, massa total sisa dan hasil pembakarannya jadi 22 g. Menurut kamu, berdasarkan konsep Hukum Lavoisier, bagaimana analisisnya?",
+    "soal": "Eh, teman-teman… tahu nggak? Hukum Lavoisier bilang: \"Dalam reaksi kimia di sistem tertutup, massa zat sebelum dan sesudah reaksi harus sama.\" Kalau massanya beda, bisa jadi ada zat yang keluar/masuk, alat ukur nggak pas, atau data salah catat.\nContoh: Kalau kamu bakar 10 g kayu di wadah tertutup, massa sisa arang + gas tetap 10 g.\nDi sebuah eksperimen, massa bahan bakar sebelum dibakar 20 g. Setelah dibakar di wadah tertutup, massa total sisa dan hasil pembakaran jadi 22 g. Bagaimana analisisnya menurut Hukum Lavoisier?",
     "pilihan": [
       "Ya, massa produk lebih besar karena adanya gas yang dilepaskan.",
       "Tidak, karena massa produk lebih besar dari massa reaktan.",
@@ -707,11 +661,11 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Tidak, karena massa produk lebih kecil dari massa reaktan."
     ],
     "jawaban": 1,
-    "penjelasan": "Menurut Hukum Lavoisier, massa sebelum dan sesudah reaksi harus sama. Jika massa produk lebih besar, ini menunjukkan bahwa ada kesalahan dalam eksperimen atau gas yang tidak tercatat dalam perhitungan.",
+    "penjelasan": "Hukum Lavoisier menyatakan massa sebelum dan sesudah reaksi harus sama. Jika massa produk lebih besar, berarti ada kesalahan eksperimen atau data yang tidak valid.",
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Nah, di sebuah eksperimen: Percobaan 1: 5 g unsur A dicampur 10 g unsur B Percobaan 2: 10 g unsur A dicampur 20 g unsur B Coba kamu perhatikan, apakah percobaan ini sesuai sama Hukum Proust?",
+    "soal": "Pernah dengar Hukum Proust? Intinya: \"Dalam senyawa yang sama, perbandingan massa unsur-unsur penyusunnya selalu tetap, berapapun jumlah senyawanya.\"\nContoh: Dalam senyawa AB, perbandingan A:B = 1:2.\nPercobaan 1: 5 g A dan 10 g B\nPercobaan 2: 10 g A dan 20 g B\nApakah percobaan ini sesuai dengan Hukum Proust?",
     "pilihan": [
       "Ya, karena perbandingan massa A:B selalu tetap 1:2.",
       "Tidak, karena perbandingan massa tidak konsisten.",
@@ -719,7 +673,7 @@ Nah, inilah Hukum Proust! .Ada dua percobaan pembuatan senyawa AB: Percobaan 1 t
       "Tidak, karena massa unsur B lebih banyak."
     ],
     "jawaban": 0,
-    "penjelasan": "Perbandingan massa A:B pada kedua percobaan adalah 5:10 = 1:2 dan 10:20 = 1:2, yang berarti perbandingan massa tetap sama dan sesuai dengan Hukum Proust.",
+    "penjelasan": "Perbandingan massa A:B pada kedua percobaan adalah 1:2, sehingga sesuai dengan Hukum Proust.",
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
