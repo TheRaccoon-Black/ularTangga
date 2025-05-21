@@ -41,195 +41,178 @@ export class Board {
     ];
     this.soalJawabPilihan = [
       {
-    soal: "Apa bunyi dari hukum kekekalan massa?",
-    pilihan: [
+    "soal": "Eh, kamu tahu nggak sih? Ternyata kalau ada reaksi kimia kayak pembakaran lilin di dalam toples tertutup, massa semua zat di dalamnya itu bakal tetap, lho! Jadi, meskipun bentuknya berubah, total massanya nggak ke mana-mana alias total massanya itu sama aja. Nah, ini yang disebut Hukum Kekekalan Massa. Apa bunyi dari hukum kekekalan massa?",
+    "pilihan": [
       "Massa zat berkurang dalam reaksi",
       "Massa zat bertambah selama reaksi",
       "Massa zat sebelum reaksi sama dengan setelah reaksi",
       "Massa gas tidak ikut dihitung"
     ],
-    jawaban: 2,
-    penjelasan: "Hukum Kekekalan Massa menyatakan bahwa massa zat sebelum dan sesudah reaksi tetap sama, selama reaksi berlangsung dalam sistem tertutup. (Sukardjo, 2016)"
+    "jawaban": 2,
+    "penjelasan": "Hukum Kekekalan Massa menyatakan bahwa massa zat sebelum dan sesudah reaksi tetap sama, selama reaksi berlangsung dalam sistem tertutup. (Sukardjo, 2016)"
   },
   {
-    soal: "Siapa ilmuwan yang pertama kali merumuskan hukum kekekalan massa?",
-    pilihan: ["Dalton", "Lavoisier", "Proust", "Gay-Lussac"],
-    jawaban: 1,
-    penjelasan: "Antoine Lavoisier adalah ilmuwan pertama yang menyatakan bahwa massa zat sebelum dan sesudah reaksi tetap sama dalam sistem tertutup. (Modul Kimia Kemdikbud, 2021)"
+    "soal": "Kamu pernah dengar nama Antoine Lavoisier? Nah, dia itu ilmuwan keren yang pertama kali bilang kalau massa zat sebelum dan sesudah reaksi itu selalu sama, asal reaksinya di ruang tertutup. Jadi walau bentuknya berubah, beratnya tetap. Keren kan? Siapa ilmuwan yang pertama kali merumuskan hukum kekekalan massa?",
+    "pilihan": ["Dalton", "Lavoisier", "Proust", "Gay-Lussac"],
+    "jawaban": 1,
+    "penjelasan": "Antoine Lavoisier adalah ilmuwan pertama yang menyatakan bahwa massa zat sebelum dan sesudah reaksi tetap sama dalam sistem tertutup. (Modul Kimia Kemdikbud, 2021)"
   },
   {
-    soal: "Sistem seperti apa yang digunakan dalam eksperimen hukum kekekalan massa?",
-    pilihan: ["Terbuka", "Tertutup", "Vakum", "Tekanan tinggi"],
-    jawaban: 1,
-    penjelasan: "Sistem tertutup memastikan tidak ada zat yang keluar atau masuk, sehingga massa total tetap. (Modul Kimia Kelas X Kemendikbud, 2021)"
+    "soal": "Coba bayangin kamu lagi bakar kertas di dalam toples yang rapat banget. Semua asap, gas, dan sisa abunya tetap di situ, nggak ada yang keluar. Nah, kondisi kayak gini namanya sistem tertutup. Di sinilah massa zat sebelum dan sesudah reaksi tetap sama, karena nggak ada yang kabur ke luar. Sistem seperti apa yang digunakan dalam eksperimen hukum kekekalan massa?",
+    "pilihan": ["Terbuka", "Tertutup", "Vakum", "Tekanan tinggi"],
+    "jawaban": 1,
+    "penjelasan": "Sistem tertutup memastikan tidak ada zat yang keluar atau masuk, sehingga massa total tetap. (Modul Kimia Kelas X Kemendikbud, 2021)"
   },
   {
-    soal: "Hukum kekekalan massa berlaku jika...",
-    pilihan: [
+    "soal": "Pernah denger tentang Hukum Kekekalan Massa gak? Sederhananya gini: dalam setiap reaksi kimia, massa zat yang ada sebelum dan sesudah reaksi itu tetep. Jadi, nggak ada yang hilang atau bertambah. Hukum kekekalan massa berlaku jika...",
+    "pilihan": [
       "Ada gas yang dilepas",
       "Sistem terbuka",
       "Reaksi eksoterm",
       "Tidak ada zat keluar dari sistem"
     ],
-    jawaban: 3,
-    penjelasan: "Hukum kekekalan massa hanya berlaku jika tidak ada zat yang keluar dari sistem, artinya reaksi berlangsung dalam sistem tertutup. (Buku Kimia SMA Kelas X Kemendikbud, 2020)"
+    "jawaban": 3,
+    "penjelasan": "Hukum kekekalan massa hanya berlaku jika tidak ada zat yang keluar dari sistem, artinya reaksi berlangsung dalam sistem tertutup. (Buku Kimia SMA Kelas X Kemendikbud, 2020)"
   },
   {
-    soal: "Bunyi hukum perbandingan tetap adalah...",
-    pilihan: [
+    "soal": "Hukum Proust bilang apa sih? Jadi intinya gini, menurut Hukum Proust, dalam senyawa itu perbandingan massa unsur-unsurnya selalu tetap, nggak berubah-ubah, meskipun kita bikin senyawa yang sama di tempat yang berbeda. Contohnya kayak air (H₂O). Di mana-mana, massa hidrogennya bakal banding oksigennya itu tetep. Bunyi hukum perbandingan tetap adalah...",
+    "pilihan": [
       "Unsur dalam senyawa bergabung dalam massa sebarang",
       "Perbandingan massa selalu berubah",
       "Perbandingan massa unsur selalu tetap",
       "Senyawa tidak memiliki massa tetap"
     ],
-    jawaban: 2,
-    penjelasan: "Hukum Proust menyatakan bahwa dalam suatu senyawa, perbandingan massa unsur-unsurnya selalu tetap. (Buku Kimia SMA Pusat Perbukuan Depdiknas)"
+    "jawaban": 2,
+    "penjelasan": "Hukum Proust menyatakan bahwa dalam suatu senyawa, perbandingan massa unsur-unsurnya selalu tetap. (Buku Kimia SMA Pusat Perbukuan Depdiknas)"
   },
   {
-    soal: "Contoh hukum perbandingan tetap adalah...",
-    pilihan: [
+    "soal": "Ngomongin Hukum Proust nih… Hukum ini intinya ngomong kalau di dalam senyawa, perbandingan massa unsur-unsurnya itu selalu tetap. Misalnya air, di manapun kamu cari — di laut, di pegunungan, atau di kulkas rumah kamu — air itu isinya 2 atom hidrogen dan 1 atom oksigen. Gak bisa tiba-tiba berubah jadi 3 hidrogen 1 oksigen ya! Contoh hukum perbandingan tetap adalah...",
+    "pilihan": [
       "Massa H₂O berbeda tiap tempat",
       "H₂O selalu terdiri dari 2H dan 1O",
       "Air dapat berubah jadi uap",
       "Air dapat mengandung berbagai zat"
     ],
-    jawaban: 1,
-    penjelasan: "Air (H₂O) selalu terdiri dari 2 atom hidrogen dan 1 atom oksigen, menunjukkan perbandingan massa tetap. (Modul Kimia SMA Kemdikbud, 2021)"
+    "jawaban": 1,
+    "penjelasan": "Air (H₂O) selalu terdiri dari 2 atom hidrogen dan 1 atom oksigen, menunjukkan perbandingan massa tetap. (Modul Kimia SMA Kemdikbud, 2021)"
   },
   {
-    soal: "Hukum perbandingan tetap ditemukan oleh siapa?",
-    pilihan: ["Lavoisier", "Proust", "Dalton", "Gay-Lussac"],
-    jawaban: 1,
-    penjelasan: "Joseph Proust adalah ilmuwan yang merumuskan hukum perbandingan tetap. (Modul Kimia SMA Kemdikbud, 2021)"
+    "soal": "Kamu pernah dengar nama Joseph Proust belum? Nah, dia itu ilmuwan keren yang pertama kali bilang kalau unsur-unsur di dalam senyawa itu massanya selalu sebanding. Jadi hukum perbandingan tetap ditemukan oleh siapa?",
+    "pilihan": ["Lavoisier", "Proust", "Dalton", "Gay-Lussac"],
+    "jawaban": 1,
+    "penjelasan": "Joseph Proust adalah ilmuwan yang merumuskan hukum perbandingan tetap. (Modul Kimia SMA Kemdikbud, 2021)"
   },
   {
-    soal: "Pasangan senyawa mana yang sesuai dengan hukum perbandingan berganda Dalton?",
-    pilihan: ["H₂O dan H₂O₂", "NaCl dan KCl", "CO dan CO₂", "CH₄ dan C₂H₆"],
-    jawaban: 2,
-    penjelasan: "CO dan CO₂ adalah contoh hukum perbandingan berganda, karena perbandingan massa oksigen terhadap karbon dalam kedua senyawa adalah 1:2. (Buku Kimia Kemdikbud, 2020)"
+    "soal": "Nah teman-teman, kalian pernah dengar gak tentang Hukum Perbandingan Berganda dari Dalton? Ceritanya gini… Kalau ada dua unsur yang bisa membentuk lebih dari satu jenis senyawa, maka massa salah satu unsur yang bergabung dengan massa tetap unsur yang lain itu bakalan berbanding kelipatan bilangan bulat sederhana. Contohnya tuh kayak nitrogen dan oksigen. Mereka bisa bikin beberapa senyawa kayak NO (Nitrogen monoksida) sama NO₂ (Nitrogen dioksida). Di NO itu 1 nitrogen ketemu 1 oksigen, sedangkan di NO₂ itu 1 nitrogen ketemu 2 oksigen. Nah, perbandingan massa oksigennya kan 1:2 tuh — kelipatan bulat sederhana kan? Nah itu dia yang dimaksud Dalton. Pasangan senyawa mana yang sesuai dengan hukum perbandingan berganda Dalton?",
+    "pilihan": ["H₂O dan H₂O₂", "NaCl dan KCl", "CO dan CO₂", "CH₄ dan C₂H₆"],
+    "jawaban": 2,
+    "penjelasan": "CO dan CO₂ adalah contoh hukum perbandingan berganda, karena perbandingan massa oksigen terhadap karbon dalam kedua senyawa adalah 1:2. (Buku Kimia Kemdikbud, 2020)"
   },
   {
-    soal: "Hukum kekekalan massa ditemukan oleh siapa?",
-    pilihan: ["Dalton", "Lavoisier", "Proust"],
-    jawaban: 1,
-    penjelasan: "Antoine Lavoisier merumuskan hukum kekekalan massa, yang menyatakan bahwa massa sebelum dan sesudah reaksi kimia adalah tetap.",
+    "soal": "Hukum kekekalan massa ditemukan oleh siapa?",
+    "pilihan": ["Dalton", "Lavoisier", "Proust"],
+    "jawaban": 1,
+    "penjelasan": "Antoine Lavoisier merumuskan hukum kekekalan massa, yang menyatakan bahwa massa sebelum dan sesudah reaksi kimia adalah tetap.",
   },
   {
-    soal: "Cocokkan pasangan berikut: Lavoisier — ?",
-    pilihan: ["Hukum Kekekalan Massa", "Hukum Proust"],
-    jawaban: 0,
-    penjelasan: "Lavoisier dikenal sebagai penemu hukum kekekalan massa.",
+    "soal": "Cocokkan pasangan berikut: Lavoisier — ?",
+    "pilihan": ["Hukum Kekekalan Massa", "Hukum Proust"],
+    "jawaban": 0,
+    "penjelasan": "Lavoisier dikenal sebagai penemu hukum kekekalan massa.",
   },
   {
-  soal: "Jika 4 gram belerang bereaksi dengan 4 gram oksigen membentuk SO, dan 4 gram belerang bereaksi dengan 8 gram oksigen membentuk SO₂, maka perbandingan massa oksigen dalam kedua senyawa tersebut adalah…",
-  pilihan: ["1:1", "1:2", "2:1", "4:8"],
-  jawaban: 1,
-  penjelasan: "Massa belerang tetap, sehingga perbandingan massa oksigen adalah 4:8 = 1:2, sesuai hukum perbandingan berganda."
-},
-{
-  soal: "Hukum perbandingan volume gas ditemukan oleh siapa?",
-  pilihan: ["Dalton", "Gay-Lussac", "Lavoisier", "Proust"],
-  jawaban: 1,
-  penjelasan: "Gay-Lussac menemukan hukum perbandingan volume gas."
-},
-{
-  soal: "Dalam hukum Gay-Lussac, volume gas yang bereaksi harus diukur pada…",
-  pilihan: ["Tekanan sebarang", "Tekanan berbeda", "Suhu dan tekanan sama", "Suhu sebarang"],
-  jawaban: 2,
-  penjelasan: "Hukum Gay-Lussac hanya berlaku jika suhu dan tekanan gas-gas yang dibandingkan adalah sama."
-},
-{
-  soal: "Hukum Proust dikenal dengan nama lain…",
-  pilihan: ["Hukum Kekekalan Massa", "Hukum Perbandingan Tetap", "Hukum Perbandingan Volume"],
-  jawaban: 1,
-  penjelasan: "Hukum Proust disebut juga hukum perbandingan tetap, menyatakan bahwa perbandingan massa unsur-unsur dalam senyawa selalu tetap."
-},
-{
-  soal: "Dua unsur yang membentuk lebih dari satu senyawa akan memiliki perbandingan massa yang sederhana dan bulat. Ini merupakan isi dari…",
-  pilihan: ["Hukum Dalton", "Hukum Kekekalan Massa", "Hukum Perbandingan Berganda"],
-  jawaban: 2,
-  penjelasan: "Hukum perbandingan berganda menjelaskan bahwa dua unsur yang membentuk lebih dari satu senyawa akan memiliki massa yang berbanding kelipatan bulat sederhana."
-},
-{
-  soal: "Jika 2 liter hidrogen bereaksi dengan 1 liter oksigen membentuk uap air, maka hukum yang berlaku adalah…",
-  pilihan: ["Hukum Kekekalan Massa", "Hukum Proust", "Hukum Gay-Lussac"],
-  jawaban: 2,
-  penjelasan: "Reaksi gas dengan perbandingan volume sederhana mengikuti hukum Gay-Lussac."
-},
-{
-  soal: "Dalam percobaan, ditemukan bahwa massa sebelum dan sesudah reaksi selalu sama. Hukum yang berlaku adalah…",
-  pilihan: ["Hukum Kekekalan Massa", "Hukum Proust", "Hukum Perbandingan Berganda"],
-  jawaban: 0,
-  penjelasan: "Hukum kekekalan massa menyatakan bahwa massa zat sebelum dan sesudah reaksi adalah tetap."
-},
-{
-    soal: "Mengapa massa zat sebelum dan sesudah reaksi dalam sistem tertutup tetap?",
-    pilihan: [
-        "Karena ada zat baru yang terbentuk",
-        "Karena massa zat hilang ke udara",
-        "Karena tidak ada zat yang masuk/keluar system",
-        "Karena gas menguap ke lingkungan"
-    ],
-    jawaban: 2,
-    penjelasan: "Karena di sistem tertutup itu, semua zat yang ikut reaksi tetap berada di dalam wadahnya. Gak ada zat yang masuk ataupun keluar, jadi jumlah massanya tetap sama sebelum dan sesudah reaksi. Kalau ada zat yang keluar ke udara atau ke lingkungan, ya berarti bukan sistem tertutup dong!"
-},
+    "soal": "Teman-teman, pernah gak ngebayangin pas bikin api unggun? Kayu itu kan isinya banyak karbon. Nah, kalau karbon ketemu oksigen waktu dibakar, dia bisa bikin dua macam gas, lho! Bisa karbon monoksida (CO) atau karbon dioksida (CO₂), tergantung banyaknya oksigen yang dipakai. Misal nih — kalau 12 gram karbon ketemu 16 gram oksigen, hasilnya CO. Tapi kalau 12 gram karbon ketemu 32 gram oksigen, hasilnya CO₂. Nah, di sini kita bisa lihat nih perbandingan massanya. Kan sama-sama 12 gram karbon, tapi oksigennya beda tuh — 16 gram sama 32 gram. Nah, perbandingan massa oksigennya tinggal dibagi aja: 16 : 32 = 1:2 Jadi, sesuai banget sama Hukum Dalton tadi, kalau dua unsur bikin lebih dari satu senyawa, massa salah satu unsur yang bergabung dengan massa tetap unsur lain bakal berbanding kelipatan bilangan bulat sederhana. Jika 4 gram belerang (S) bereaksi dengan 4 gram oksigen membentuk SO, dan 4 gram belerang bereaksi dengan 8 gram oksigen membentuk SO₂, maka perbandingan massa oksigen dalam kedua senyawa tersebut adalah…",
+    "pilihan": ["1:1", "1:2", "2:1", "4:8"],
+    "jawaban": 1,
+    "penjelasan": "Massa belerang tetap, sehingga perbandingan massa oksigen adalah 4:8 = 1:2, sesuai hukum perbandingan berganda."
+  },
+  {
+    "soal": "Eh, teman-teman, kalian pernah gak liat balon gas helium waktu ulang tahun? Nah, balon itu bisa ngembang karena gas di dalamnya punya volume. Serunya, kalau ada beberapa gas yang direaksikan — kayak hidrogen sama oksigen buat bikin air — ternyata volume gas-gas itu bisa dibandingkan lho! Misalnya nih, 2 liter gas hidrogen ketemu 1 liter gas oksigen → hasilnya 2 liter uap air. Nah, volumenya itu berbanding bilangan bulat sederhana: 2 : 1 : 2. Aturan kayak gini pertama kali dijelasin sama Gay-Lussac. Beliau bilang, volume gas-gas yang bereaksi dan hasil reaksinya berbanding bilangan bulat sederhana, asalkan diukur pada suhu dan tekanan yang sama. Jadi, tiap kita ngomong soal perbandingan volume gas dalam reaksi kimia, ya ingetnya ke Gay-Lussac! Hukum perbandingan volume gas ditemukan oleh siapa?",
+    "pilihan": ["Dalton", "Gay-Lussac", "Lavoisier", "Proust"],
+    "jawaban": 1,
+    "penjelasan": "Gay-Lussac menemukan hukum perbandingan volume gas."
+  },
+  {
+    "soal": "Teman-teman, pernah gak main balon terus balonnya ditiup di siang hari, terus dibiarkan di luar sampe malam? Biasanya, pas siang balonnya gede banget, tapi waktu malam kok kayak ngempes. Nah itu karena volume gas di dalam balon bisa berubah-ubah tergantung suhu dan tekanan di sekitarnya. Nah, waktu Gay-Lussac bikin aturan tentang volume gas yang bereaksi, dia ngasih syarat penting nih: volume gas yang dibandingkan harus diukur pada suhu dan tekanan yang sama. Kenapa? Karena kalau suhu atau tekanannya beda, volume gasnya bisa berubah-ubah kayak balon tadi. Biar perbandingan volumnya adil dan akurat, ya harus di kondisi yang sama. Makanya, waktu ngitung perbandingan volume gas di reaksi, pastikan dulu suhu dan tekanannya sama ya! Dalam hukum Gay-Lussac, volume gas yang bereaksi harus diukur pada…",
+    "pilihan": ["Tekanan sebarang", "Tekanan berbeda", "Suhu dan tekanan sama", "Suhu sebarang"],
+    "jawaban": 2,
+    "penjelasan": "Hukum Gay-Lussac hanya berlaku jika suhu dan tekanan gas-gas yang dibandingkan adalah sama."
+  },
+  {
+    "soal": "Hukum Proust dikenal dengan nama lain…",
+    "pilihan": ["Hukum Kekekalan Massa", "Hukum Perbandingan Tetap", "Hukum Perbandingan Volume"],
+    "jawaban": 1,
+    "penjelasan": "Hukum Proust disebut juga hukum perbandingan tetap, menyatakan bahwa perbandingan massa unsur-unsur dalam senyawa selalu tetap."
+  },
+  {
+    "soal": "Dua unsur yang membentuk lebih dari satu senyawa akan memiliki perbandingan massa yang sederhana dan bulat. Ini merupakan isi dari…",
+    "pilihan": ["Hukum Dalton", "Hukum Kekekalan Massa", "Hukum Perbandingan Berganda"],
+    "jawaban": 2,
+    "penjelasan": "Hukum perbandingan berganda menjelaskan bahwa dua unsur yang membentuk lebih dari satu senyawa akan memiliki massa yang berbanding kelipatan bulat sederhana."
+  },
+  {
+    "soal": "Jika 2 liter hidrogen bereaksi dengan 1 liter oksigen membentuk uap air, maka hukum yang berlaku adalah…",
+    "pilihan": ["Hukum Kekekalan Massa", "Hukum Proust", "Hukum Gay-Lussac"],
+    "jawaban": 2,
+    "penjelasan": "Reaksi gas dengan perbandingan volume sederhana mengikuti hukum Gay-Lussac."
+  },
+  {
+    "soal": "Dalam percobaan, ditemukan bahwa massa sebelum dan sesudah reaksi selalu sama. Hukum yang berlaku adalah…",
+    "pilihan": ["Hukum Kekekalan Massa", "Hukum Proust", "Hukum Perbandingan Berganda"],
+    "jawaban": 0,
+    "penjelasan": "Hukum kekekalan massa menyatakan bahwa massa zat sebelum dan sesudah reaksi adalah tetap."
+  },
+  {
+    "soal": "Oke teman-teman, coba bayangin kamu lagi bikin es teh manis di dalam botol yang ditutup rapat. Kamu masukin gula, teh, dan air ke dalam botol, terus ditutup. Nah, meskipun nanti gulanya larut, warna tehnya berubah, bahkan kalau kamu kocok-kocok botolnya, berat totalnya tetap sama kan? Nah, begitulah yang dimaksud sama Hukum Kekekalan Massa. Hukum ini bilang kalau dalam reaksi kimia yang terjadi di sistem tertutup (artinya gak ada zat yang masuk atau keluar), jumlah massa zat sebelum dan sesudah reaksi itu tetap. Walaupun zat-zatnya berubah bentuk atau jadi zat baru, massa totalnya gak kemana-mana selama gak ada yang keluar masuk dari sistem itu. Mengapa massa zat sebelum dan sesudah reaksi dalam sistem tertutup tetap?",
+    "pilihan": ["Karena ada zat baru yang terbentuk", "Karena massa zat hilang ke udara", "Karena tidak ada zat yang masuk/keluar system", "Karena gas menguap ke lingkungan"],
+    "jawaban": 2,
+    "penjelasan": "Karena di sistem tertutup itu, semua zat yang ikut reaksi tetap berada di dalam wadahnya. Gak ada zat yang masuk ataupun keluar, jadi jumlah massanya tetap sama sebelum dan sesudah reaksi. Kalau ada zat yang keluar ke udara atau ke lingkungan, ya berarti bukan sistem tertutup dong!"
+  },
+  {
+    "soal": "Teman-teman, pernah gak kepikiran kalau air di pegunungan, di laut, di laboratorium, atau di gelas kamu di rumah itu sebenarnya susunan unsurnya sama persis? Jadi gini… Air itu kan terdiri dari hidrogen dan oksigen, dengan perbandingan massa 2:16 (karena 1 atom hidrogen massanya 1, dan 1 atom oksigen massanya 16). Nah, dari dulu sampai sekarang, dimanapun kamu temukan air, perbandingan massanya ya tetep segitu. Inilah yang disebut Hukum Proust atau Hukum Perbandingan Tetap. Hukum ini bilang, perbandingan massa unsur-unsur penyusun suatu senyawa itu selalu tetap, gak peduli air itu kamu ambil dari laboratorium, sungai, atau dari air hujan. Kayak resep bakso yang isinya daging sama tepung, kalau resepnya 2:1, ya bakal gitu terus biar rasanya konsisten. Mengapa perbandingan massa unsur dalam senyawa air di laboratorium dan di alam tetap sama?",
+    "pilihan": ["Karena suhu pengaruhnya kecil", "Karena hukum kekekalan massa", "Karena perbandingan massa mengikuti hukum Proust", "Karena air mudah menguap"],
+    "jawaban": 2,
+    "penjelasan": "Karena Hukum Proust menyatakan bahwa perbandingan massa unsur-unsur penyusun suatu senyawa itu tetap, di manapun senyawa itu ditemukan. Jadi, air yang kamu temui di sungai, di laboratorium, atau di botol minum kamu, perbandingan massa hidrogen dan oksigennya pasti sama."
+  },
+  {
+    "soal": "Coba deh bayangin… air yang kamu minum di rumah, air hujan di luar sana, atau air di laboratorium, semuanya punya perbandingan massa hidrogen dan oksigen yang sama, lho! Nah, kenapa bisa gitu? Karena ada yang namanya Hukum Perbandingan Tetap. Hukum ini bilang kalau unsur-unsur dalam suatu senyawa bakal nyatu dengan perbandingan massa yang selalu sama, gak peduli dibuat di laboratorium atau di alam bebas. Contohnya, di air: setiap 1 gram hidrogen akan ketemu sama 8 gram oksigen buat jadi air. Kalau perbandingan ini beda? Ya bukan air namanya! Mengapa air selalu memiliki perbandingan massa H dan O yang sama di manapun ditemukan?",
+    "pilihan": ["Karena suhu yang berubah-ubah gak ngaruh ke susunan massanya", "Karena ada aturan alami yang disebut hukum perbandingan tetap", "Karena volume air bisa beda-beda tergantung wadahnya", "Karena hidrogen itu gas paling ringan di alam"],
+    "jawaban": 1,
+    "penjelasan": "Karena Hukum Perbandingan Tetap menjelaskan kalau unsur-unsur dalam senyawa bakal selalu berikatan dalam perbandingan massa tertentu. Di air, perbandingan massa hidrogen dan oksigen itu harus tetap sama, mau dibuat di laboratorium, diambil dari sungai, atau hasil tetesan hujan sekalipun."
+  },
 
 {
-    soal: "Mengapa perbandingan massa unsur dalam senyawa air di laboratorium dan di alam tetap sama?",
-    pilihan: [
-        "Karena suhu pengaruhnya kecil",
-        "Karena hukum kekekalan massa",
-        "Karena perbandingan massa mengikuti hukum Proust",
-        "Karena air mudah menguap"
-    ],
-    jawaban: 2,
-    penjelasan: "Karena Hukum Proust menyatakan bahwa perbandingan massa unsur-unsur penyusun suatu senyawa itu tetap, di manapun senyawa itu ditemukan. Jadi, air yang kamu temui di sungai, di laboratorium, atau di botol minum kamu, perbandingan massa hidrogen dan oksigennya pasti sama."
-},
-
-{
-    soal: "Mengapa air selalu memiliki perbandingan massa H dan O yang sama di manapun ditemukan?",
-    pilihan: [
-        "Karena suhu yang berubah-ubah gak ngaruh ke susunan massanya",
-        "Karena ada aturan alami yang disebut hukum perbandingan tetap",
-        "Karena volume air bisa beda-beda tergantung wadahnya",
-        "Karena hidrogen itu gas paling ringan di alam"
-    ],
-    jawaban: 1,
-    penjelasan: "Karena Hukum Perbandingan Tetap menjelaskan kalau unsur-unsur dalam senyawa bakal selalu berikatan dalam perbandingan massa tertentu. Di air, perbandingan massa hidrogen dan oksigen itu harus tetap sama, mau dibuat di laboratorium, diambil dari sungai, atau hasil tetesan hujan sekalipun."
-},
-
-{
-    soal: "Hukum yang menyatakan massa zat sebelum dan sesudah reaksi adalah…",
-    pilihan: [
+    "soal": "Hukum yang menyatakan massa zat sebelum dan sesudah reaksi adalah…",
+    "pilihan": [
         "Proust",
         "Lavoisier"
     ],
-    jawaban: 1,
-    penjelasan: "Hukum Lavoisier (Hukum Kekekalan Massa) menyatakan bahwa massa zat sebelum dan sesudah reaksi adalah sama."
+    "jawaban": 1,
+   "penjelasan": "Hukum Lavoisier (Hukum Kekekalan Massa) menyatakan bahwa massa zat sebelum dan sesudah reaksi adalah sama."
 },
 
 {
-    soal: "Kenapa sih CO dan CO₂ bisa jadi contoh hukum perbandingan berganda?",
-    pilihan: [
+    "soal": "Kenapa sih CO dan CO₂ bisa jadi contoh hukum perbandingan berganda?",
+    "pilihan": [
         "Karena unsur-unsurnya sama tapi bisa bikin senyawa yang beda",
         "Karena massanya selalu sama persis",
         "Karena volume gasnya beda-beda",
         "Karena unsur yang dipakai gak sama"
     ],
-    jawaban: 0,
-    penjelasan: "Karena baik CO maupun CO₂ tersusun dari unsur yang sama, yaitu karbon dan oksigen, tapi massanya bergabung dalam perbandingan yang berbeda-beda untuk membentuk senyawa yang berbeda pula. Dan sesuai Hukum Perbandingan Berganda, perbandingan massanya bakal berupa bilangan bulat sederhana."
+    "jawaban": 0,
+    "penjelasan": "Karena baik CO maupun CO₂ tersusun dari unsur yang sama, yaitu karbon dan oksigen, tapi massanya bergabung dalam perbandingan yang berbeda-beda untuk membentuk senyawa yang berbeda pula. Dan sesuai Hukum Perbandingan Berganda, perbandingan massanya bakal berupa bilangan bulat sederhana."
 },
 
 {
-    soal: "Kenapa sih Hukum Gay-Lussac cuma bisa dipakai buat gas?",
-    pilihan: [
+    "soal": "Kenapa sih Hukum Gay-Lussac cuma bisa dipakai buat gas?",
+    "pilihan": [
         "Karena gas gampang menguap kayak air di siang bolong",
         "Karena volume gas bisa diukur dan dibandingin dengan mudah",
         "Karena gas itu berat kayak beban tugas akhir",
         "Karena gas susah banget buat bereaksi"
     ],
-    jawaban: 1,
-    penjelasan: "Karena volume gas bisa diukur dan dibandingkan dengan mudah waktu bereaksi, jadi perbandingan volume gas-gas yang bereaksi dan hasilnya bisa kelihatan jelas."
+    "jawaban": 1,
+    "penjelasan": "Karena volume gas bisa diukur dan dibandingkan dengan mudah waktu bereaksi, jadi perbandingan volume gas-gas yang bereaksi dan hasilnya bisa kelihatan jelas."
 },
 [
   {
