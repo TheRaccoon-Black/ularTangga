@@ -414,8 +414,10 @@ export class Game {
       // Clear previous scores
       scoreListEl.innerHTML = "";
 
+      const sortedPlayers = [...this.players].sort((a, b) => b.score - a.score);
+
       // Populate scores list
-      this.players.forEach((player) => {
+      sortedPlayers.forEach((player) => {
         const li = document.createElement("li");
         li.textContent = `${player.name}: ${player.score} point${
           player.score !== 1 ? "s" : ""

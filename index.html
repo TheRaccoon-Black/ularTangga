@@ -307,6 +307,78 @@
       /> -->
     </div>
     <!-- Final Score Modal -->
+     <!-- Final Score Modal -->
+<div
+  id="finalScoreModal"
+  class="modal"
+  style="
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    font-family: 'Arial', sans-serif;
+  "
+>
+  <div
+    class="modal-content"
+    style="
+      background: linear-gradient(to bottom, #fff3e0, #ffe0b2);
+      border: 4px solid #ff9800;
+      border-radius: 15px;
+      padding: 30px 40px;
+      max-width: 700px;
+      width: 90%;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      position: relative;
+      text-align: center;
+    "
+  >
+    <span
+      id="closeFinalScore"
+      class="close-button"
+      style="
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #e65100;
+        cursor: pointer;
+      "
+    >&times;</span>
+    <h2
+      style="
+        color: #BE4409;
+        font-size: 32px;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        margin-bottom: 20px;
+      "
+    >
+      Final Scores
+    </h2>
+    <ul
+      id="finalScoreList"
+      style="
+        list-style: none;
+        padding: 0;
+        font-size: 20px;
+        color: #4e342e;
+        max-height: 300px;
+        overflow-y: auto;
+        text-align: left;
+        margin: 0 auto;
+        width: 80%;
+      "
+    ></ul>
+  </div>
+</div>
+<!-- 
     <div
       id="finalScoreModal"
       class="modal"
@@ -320,10 +392,10 @@
           style="list-style: none; padding: 0; font-size: 18px; color: #333"
         ></ul>
       </div>
-    </div>
+    </div> -->
 
     <!-- Feedback Modal -->
-    <div
+    <!-- <div
       id="feedbackModal"
       class="modal"
       style="display: none; align-items: center; justify-content: center"
@@ -334,10 +406,30 @@
         <p id="feedbackExplanation"></p>
         <button id="okFeedbackBtn" class="modal-ok-button">OK</button>
       </div>
-    </div>
+    </div> -->
+    <div
+  id="feedbackModal"
+  class="modal"
+  style="display: none; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 9999; font-family: 'Arial', sans-serif;"
+>
+  <div class="modal-content" style="background: #e0f7fa; border: 3px solid #00796b; border-radius: 10px; padding: 20px 30px; max-width: 500px; width: 90%; box-shadow: 0 0 15px rgba(0,0,0,0.4); position: relative; text-align: center;">
+    <span
+      id="closeFeedback"
+      class="close-button"
+      style="position: absolute; top: 10px; right: 15px; font-size: 24px; font-weight: bold; color: #00796b; cursor: pointer;"
+    >&times;</span>
+    <h2 id="feedbackTitle" style="color: #00796b; font-size: 24px; margin-bottom: 15px;"></h2>
+    <p id="feedbackExplanation" style="color: #004d40; font-size: 16px;"></p>
+    <button
+      id="okFeedbackBtn"
+      class="modal-ok-button"
+      style="margin-top: 20px; padding: 10px 20px; font-size: 16px; background-color: #00796b; color: white; border: none; border-radius: 5px; cursor: pointer;"
+    >OK</button>
+  </div>
+</div>
 
     <!-- Question Modal -->
-    <div id="questionModal" class="modal" style="display: none">
+    <!-- <div id="questionModal" class="modal" style="display: none">
       <div class="modal-content">
         <h2 id="questionTitle">Question</h2>
         <div
@@ -347,12 +439,34 @@
 
         <p id="questionText"></p>
         <form id="questionForm">
-          <!-- Options will be added dynamically here -->
+
         </form>
         <button id="submitAnswer" disabled>Submit Answer</button>
       </div>
-    </div>
+    </div> -->
+    <div
+  id="questionModal"
+  class="modal"
+  style="display: none; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 9999; font-family: 'Arial', sans-serif;"
+>
+  <div class="modal-content" style="background: #e1f5fe; border: 3px solid #0288d1; border-radius: 10px; padding: 20px 30px; max-width: 600px; width: 90%; box-shadow: 0 0 15px rgba(0,0,0,0.4); text-align: center;">
+    <h2 id="questionTitle" style="color: #01579b; font-size: 24px; margin-bottom: 10px;">Question</h2>
+    <div
+      id="tileInfo"
+      style="font-weight: bold; margin-bottom: 15px; color: #e65100; font-size: 16px;"
+    ></div>
 
+    <p id="questionText" style="color: #01579b; font-size: 18px; margin-bottom: 20px;"></p>
+    <form id="questionForm" style="display: flex; flex-direction: column; gap: 10px;">
+      <!-- Options will be added dynamically here -->
+    </form>
+    <button
+      id="submitAnswer"
+      disabled
+      style="margin-top: 20px; padding: 10px 20px; font-size: 16px; background-color: #0288d1; color: white; border: none; border-radius: 5px; cursor: pointer;"
+    >Submit Answer</button>
+  </div>
+</div>
     <!-- Modal -->
     <div id="infoModal" class="modal">
       <div class="modal-content">
