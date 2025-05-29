@@ -420,6 +420,7 @@ export class Board {
     "jawaban": 1,
     "penjelasan": "Berdasarkan Hukum Lavoisier, massa sebelum dan sesudah reaksi harus sama. Massa karbon = 12 g, Massa karbon dioksida = 44 g. Massa oksigen = Massa karbon dioksida - Massa karbon = 44 g - 12 g = 32 g. Jadi, massa oksigen yang bereaksi adalah 32 g."
   },
+  // revisi --------------------------------------------------------------------------------
   {
     "soal": "Kita bahas Hukum Gay-Lussac yuk. Hukum ini bilang: Kalau suhu gas dinaikkan, maka tekanannya juga naik, asalkan volumenya tetap. Ibaratnya kayak balon karet. Kalau balon itu diisi gas terus dipanaskan tanpa dibesarin, gas di dalamnya bakal makin “sumpek” dan tekanannya naik. Jika tekanan gas pada suhu 300 K adalah 3 atm, berapa tekanan gas tersebut pada suhu 600 K?",
     "pilihan": [
@@ -548,7 +549,9 @@ export class Board {
       "650 mmHg",
       "500 mmHg"
     ],
-    "jawaban": 1,
+
+    // revisi
+    "jawaban": 0,
     "penjelasan": "Berdasarkan Hukum Dalton, tekanan total gas campuran adalah jumlah tekanan parsialnya. Tekanan total = 180 mmHg + 220 mmHg + 150 mmHg = 600 mmHg."
   },
   {
