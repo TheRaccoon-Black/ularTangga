@@ -1,3 +1,4 @@
+import data from './data.json';
 export class Player {
   constructor(name, color, image, id) {
     this.name = name;
@@ -40,8 +41,8 @@ export class Board {
       [76, 97],
     ];
     this.soalJawabPilihan = [
-      {
-    "soal": "Eh, kamu tahu nggak sih? Ternyata kalau ada reaksi kimia kayak pembakaran lilin di dalam toples tertutup, massa semua zat di dalamnya itu bakal tetap, lho! Jadi, meskipun bentuknya berubah, total massanya nggak ke mana-mana alias total massanya itu sama aja. Nah, ini yang disebut Hukum Kekekalan Massa. Apa bunyi dari hukum kekekalan massa?",
+  {
+    "soal": "<em>Eh, kamu tahu nggak sih?</em><br>Ternyata kalau ada reaksi kimia kayak pembakaran lilin di dalam toples tertutup, massa semua zat di dalamnya itu bakal tetap, lho! Jadi, meskipun bentuknya berubah, total massanya nggak ke mana-mana alias total massanya itu sama aja. Nah, ini yang disebut Hukum Kekekalan Massa. <br>Apa bunyi dari hukum kekekalan massa?",
     "pilihan": [
       "Massa zat berkurang dalam reaksi",
       "Massa zat bertambah selama reaksi",
@@ -52,19 +53,19 @@ export class Board {
     "penjelasan": "Hukum Kekekalan Massa menyatakan bahwa massa zat sebelum dan sesudah reaksi tetap sama, selama reaksi berlangsung dalam sistem tertutup. (Sukardjo, 2016)"
   },
   {
-    "soal": "Kamu pernah dengar nama Antoine Lavoisier? Nah, dia itu ilmuwan keren yang pertama kali bilang kalau massa zat sebelum dan sesudah reaksi itu selalu sama, asal reaksinya di ruang tertutup. Jadi walau bentuknya berubah, beratnya tetap. Keren kan? Siapa ilmuwan yang pertama kali merumuskan hukum kekekalan massa?",
+    "soal": "<em>Kamu pernah dengar nama Antoine Lavoisier?</em><br>Nah, dia itu ilmuwan keren yang pertama kali bilang kalau massa zat sebelum dan sesudah reaksi itu selalu sama, asal reaksinya di ruang tertutup. Jadi walau bentuknya berubah, beratnya tetap. Keren kan?<br>Siapa ilmuwan yang pertama kali merumuskan hukum kekekalan massa?",
     "pilihan": ["Dalton", "Lavoisier", "Proust", "Gay-Lussac"],
     "jawaban": 1,
     "penjelasan": "Antoine Lavoisier adalah ilmuwan pertama yang menyatakan bahwa massa zat sebelum dan sesudah reaksi tetap sama dalam sistem tertutup. (Modul Kimia Kemdikbud, 2021)"
   },
   {
-    "soal": "Coba bayangin kamu lagi bakar kertas di dalam toples yang rapat banget. Semua asap, gas, dan sisa abunya tetap di situ, nggak ada yang keluar. Nah, kondisi kayak gini namanya sistem tertutup. Di sinilah massa zat sebelum dan sesudah reaksi tetap sama, karena nggak ada yang kabur ke luar. Sistem seperti apa yang digunakan dalam eksperimen hukum kekekalan massa?",
+    "soal": "Coba bayangin kamu lagi bakar kertas di dalam toples yang rapat banget. Semua asap, gas, dan sisa abunya tetap di situ, nggak ada yang keluar. Nah, kondisi kayak gini namanya sistem tertutup. Di sinilah massa zat sebelum dan sesudah reaksi tetap sama, karena nggak ada yang kabur ke luar.<br>Sistem seperti apa yang digunakan dalam eksperimen hukum kekekalan massa?",
     "pilihan": ["Terbuka", "Tertutup", "Vakum", "Tekanan tinggi"],
     "jawaban": 1,
     "penjelasan": "Sistem tertutup memastikan tidak ada zat yang keluar atau masuk, sehingga massa total tetap. (Modul Kimia Kelas X Kemendikbud, 2021)"
   },
   {
-    "soal": "Pernah denger tentang Hukum Kekekalan Massa gak? Sederhananya gini: dalam setiap reaksi kimia, massa zat yang ada sebelum dan sesudah reaksi itu tetep. Jadi, nggak ada yang hilang atau bertambah. Hukum kekekalan massa berlaku jika...",
+    "soal": "<em>Pernah denger tentang Hukum Kekekalan Massa gak?</em><br>Sederhananya gini: dalam setiap reaksi kimia, massa zat yang ada sebelum dan sesudah reaksi itu tetep. Jadi, nggak ada yang hilang atau bertambah. <br>Hukum kekekalan massa berlaku jika...",
     "pilihan": [
       "Ada gas yang dilepas",
       "Sistem terbuka",
@@ -75,7 +76,7 @@ export class Board {
     "penjelasan": "Hukum kekekalan massa hanya berlaku jika tidak ada zat yang keluar dari sistem, artinya reaksi berlangsung dalam sistem tertutup. (Buku Kimia SMA Kelas X Kemendikbud, 2020)"
   },
   {
-    "soal": "Hukum Proust bilang apa sih? Jadi intinya gini, menurut Hukum Proust, dalam senyawa itu perbandingan massa unsur-unsurnya selalu tetap, nggak berubah-ubah, meskipun kita bikin senyawa yang sama di tempat yang berbeda. Contohnya kayak air (H₂O). Di mana-mana, massa hidrogennya bakal banding oksigennya itu tetep. Bunyi hukum perbandingan tetap adalah...",
+    "soal": "<em>Hukum Proust bilang apa sih?</em><br>Jadi intinya gini, menurut Hukum Proust, dalam senyawa itu perbandingan massa unsur-unsurnya selalu tetap, nggak berubah-ubah, meskipun kita bikin senyawa yang sama di tempat yang berbeda. <br>Contohnya kayak air (H₂O). <br>Di mana-mana, massa hidrogennya bakal banding oksigennya itu tetep. Bunyi hukum perbandingan tetap adalah...",
     "pilihan": [
       "Unsur dalam senyawa bergabung dalam massa sebarang",
       "Perbandingan massa selalu berubah",
@@ -86,7 +87,7 @@ export class Board {
     "penjelasan": "Hukum Proust menyatakan bahwa dalam suatu senyawa, perbandingan massa unsur-unsurnya selalu tetap. (Buku Kimia SMA Pusat Perbukuan Depdiknas)"
   },
   {
-    "soal": "Ngomongin Hukum Proust nih… Hukum ini intinya ngomong kalau di dalam senyawa, perbandingan massa unsur-unsurnya itu selalu tetap. Misalnya air, di manapun kamu cari — di laut, di pegunungan, atau di kulkas rumah kamu — air itu isinya 2 atom hidrogen dan 1 atom oksigen. Gak bisa tiba-tiba berubah jadi 3 hidrogen 1 oksigen ya! Contoh hukum perbandingan tetap adalah...",
+    "soal": "<em>Ngomongin Hukum Proust nih…</em> <br>Hukum ini intinya ngomong kalau di dalam senyawa, perbandingan massa unsur-unsurnya itu selalu tetap. Misalnya air, di manapun kamu cari — di laut, di pegunungan, atau di kulkas rumah kamu — air itu isinya 2 atom hidrogen dan 1 atom oksigen. Gak bisa tiba-tiba berubah jadi 3 hidrogen 1 oksigen ya! <br>Contoh hukum perbandingan tetap adalah...",
     "pilihan": [
       "Massa H₂O berbeda tiap tempat",
       "H₂O selalu terdiri dari 2H dan 1O",
@@ -97,13 +98,13 @@ export class Board {
     "penjelasan": "Air (H₂O) selalu terdiri dari 2 atom hidrogen dan 1 atom oksigen, menunjukkan perbandingan massa tetap. (Modul Kimia SMA Kemdikbud, 2021)"
   },
   {
-    "soal": "Kamu pernah dengar nama Joseph Proust belum? Nah, dia itu ilmuwan keren yang pertama kali bilang kalau unsur-unsur di dalam senyawa itu massanya selalu sebanding. Jadi hukum perbandingan tetap ditemukan oleh siapa?",
+    "soal": "<em>Kamu pernah dengar nama Joseph Proust belum?</em> <br>Nah, dia itu ilmuwan keren yang pertama kali bilang kalau unsur-unsur di dalam senyawa itu massanya selalu sebanding.<br>Jadi hukum perbandingan tetap ditemukan oleh siapa?",
     "pilihan": ["Lavoisier", "Proust", "Dalton", "Gay-Lussac"],
     "jawaban": 1,
     "penjelasan": "Joseph Proust adalah ilmuwan yang merumuskan hukum perbandingan tetap. (Modul Kimia SMA Kemdikbud, 2021)"
   },
   {
-    "soal": "Nah teman-teman, kalian pernah dengar gak tentang Hukum Perbandingan Berganda dari Dalton? Ceritanya gini… Kalau ada dua unsur yang bisa membentuk lebih dari satu jenis senyawa, maka massa salah satu unsur yang bergabung dengan massa tetap unsur yang lain itu bakalan berbanding kelipatan bilangan bulat sederhana. Contohnya tuh kayak nitrogen dan oksigen. Mereka bisa bikin beberapa senyawa kayak NO (Nitrogen monoksida) sama NO₂ (Nitrogen dioksida). Di NO itu 1 nitrogen ketemu 1 oksigen, sedangkan di NO₂ itu 1 nitrogen ketemu 2 oksigen. Nah, perbandingan massa oksigennya kan 1:2 tuh — kelipatan bulat sederhana kan? Nah itu dia yang dimaksud Dalton. Pasangan senyawa mana yang sesuai dengan hukum perbandingan berganda Dalton?",
+    "soal": "Nah teman-teman, kalian pernah dengar gak tentang Hukum Perbandingan Berganda dari Dalton?<br>Ceritanya gini… Kalau ada dua unsur yang bisa membentuk lebih dari satu jenis senyawa, maka massa salah satu unsur yang bergabung dengan massa tetap unsur yang lain itu bakalan berbanding kelipatan bilangan bulat sederhana.<br>Contohnya tuh kayak nitrogen dan oksigen. Unsur ini bisa bikin beberapa senyawa kayak NO (Nitrogen monoksida) sama NO₂ (Nitrogen dioksida).<br>Di NO itu 1 nitrogen ketemu 1 oksigen, sedangkan di NO₂ itu 1 nitrogen ketemu 2 oksigen. Nah, perbandingan massa oksigennya kan 1:2 tuh — kelipatan bulat sederhana kan? Nah itu dia yang dimaksud Dalton.<br>Pasangan senyawa mana yang sesuai dengan hukum perbandingan berganda Dalton?",
     "pilihan": ["H₂O dan H₂O₂", "NaCl dan KCl", "CO dan CO₂", "CH₄ dan C₂H₆"],
     "jawaban": 2,
     "penjelasan": "CO dan CO₂ adalah contoh hukum perbandingan berganda, karena perbandingan massa oksigen terhadap karbon dalam kedua senyawa adalah 1:2. (Buku Kimia Kemdikbud, 2020)"
@@ -112,28 +113,28 @@ export class Board {
     "soal": "Hukum kekekalan massa ditemukan oleh siapa?",
     "pilihan": ["Dalton", "Lavoisier", "Proust"],
     "jawaban": 1,
-    "penjelasan": "Antoine Lavoisier merumuskan hukum kekekalan massa, yang menyatakan bahwa massa sebelum dan sesudah reaksi kimia adalah tetap.",
+    "penjelasan": "Antoine Lavoisier merumuskan hukum kekekalan massa, yang menyatakan bahwa massa sebelum dan sesudah reaksi kimia adalah tetap."
   },
   {
     "soal": "Cocokkan pasangan berikut: Lavoisier — ?",
     "pilihan": ["Hukum Kekekalan Massa", "Hukum Proust"],
     "jawaban": 0,
-    "penjelasan": "Lavoisier dikenal sebagai penemu hukum kekekalan massa.",
+    "penjelasan": "Lavoisier dikenal sebagai penemu hukum kekekalan massa."
   },
   {
-    "soal": "Teman-teman, pernah gak ngebayangin pas bikin api unggun? Kayu itu kan isinya banyak karbon. Nah, kalau karbon ketemu oksigen waktu dibakar, dia bisa bikin dua macam gas, lho! Bisa karbon monoksida (CO) atau karbon dioksida (CO₂), tergantung banyaknya oksigen yang dipakai. Misal nih — kalau 12 gram karbon ketemu 16 gram oksigen, hasilnya CO. Tapi kalau 12 gram karbon ketemu 32 gram oksigen, hasilnya CO₂. Nah, di sini kita bisa lihat nih perbandingan massanya. Kan sama-sama 12 gram karbon, tapi oksigennya beda tuh — 16 gram sama 32 gram. Nah, perbandingan massa oksigennya tinggal dibagi aja: 16 : 32 = 1:2 Jadi, sesuai banget sama Hukum Dalton tadi, kalau dua unsur bikin lebih dari satu senyawa, massa salah satu unsur yang bergabung dengan massa tetap unsur lain bakal berbanding kelipatan bilangan bulat sederhana. Jika 4 gram belerang (S) bereaksi dengan 4 gram oksigen membentuk SO, dan 4 gram belerang bereaksi dengan 8 gram oksigen membentuk SO₂, maka perbandingan massa oksigen dalam kedua senyawa tersebut adalah…",
+    "soal": "Teman-teman, pernah gak ngebayangin pas bikin api unggun?<br>Kayu itu kan isinya banyak karbon. Nah, kalau karbon ketemu oksigen waktu dibakar, dia bisa bikin dua macam gas, lho! Bisa karbon monoksida (CO) atau karbon dioksida (CO₂), tergantung banyaknya oksigen yang dipakai. Misal nih — kalau 12 gram karbon ketemu 16 gram oksigen, hasilnya CO. Tapi kalau 12 gram karbon ketemu 32 gram oksigen, hasilnya CO₂. <br>Nah, di sini kita bisa lihat nih perbandingan massanya. Kan sama-sama 12 gram karbon, tapi oksigennya beda tuh — 16 gram sama 32 gram. <br>Nah, perbandingan massa oksigennya tinggal dibagi aja: 16 : 32 = 1:2 <br>Jadi, sesuai banget sama Hukum Dalton tadi, kalau dua unsur bikin lebih dari satu senyawa, massa salah satu unsur yang bergabung dengan massa tetap unsur lain bakal berbanding kelipatan bilangan bulat sederhana. <br>Jika 4 gram belerang (S) bereaksi dengan 4 gram oksigen membentuk SO, dan 4 gram belerang bereaksi dengan 8 gram oksigen membentuk SO₂, maka perbandingan massa oksigen dalam kedua senyawa tersebut adalah…",
     "pilihan": ["1:1", "1:2", "2:1", "4:8"],
     "jawaban": 1,
     "penjelasan": "Massa belerang tetap, sehingga perbandingan massa oksigen adalah 4:8 = 1:2, sesuai hukum perbandingan berganda."
   },
   {
-    "soal": "Eh, teman-teman, kalian pernah gak liat balon gas helium waktu ulang tahun? Nah, balon itu bisa ngembang karena gas di dalamnya punya volume. Serunya, kalau ada beberapa gas yang direaksikan — kayak hidrogen sama oksigen buat bikin air — ternyata volume gas-gas itu bisa dibandingkan lho! Misalnya nih, 2 liter gas hidrogen ketemu 1 liter gas oksigen → hasilnya 2 liter uap air. Nah, volumenya itu berbanding bilangan bulat sederhana: 2 : 1 : 2. Aturan kayak gini pertama kali dijelasin sama Gay-Lussac. Beliau bilang, volume gas-gas yang bereaksi dan hasil reaksinya berbanding bilangan bulat sederhana, asalkan diukur pada suhu dan tekanan yang sama. Jadi, tiap kita ngomong soal perbandingan volume gas dalam reaksi kimia, ya ingetnya ke Gay-Lussac! Hukum perbandingan volume gas ditemukan oleh siapa?",
+    "soal": "Eh, teman-teman, kalian pernah gak liat balon gas helium waktu ulang tahun? <br>Nah, balon itu bisa ngembang karena gas di dalamnya punya volume. Serunya, kalau ada beberapa gas yang direaksikan — kayak hidrogen sama oksigen buat bikin air — ternyata volume gas-gas itu bisa dibandingkan lho! <br>Misalnya nih, 2 liter gas hidrogen ketemu 1 liter gas oksigen → hasilnya 2 liter uap air.<br>Nah, volumenya itu berbanding bilangan bulat sederhana: 2 : 1 : 2. Aturan kayak gini pertama kali dijelasin sama Gay-Lussac. Beliau bilang, volume gas-gas yang bereaksi dan hasil reaksinya berbanding bilangan bulat sederhana, asalkan diukur pada suhu dan tekanan yang sama. Jadi, tiap kita ngomong soal perbandingan volume gas dalam reaksi kimia, ya ingetnya ke Gay-Lussac! <br>Hukum perbandingan volume gas ditemukan oleh siapa?",
     "pilihan": ["Dalton", "Gay-Lussac", "Lavoisier", "Proust"],
     "jawaban": 1,
     "penjelasan": "Gay-Lussac menemukan hukum perbandingan volume gas."
   },
   {
-    "soal": "Teman-teman, pernah gak main balon terus balonnya ditiup di siang hari, terus dibiarkan di luar sampe malam? Biasanya, pas siang balonnya gede banget, tapi waktu malam kok kayak ngempes. Nah itu karena volume gas di dalam balon bisa berubah-ubah tergantung suhu dan tekanan di sekitarnya. Nah, waktu Gay-Lussac bikin aturan tentang volume gas yang bereaksi, dia ngasih syarat penting nih: volume gas yang dibandingkan harus diukur pada suhu dan tekanan yang sama. Kenapa? Karena kalau suhu atau tekanannya beda, volume gasnya bisa berubah-ubah kayak balon tadi. Biar perbandingan volumnya adil dan akurat, ya harus di kondisi yang sama. Makanya, waktu ngitung perbandingan volume gas di reaksi, pastikan dulu suhu dan tekanannya sama ya! Dalam hukum Gay-Lussac, volume gas yang bereaksi harus diukur pada…",
+    "soal": "Teman-teman, pernah gak main balon terus balonnya ditiup di siang hari, terus dibiarkan di luar sampe malam? Biasanya, pas siang balonnya gede banget, tapi waktu malam kok kayak ngempes. <br>Nah itu karena volume gas di dalam balon bisa berubah-ubah tergantung suhu dan tekanan di sekitarnya. Nah, waktu Gay-Lussac bikin aturan tentang volume gas yang bereaksi, dia ngasih syarat penting nih: volume gas yang dibandingkan harus diukur pada suhu dan tekanan yang sama. Kenapa? Karena kalau suhu atau tekanannya beda, volume gasnya bisa berubah-ubah kayak balon tadi. Biar perbandingan volumnya adil dan akurat, ya harus di kondisi yang sama. Makanya, waktu ngitung perbandingan volume gas di reaksi, pastikan dulu suhu dan tekanannya sama ya!<br>Dalam hukum Gay-Lussac, volume gas yang bereaksi harus diukur pada…",
     "pilihan": ["Tekanan sebarang", "Tekanan berbeda", "Suhu dan tekanan sama", "Suhu sebarang"],
     "jawaban": 2,
     "penjelasan": "Hukum Gay-Lussac hanya berlaku jika suhu dan tekanan gas-gas yang dibandingkan adalah sama."
@@ -163,36 +164,34 @@ export class Board {
     "penjelasan": "Hukum kekekalan massa menyatakan bahwa massa zat sebelum dan sesudah reaksi adalah tetap."
   },
   {
-    "soal": "Oke teman-teman, coba bayangin kamu lagi bikin es teh manis di dalam botol yang ditutup rapat. Kamu masukin gula, teh, dan air ke dalam botol, terus ditutup. Nah, meskipun nanti gulanya larut, warna tehnya berubah, bahkan kalau kamu kocok-kocok botolnya, berat totalnya tetap sama kan? Nah, begitulah yang dimaksud sama Hukum Kekekalan Massa. Hukum ini bilang kalau dalam reaksi kimia yang terjadi di sistem tertutup (artinya gak ada zat yang masuk atau keluar), jumlah massa zat sebelum dan sesudah reaksi itu tetap. Walaupun zat-zatnya berubah bentuk atau jadi zat baru, massa totalnya gak kemana-mana selama gak ada yang keluar masuk dari sistem itu. Mengapa massa zat sebelum dan sesudah reaksi dalam sistem tertutup tetap?",
+    "soal": "Oke teman-teman, coba bayangin kamu lagi bikin es teh manis di dalam botol yang ditutup rapat. Kamu masukin gula, teh, dan air ke dalam botol, terus ditutup. Nah, meskipun nanti gulanya larut, warna tehnya berubah, bahkan kalau kamu kocok-kocok botolnya, berat totalnya tetap sama kan?<br>Nah, begitulah yang dimaksud sama Hukum Kekekalan Massa. Hukum ini bilang kalau dalam reaksi kimia yang terjadi di sistem tertutup (artinya gak ada zat yang masuk atau keluar), jumlah massa zat sebelum dan sesudah reaksi itu tetap. Walaupun zat-zatnya berubah bentuk atau jadi zat baru, massa totalnya gak kemana-mana selama gak ada yang keluar masuk dari sistem itu.<br>Mengapa massa zat sebelum dan sesudah reaksi dalam sistem tertutup tetap?",
     "pilihan": ["Karena ada zat baru yang terbentuk", "Karena massa zat hilang ke udara", "Karena tidak ada zat yang masuk/keluar system", "Karena gas menguap ke lingkungan"],
     "jawaban": 2,
     "penjelasan": "Karena di sistem tertutup itu, semua zat yang ikut reaksi tetap berada di dalam wadahnya. Gak ada zat yang masuk ataupun keluar, jadi jumlah massanya tetap sama sebelum dan sesudah reaksi. Kalau ada zat yang keluar ke udara atau ke lingkungan, ya berarti bukan sistem tertutup dong!"
   },
   {
-    "soal": "Teman-teman, pernah gak kepikiran kalau air di pegunungan, di laut, di laboratorium, atau di gelas kamu di rumah itu sebenarnya susunan unsurnya sama persis? Jadi gini… Air itu kan terdiri dari hidrogen dan oksigen, dengan perbandingan massa 2:16 (karena 1 atom hidrogen massanya 1, dan 1 atom oksigen massanya 16). Nah, dari dulu sampai sekarang, dimanapun kamu temukan air, perbandingan massanya ya tetep segitu. Inilah yang disebut Hukum Proust atau Hukum Perbandingan Tetap. Hukum ini bilang, perbandingan massa unsur-unsur penyusun suatu senyawa itu selalu tetap, gak peduli air itu kamu ambil dari laboratorium, sungai, atau dari air hujan. Kayak resep bakso yang isinya daging sama tepung, kalau resepnya 2:1, ya bakal gitu terus biar rasanya konsisten. Mengapa perbandingan massa unsur dalam senyawa air di laboratorium dan di alam tetap sama?",
+    "soal": "Teman-teman, pernah gak kepikiran kalau air di pegunungan, di laut, di laboratorium, atau di gelas kamu di rumah itu sebenarnya susunan unsurnya sama persis?<br>Jadi gini… Air itu kan terdiri dari hidrogen dan oksigen, dengan perbandingan massa 2:16 (karena 1 atom hidrogen massanya 1, dan 1 atom oksigen massanya 16).<br>Nah, dari dulu sampai sekarang, dimanapun kamu temukan air, perbandingan massanya ya tetep segitu. Inilah yang disebut Hukum Proust atau Hukum Perbandingan Tetap. Hukum ini bilang, perbandingan massa unsur-unsur penyusun suatu senyawa itu selalu tetap, gak peduli air itu kamu ambil dari laboratorium, sungai, atau dari air hujan. Kayak resep bakso yang isinya daging sama tepung, kalau resepnya 2:1, ya bakal gitu terus biar rasanya konsisten.<br>Mengapa perbandingan massa unsur dalam senyawa air di laboratorium dan di alam tetap sama?",
     "pilihan": ["Karena suhu pengaruhnya kecil", "Karena hukum kekekalan massa", "Karena perbandingan massa mengikuti hukum Proust", "Karena air mudah menguap"],
     "jawaban": 2,
     "penjelasan": "Karena Hukum Proust menyatakan bahwa perbandingan massa unsur-unsur penyusun suatu senyawa itu tetap, di manapun senyawa itu ditemukan. Jadi, air yang kamu temui di sungai, di laboratorium, atau di botol minum kamu, perbandingan massa hidrogen dan oksigennya pasti sama."
   },
   {
-    "soal": "Coba deh bayangin… air yang kamu minum di rumah, air hujan di luar sana, atau air di laboratorium, semuanya punya perbandingan massa hidrogen dan oksigen yang sama, lho! Nah, kenapa bisa gitu? Karena ada yang namanya Hukum Perbandingan Tetap. Hukum ini bilang kalau unsur-unsur dalam suatu senyawa bakal nyatu dengan perbandingan massa yang selalu sama, gak peduli dibuat di laboratorium atau di alam bebas. Contohnya, di air: setiap 1 gram hidrogen akan ketemu sama 8 gram oksigen buat jadi air. Kalau perbandingan ini beda? Ya bukan air namanya! Mengapa air selalu memiliki perbandingan massa H dan O yang sama di manapun ditemukan?",
+    "soal": "Coba deh bayangin… air yang kamu minum di rumah, air hujan di luar sana, atau air di laboratorium, semuanya punya perbandingan massa hidrogen dan oksigen yang sama, lho! Nah, kenapa bisa gitu?<br>Karena ada yang namanya Hukum Perbandingan Tetap. Hukum ini bilang kalau unsur-unsur dalam suatu senyawa bakal nyatu dengan perbandingan massa yang selalu sama, gak peduli dibuat di laboratorium atau di alam bebas.<br>Contohnya, di air: setiap 1 gram hidrogen akan ketemu sama 8 gram oksigen buat jadi air. Kalau perbandingan ini beda? Ya bukan air namanya!<br>Mengapa air selalu memiliki perbandingan massa H dan O yang sama di manapun ditemukan?",
     "pilihan": ["Karena suhu yang berubah-ubah gak ngaruh ke susunan massanya", "Karena ada aturan alami yang disebut hukum perbandingan tetap", "Karena volume air bisa beda-beda tergantung wadahnya", "Karena hidrogen itu gas paling ringan di alam"],
     "jawaban": 1,
     "penjelasan": "Karena Hukum Perbandingan Tetap menjelaskan kalau unsur-unsur dalam senyawa bakal selalu berikatan dalam perbandingan massa tertentu. Di air, perbandingan massa hidrogen dan oksigen itu harus tetap sama, mau dibuat di laboratorium, diambil dari sungai, atau hasil tetesan hujan sekalipun."
   },
-
-{
+  {
     "soal": "Hukum yang menyatakan massa zat sebelum dan sesudah reaksi adalah…",
     "pilihan": [
-        "Proust",
-        "Lavoisier"
+      "Proust",
+      "Lavoisier"
     ],
     "jawaban": 1,
-   "penjelasan": "Hukum Lavoisier (Hukum Kekekalan Massa) menyatakan bahwa massa zat sebelum dan sesudah reaksi adalah sama."
-},
-
- {
-    "soal": "Pernah gak sih kamu mikir, kok karbon bisa aja gabung sama oksigen jadi CO (karbon monoksida) atau jadi CO₂ (karbon dioksida)? Padahal dua-duanya isinya karbon sama oksigen juga. Nah, ini nih yang dijelasin sama Hukum Perbandingan Berganda. Hukum ini bilang, kalau dua unsur bisa bikin lebih dari satu senyawa, maka massa salah satu unsurnya yang bergabung dengan massa tetap unsur lain akan berbanding sebagai bilangan bulat sederhana, Contohnya: Di CO, 12 gram karbon ketemu 16 gram oksigen. Di CO₂, 12 gram karbon ketemu 32 gram oksigen. Perbandingan 16:32 itu 1:2 → bilangan bulat sederhana kan? Makanya contoh hukum ini pas banget. Soal Kenapa sih CO dan CO₂ bisa jadi contoh hukum perbandingan berganda?",
+    "penjelasan": "Hukum Lavoisier (Hukum Kekekalan Massa) menyatakan bahwa massa zat sebelum dan sesudah reaksi adalah sama."
+  },
+  {
+    "soal": "Pernah gak sih kamu mikir, kok karbon bisa aja gabung sama oksigen jadi CO (karbon monoksida) atau jadi CO₂ (karbon dioksida)?<br>Padahal dua-duanya isinya karbon sama oksigen juga. Nah, ini nih yang dijelasin sama Hukum Perbandingan Berganda. Hukum ini bilang, kalau dua unsur bisa bikin lebih dari satu senyawa, maka massa salah satu unsurnya yang bergabung dengan massa tetap unsur lain akan berbanding sebagai bilangan bulat sederhana.<br>Contohnya: Di CO, 12 gram karbon ketemu 16 gram oksigen. Di CO₂, 12 gram karbon ketemu 32 gram oksigen.<br>Perbandingan 16:32 itu 1:2 → bilangan bulat sederhana kan? Makanya contoh hukum ini pas banget.<br>Soal Kenapa sih CO dan CO₂ bisa jadi contoh hukum perbandingan berganda?",
     "pilihan": [
       "Karena unsur-unsurnya sama tapi bisa bikin senyawa yang beda",
       "Karena massanya selalu sama persis",
@@ -203,7 +202,7 @@ export class Board {
     "penjelasan": "Karena baik CO maupun CO₂ tersusun dari unsur yang sama, yaitu karbon dan oksigen, tapi massanya bergabung dalam perbandingan yang berbeda-beda untuk membentuk senyawa yang berbeda pula. Dan sesuai Hukum Perbandingan Berganda, perbandingan massanya bakal berupa bilangan bulat sederhana."
   },
   {
-    "soal": "Pernah lihat balon yang ditiup makin gede? Nah, itu karena gas bisa ngisi ruang alias volumenya bisa berubah-ubah tergantung kondisi. Makanya, kalau kita mau ngukur seberapa banyak gas yang bereaksi sama gas lain, gampang banget — tinggal ukur volumenya! Nah, Hukum Gay-Lussac itu ngomongin soal perbandingan volume gas yang bereaksi dan hasil reaksinya. Tapi syaratnya, harus diukur pada suhu dan tekanan yang sama biar adil, kayak lomba lari yang garis start-nya barengan. Kenapa hukum ini cuma berlaku buat gas? Karena volume zat padat dan cair gak bisa diukur dan dibandingin kayak gas. Gas itu fleksibel, bisa ngembang dan mengecil, jadi gampang dibandingin volumenya waktu bereaksi. Soal Kenapa sih Hukum Gay-Lussac cuma bisa dipakai buat gas?",
+    "soal": "Pernah lihat balon yang ditiup makin gede?<br>Nah, itu karena gas bisa ngisi ruang alias volumenya bisa berubah-ubah tergantung kondisi. Makanya, kalau kita mau ngukur seberapa banyak gas yang bereaksi sama gas lain, gampang banget — tinggal ukur volumenya!<br>Nah, Hukum Gay-Lussac itu ngomongin soal perbandingan volume gas yang bereaksi dan hasil reaksinya. Tapi syaratnya, harus diukur pada suhu dan tekanan yang sama biar adil, kayak lomba lari yang garis start-nya barengan. Kenapa hukum ini cuma berlaku buat gas?<br> Karena volume zat padat dan cair gak bisa diukur dan dibandingin kayak gas. Gas itu fleksibel, bisa ngembang dan mengecil, jadi gampang dibandingin volumenya waktu bereaksi. <br>Soal Kenapa sih Hukum Gay-Lussac cuma bisa dipakai buat gas?",
     "pilihan": [
       "Karena gas gampang menguap kayak air di siang bolong",
       "Karena volume gas bisa diukur dan dibandingin dengan mudah",
@@ -214,7 +213,7 @@ export class Board {
     "penjelasan": "Karena volume gas bisa diukur dan dibandingkan dengan mudah waktu bereaksi, jadi perbandingan volume gas-gas yang bereaksi dan hasilnya bisa kelihatan jelas."
   },
   {
-    "soal": "Oke teman-teman, coba bayangin nih… kalian punya dua gelas es teh manis. Dua-duanya sama-sama pakai teh dan gula, tapi satu gelas gulanya 1 sendok, satu lagi gulanya 2 sendok. Nah, di sini tehnya tetap sama, gulanya yang beda-beda jumlahnya. Nah, kalau di dunia kimia, hal ini mirip sama Hukum Perbandingan Berganda. Hukum ini bilang, kalau dua unsur bisa membentuk lebih dari satu senyawa, maka massa salah satu unsur yang bergabung dengan massa tetap unsur lain akan berbanding sebagai bilangan bulat sederhana. Contohnya apa? CO dan CO₂. Dua-duanya isinya karbon dan oksigen. Tapi, di CO, 1 atom karbon ketemu sama 1 atom oksigen. Sementara di CO₂, 1 atom karbon ketemu sama 2 atom oksigen. Nah, lihat tuh — perbandingan massanya 1:2. Pas banget sama bunyi hukum ini. Soal Nah sekarang, kenapa sih CO dan CO₂ bisa jadi contoh Hukum Perbandingan Berganda?",
+    "soal": "Oke teman-teman, coba bayangin nih… kalian punya dua gelas es teh manis. Dua-duanya sama-sama pakai teh dan gula, tapi satu gelas gulanya 1 sendok, satu lagi gulanya 2 sendok. Nah, di sini tehnya tetap sama, gulanya yang beda-beda jumlahnya.<br>Nah, kalau di dunia kimia, hal ini mirip sama Hukum Perbandingan Berganda. Hukum ini bilang, kalau dua unsur bisa membentuk lebih dari satu senyawa, maka massa salah satu unsur yang bergabung dengan massa tetap unsur lain akan berbanding sebagai bilangan bulat sederhana.<br>Contohnya apa? CO dan CO₂. Dua-duanya isinya karbon dan oksigen. Tapi, di CO, 1 atom karbon ketemu sama 1 atom oksigen. Sementara di CO₂, 1 atom karbon ketemu sama 2 atom oksigen. Nah, lihat tuh — perbandingan massanya 1:2. Pas banget sama bunyi hukum ini.<br>Soal Nah sekarang, kenapa sih CO dan CO₂ bisa jadi contoh Hukum Perbandingan Berganda?",
     "pilihan": [
       "Karena massanya karbonnya sama terus",
       "Karena massa oksigennya berbanding 1:2",
@@ -225,7 +224,7 @@ export class Board {
     "penjelasan": "Karena di CO dan CO₂, massanya karbon tetap, yang berubah itu jumlah oksigennya. Di CO → 1 karbon : 1 oksigen, Di CO₂ → 1 karbon : 2 oksigen, jadi perbandingan massa oksigennya 1:2. Pas banget sama syarat Hukum Perbandingan Berganda."
   },
   {
-    "soal": "Teman-teman pernah makan garam kan? Nah, di mana pun kalian beli garam — mau di Indonesia, Jepang, atau kutub utara — isinya pasti sama, yaitu natrium (Na) dan klorin (Cl). Garam ini contohnya senyawa NaCl. Nah, menurut Hukum Perbandingan Tetap, perbandingan massa unsur-unsur penyusun suatu senyawa itu selalu tetap. Artinya, berapa pun banyaknya atau di mana pun asalnya, jumlah perbandingan massanya nggak bakal berubah. Contohnya gini: Di Indonesia → Na : Cl = 23 : 35,5. Di Amerika → Na : Cl = 23 : 35,5. Di planet Mars (kalau ada) → ya tetap aja 23 : 35,5. Jadi gak ada ceritanya NaCl di luar negeri lebih asin karena perbandingan Na dan Cl-nya beda ya! Soal Kalau begitu, perbandingan massa Na dan Cl dalam senyawa NaCl di Indonesia dan di luar negeri itu…",
+    "soal": "Teman-teman pernah makan garam kan?<br>Nah, di mana pun kalian beli garam — mau di Indonesia, Jepang, atau kutub utara — isinya pasti sama, yaitu natrium (Na) dan klorin (Cl). Garam ini contohnya senyawa NaCl. Nah, menurut Hukum Perbandingan Tetap, perbandingan massa unsur-unsur penyusun suatu senyawa itu selalu tetap. Artinya, berapa pun banyaknya atau di mana pun asalnya, jumlah perbandingan massanya nggak bakal berubah.<br>Contohnya gini:<br>Di Indonesia → Na : Cl = 23 : 35,5. <br>Di Amerika → Na : Cl = 23 : 35,5.<br>Di planet Mars (kalau ada) → ya tetap aja 23 : 35,5.<br>Jadi gak ada ceritanya NaCl di luar negeri lebih asin karena perbandingan Na dan Cl-nya beda ya!<br>Soal Kalau begitu, perbandingan massa Na dan Cl dalam senyawa NaCl di Indonesia dan di luar negeri itu…",
     "pilihan": [
       "Berbeda, karena garamnya beda tempat",
       "Sama, karena mengikuti Hukum Perbandingan Tetap",
@@ -236,7 +235,7 @@ export class Board {
     "penjelasan": "Karena sesuai Hukum Perbandingan Tetap, perbandingan massa unsur-unsur dalam senyawa itu harus sama, di mana pun senyawa itu ditemukan. NaCl di Indonesia, Amerika, atau di kutub utara pun tetap punya perbandingan massa Na dan Cl yang sama, yaitu 23 : 35,5."
   },
   {
-    "soal": "Ke teman-teman, jadi kalau kita bereksperimen pakai gas-gas di laboratorium — misalnya gas hidrogen, oksigen, nitrogen — ternyata volume gas yang bereaksi itu punya aturan unik lho. Menurut Hukum Gay-Lussac, kalau gas-gas itu direaksikan di suhu dan tekanan yang sama, volume gas-gas yang bereaksi dan volume hasil reaksinya akan berbanding sebagai bilangan bulat sederhana. Misalnya nih: 2 liter hidrogen + 1 liter oksigen → jadi 2 liter uap air. Perbandingannya? 2 : 1 : 2 → gampang banget kan? Nggak ada tuh perbandingan kayak 1,75 : 0,8 atau 3,6 : 5,2. Semuanya bilangan bulat sederhana. Soal Nah, berdasarkan cerita tadi… perbandingan volume gas-gas yang bereaksi dalam hukum Gay Lussac itu kayak gimana sih?",
+    "soal": "Ke teman-teman, jadi kalau kita bereksperimen pakai gas-gas di laboratorium — misalnya gas hidrogen, oksigen, nitrogen — ternyata volume gas yang bereaksi itu punya aturan unik lho.<br>Menurut Hukum Gay-Lussac, kalau gas-gas itu direaksikan di suhu dan tekanan yang sama, volume gas-gas yang bereaksi dan volume hasil reaksinya akan berbanding sebagai bilangan bulat sederhana.<br>Misalnya nih:<br>2 liter hidrogen + 1 liter oksigen → jadi 2 liter uap air.<br>Perbandingannya?<br>2 : 1 : 2→gampang banget kan? Nggak ada tuh perbandingan kayak 1,75 : 0,8 atau 3,6 : 5,2. Semuanya bilangan bulat sederhana.<br>Soal Nah, berdasarkan cerita tadi… perbandingan volume gas-gas yang bereaksi dalam hukum Gay Lussac itu kayak gimana sih?",
     "pilihan": [
       "Acak, tergantung mood gasnya",
       "Bilangan bulat sederhana Seperti 1:2, 2:3",
@@ -247,29 +246,29 @@ export class Board {
     "penjelasan": "Karena menurut Hukum Gay-Lussac, volume gas-gas yang bereaksi dan hasil reaksinya selalu berbanding sebagai bilangan bulat sederhana saat suhu dan tekanannya sama. Contohnya kayak 2 : 1 : 2 atau 1 : 3 : 2. Nggak pernah acak atau pecahan."
   },
   {
-    "soal": "Nah, teman-teman — kalau kita punya beberapa jenis gas dalam satu wadah tertutup, masing-masing gas itu tetap “nyumbang” tekanan ke dalam wadah, meskipun jenisnya beda-beda. Hukum Dalton bilang begini: Tekanan total campuran gas itu tinggal dijumlahin aja semua tekanan masing-masing gasnya. Jadi misalnya: Gas A tekanannya 2 atm, Gas B tekanannya 3 atm. Berarti tekanan totalnya? Ya tinggal 2 + 3 = 5 atm. Gampang banget kan? Soal Kalau ada gas A dengan tekanan 2 atm dan gas B dengan tekanan 3 atm dimasukin ke dalam satu wadah, kira-kira berapa total tekanannya?",
+    "soal": "Nah, teman-teman — kalau kita punya beberapa jenis gas dalam satu wadah tertutup, masing-masing gas itu tetap “nyumbang” tekanan ke dalam wadah, meskipun jenisnya beda-beda.<br>Hukum Dalton bilang begini: Tekanan total campuran gas itu tinggal dijumlahin aja semua tekanan masing-masing gasnya. Jadi misalnya: Gas A tekanannya 2 atm, Gas B tekanannya 3 atm. Berarti tekanan totalnya? Ya tinggal 2 + 3 = 5 atm. Gampang banget kan?<br>Soal Kalau ada gas A dengan tekanan 4 atm dan gas B dengan tekanan 2 atm dimasukin ke dalam satu wadah, kira-kira berapa total tekanannya?",
     "pilihan": [
-      "1 atm — ah masa?",
-      "5 atm — kayaknya masuk akal nih",
-      "6 atm — jangan ngasal ya",
-      "3 atm — itu kan cuma gas B doang"
+      "1 atm",
+      "5 atm",
+      "6 atm",
+      "3 atm"
     ],
-    "jawaban": 1,
-    "penjelasan": "Karena sesuai Hukum Dalton, tekanan total campuran gas tinggal ditambahin aja tekanan masing-masing gasnya. Jadi: 2 atm (gas A) + 3 atm (gas B) = 5 atm."
+    "jawaban": 2,
+    "penjelasan": "Karena sesuai Hukum Dalton, tekanan total campuran gas tinggal ditambahin aja tekanan masing-masing gasnya. Jadi: 4 atm (gas A) + 2 atm (gas B) = 6 atm."
   },
   {
-    "soal": "Oke teman-teman, coba bayangin kita punya beberapa balon gas helium, oksigen, sama nitrogen di dalam satu ruangan. Nah, masing-masing gas itu bakal 'nyumbang' tekanan ke udara di ruangan itu. Hukum Dalton bilang begini: Tekanan total campuran gas itu tinggal dijumlahin tekanan masing-masing gasnya. Misalnya nih: Gas X tekanannya 1 atm, Gas Y tekanannya 4 atm. Berarti totalnya: 1 atm + 4 atm = 5 atm. Nah inget ya, total tekanan itu hasil tambah dari tekanan tiap gasnya. Soal Kalau sekarang ada campuran gas: Gas A tekanannya 2 atm, Gas B tekanannya 3 atm. Berapa nih total tekanan campuran gasnya?",
+    "soal": "Oke teman-teman, coba bayangin kita punya beberapa balon gas helium, oksigen, sama nitrogen di dalam satu ruangan. Nah, masing-masing gas itu bakal 'nyumbang' tekanan ke udara di ruangan itu.<br>Hukum Dalton bilang begini:<br>Tekanan total campuran gas itu tinggal dijumlahin tekanan masing-masing gasnya.<br>Misalnya nih:<br>Gas X tekanannya 1 atm<br>Gas Y tekanannya 4 atm.<br>Berarti totalnya: 1 atm + 4 atm = 5 atm.<br>Nah inget ya, total tekanan itu hasil tambah dari tekanan tiap gasnya.<br>soal Kalau sekarang ada campuran gas:<br>Gas A tekanannya 2 atm<br>Gas B tekanannya 3 atm.<br>Berapa nih total tekanan campuran gasnya?",
     "pilihan": [
-      "1 atm — kayaknya kejauhan",
-      "3 atm — itu baru satu gas doang",
-      "5 atm — hmm, bisa nih",
-      "6 atm — wah, kelebihan"
+      "1 atm",
+      "3 atm",
+      "5 atm",
+      "6 atm"
     ],
     "jawaban": 2,
     "penjelasan": "Karena sesuai Hukum Dalton, tekanan total campuran gas itu tinggal dijumlahkan dari masing-masing gas yang ada. Jadi: 2 atm (gas A) + 3 atm (gas B) = 5 atm. Gampang kan? Tinggal tambah-tambah aja kayak beli dua es teh 2 ribu sama 3 ribu, totalnya 5 ribu."
   },
   {
-    "soal": "Oke teman-teman, kalian pernah nggak nyampur teh manis sama es batu? Nah, sebelum dicampur, coba timbang deh: Tehnya 150 gram, Es batunya 50 gram, Total sebelum dicampur = 200 gram. Pas esnya udah leleh dan tercampur, kira-kira total massanya tetap berapa? Yup, tetap 200 gram. Nah, itulah yang dimaksud sama Hukum Lavoisier atau Hukum Kekekalan Massa. “Massa zat sebelum dan sesudah reaksi (kalau nggak ada zat yang keluar masuk) itu selalu sama.” Soal Kalau ada reaksi kimia nih: Massa zat-zat sebelum reaksi 200 gram, lebih dari 200 g. Berapa ya massa hasil reaksinya kalau sesuai hukum Lavoisier?",
+    "soal": "Oke teman-teman, kalian pernah nggak nyampur teh manis sama es batu? Nah, sebelum dicampur, coba timbang deh:<br>Tehnya 150 gram <br>Es batunya 50 gram<br>Total sebelum dicampur = 200 gram. <br>Pas esnya udah leleh dan tercampur, kira-kira total massanya tetap berapa? Yup, tetap 200 gram. <br>Nah, itulah yang dimaksud sama Hukum Lavoisier atau Hukum Kekekalan Massa. <br>“Massa zat sebelum dan sesudah reaksi (kalau nggak ada zat yang keluar masuk) itu selalu sama.” <br>Soal Kalau ada reaksi kimia nih: <br>Massa zat-zat sebelum reaksi 200 gram. <br>Berapa ya massa hasil reaksinya kalau sesuai hukum Lavoisier?",
     "pilihan": [
       "Lebih kecil dari 200 g",
       "Lebih dari 200 g",
@@ -280,7 +279,7 @@ export class Board {
     "penjelasan": "Karena sesuai Hukum Kekekalan Massa, selama reaksi terjadi dalam sistem tertutup alias nggak ada zat yang keluar atau masuk, massa total sebelum dan sesudah reaksi itu harus tetap sama. Jadi, kalau awalnya 200 gram, ya hasilnya tetap 200 gram juga."
   },
   {
-    "soal": "Hei teman-teman! Udah pernah ikut perkemahan belum? Nah, jadi waktu kita bakar kayu di api unggun atau di tungku, hasil akhirnya bukan cuma abu loh. Ada juga uap air dan gas karbon dioksida yang keluar ke udara. Nah, itulah sebabnya setelah kayu habis terbakar, abunya jauh lebih ringan dibanding berat kayu awalnya. Kenapa? Karena sebagian zatnya berubah jadi gas dan menguap ke udara! \nSoal: Menurut kamu nih, kenapa sih berat kayu yang dibakar jadi abu itu lebih ringan daripada berat kayu sebelum dibakar?",
+    "soal": "Hei teman-teman! Udah pernah ikut perkemahan belum?<br>Nah, jadi waktu kita bakar kayu di api unggun atau di tungku, hasil akhirnya bukan cuma abu loh. Ada juga uap air dan gas karbon dioksida yang keluar ke udara. Nah, itulah sebabnya setelah kayu habis terbakar, abunya jauh lebih ringan dibanding berat kayu awalnya. Kenapa? Karena sebagian zatnya berubah jadi gas dan menguap ke udara!<br>Soal: Menurut kamu nih, kenapa sih berat kayu yang dibakar jadi abu itu lebih ringan daripada berat kayu sebelum dibakar?",
     "pilihan": [
       "Karena ada zat gas hasil pembakaran yang lepas ke udara",
       "Karena massa benda bisa hilang tiba-tiba begitu saja",
@@ -291,7 +290,7 @@ export class Board {
     "penjelasan": "Kalau benda dibakar, sebagian zatnya bisa berubah jadi gas dan keluar ke udara, seperti gas karbon dioksida dan uap air. Itulah kenapa sisa abunya tinggal sedikit. Massa benda nggak bisa hilang tiba-tiba ya, sesuai Hukum Lavoisier, cuma berubah bentuk dan wujud aja."
   },
   {
-    "soal": "Pernah nggak kamu buka botol soda terus bunyi “psstt!”? Nah, itu karena di dalam botol soda ada gas CO₂ (karbon dioksida) yang ditekan kuat saat ditutup rapat. Begitu tutupnya dibuka, tekanan di dalam botol langsung turun dan gas CO₂ keluar dengan cepat. Makanya terdengar suara itu. Menurut kamu, kenapa sih botol soda bisa berbunyi “psstt!” waktu dibuka?",
+    "soal": "Pernah nggak kamu buka botol soda terus bunyi “<em>psstt!”?</em><br>Nah, itu karena di dalam botol soda ada gas CO₂ (karbon dioksida) yang ditekan kuat saat ditutup rapat. Begitu tutupnya dibuka, tekanan di dalam botol langsung turun dan gas CO₂ keluar dengan cepat. Makanya terdengar suara itu. <br>Menurut kamu, kenapa sih botol soda bisa berbunyi “<em>psstt!</em>” waktu dibuka?",
     "pilihan": [
       "Karena volume gas di dalam botol lebih besar dari volumenya",
       "Karena tekanan gas menurun saat tutup dibuka",
@@ -302,7 +301,7 @@ export class Board {
     "penjelasan": "Saat botol soda masih tertutup, tekanan di dalam lebih tinggi karena gas CO₂ ditekan ke dalam minuman. Begitu tutupnya dibuka, tekanan langsung turun dan gas keluar cepat sambil berbunyi “psstt!”. Inilah contoh sederhana konsep tekanan gas dalam kehidupan sehari-hari."
   },
   {
-    "soal": "Coba kamu perhatikan deh, es batu di kulkas kalau mencair jadi air, rasanya tetap sama aja kan? Nah, itu karena air — baik dalam bentuk es ataupun cair — selalu terdiri dari unsur yang sama, yaitu hidrogen (H) dan oksigen (O) dengan perbandingan tetap. Inilah yang dijelaskan dalam Hukum Proust, bahwa perbandingan massa unsur penyusun suatu senyawa selalu tetap, nggak peduli wujudnya. Kenapa ya semua es batu murni kalau mencair jadi air tetap punya komposisi yang sama?",
+    "soal": "Coba kamu perhatikan deh, es batu di kulkas kalau mencair jadi air, rasanya tetap sama aja kan? Nah, itu karena air — baik dalam bentuk es ataupun cair — selalu terdiri dari unsur yang sama, yaitu hidrogen (H) dan oksigen (O) dengan perbandingan tetap. Inilah yang dijelaskan dalam Hukum Proust, bahwa perbandingan massa unsur penyusun suatu senyawa selalu tetap, nggak peduli wujudnya.<br>Kenapa ya semua es batu murni kalau mencair jadi air tetap punya komposisi yang sama?",
     "pilihan": [
       "Karena perbandingan unsur hidrogen dan oksigen di dalamnya selalu tetap",
       "Karena es batu itu biasanya dibuat dari air mineral",
@@ -322,7 +321,7 @@ export class Board {
     "penjelasan": "Hukum Lavoisier menyatakan bahwa massa zat sebelum dan sesudah reaksi adalah sama selama tidak ada zat yang keluar atau masuk dari sistem."
   },
   {
-    "soal": "Hukum Boyle mengungkapkan bahwa volume gas berbanding terbalik dengan tekanan, jika suhu tetap. Rumus: P1 x V1 = P2 x V2. Dengan: P1= tekanan awal, V1= volume awal, P2= tekanan akhir, V2= volume akhir. Jika tekanan gas pada volume 4 L adalah 2 atm, berapa volume gas tersebut jika tekanan berubah menjadi 4 atm dengan suhu tetap?",
+    "soal": "Hukum Boyle mengungkapkan bahwa volume gas berbanding terbalik dengan tekanan, jika suhu tetap. <br>Rumus: P1 x V1 = P2 x V2. <br>Dengan: <br>P1= tekanan awal<br>V1= volume awal<br>P2= tekanan akhir<br>V2= volume akhir. <br>Jika tekanan gas pada volume 4 L adalah 2 atm, berapa volume gas tersebut jika tekanan berubah menjadi 4 atm dengan suhu tetap?",
     "pilihan": [
       "2 L",
       "3 L",
@@ -330,10 +329,10 @@ export class Board {
       "0.5 L"
     ],
     "jawaban": 0,
-    "penjelasan": "Menurut Hukum Boyle, P1 x V1 = P2 x V2, jadi volume gas menjadi 2 L."
+    "penjelasan": "Menurut Hukum Boyle, P1 x V1 = P2 x V2.<br>Substitusi nilai: (2 atm) x (4 L) = (4 atm) x V2.<br>8 = 4 x V2.<br>V2 = 8 / 4 = 2 L.<br>Jadi volume gas menjadi 2 L."
   },
   {
-    "soal": "Bayangin kamu lagi bikin balon gas di siang hari. Pas pagi-pagi, suhu udaranya masih dingin, tekanan gas di balon 1 atm. Nah, siangnya pas matahari mulai terik, suhu di luar naik jadi dua kali lipat. Karena volume balon nggak berubah (nggak dilepas), tekanan di dalam balon juga bakal ikut naik. Nah, inilah yang dijelasin sama Hukum Gay-Lussac: Kalau volume gas nggak berubah, tekanan gas bakal sebanding sama suhunya (dalam Kelvin). Rumus: P1/T1 = P2/T2. Dengan: P1= tekanan awal, T1= suhu awal, P2= tekanan akhir, T2= suhu akhir. Jika tekanan gas pada suhu 300 K adalah 1 atm, berapa tekanan gas tersebut jika suhu naik menjadi 600 K dengan volume tetap?",
+    "soal": "Bayangin kamu lagi bikin balon gas di siang hari. <br>Pas pagi-pagi, suhu udaranya masih dingin, tekanan gas di balon 1 atm. <br>Nah, siangnya pas matahari mulai terik, suhu di luar naik jadi dua kali lipat. Karena volume balon nggak berubah (nggak dilepas), tekanan di dalam balon juga bakal ikut naik. <br>Nah, inilah yang dijelasin sama Hukum Gay-Lussac: <em>Kalau volume gas nggak berubah, tekanan gas bakal sebanding sama suhunya (dalam Kelvin)</em>. <br>Rumus: P1/T1 = P2/T2.<br>Dengan: <br>P1= tekanan awal, <br>T1= suhu awal, <br>P2= tekanan akhir, <br>T2= suhu akhir. <br>Jika tekanan gas pada suhu 300 K adalah 1 atm, berapa tekanan gas tersebut jika suhu naik menjadi 600 K dengan volume tetap?",
     "pilihan": [
       "2 atm",
       "3 atm",
@@ -341,21 +340,21 @@ export class Board {
       "5 atm"
     ],
     "jawaban": 0,
-    "penjelasan": "Menurut Hukum Gay-Lussac, tekanan gas berbanding lurus dengan suhu (dalam Kelvin) jika volume tetap, jadi tekanan menjadi 2 atm."
+    "penjelasan": "Menurut Hukum Gay-Lussac, tekanan gas berbanding lurus dengan suhu (dalam Kelvin) jika volume tetap. P1/T1 = P2/T2. (1 atm / 300 K) = P2 / 600 K. P2 = (1 atm * 600 K) / 300 K = 2 atm. Jadi, tekanan menjadi 2 atm."
   },
   {
-    "soal": "Kita bayangin kayak lagi bikin eksperimen kecil di laboratorium nih. Misalnya kamu bakar 5 gram magnesium di dalam wadah tertutup bareng oksigen. Setelah selesai, total massa hasil reaksinya jadi 9 gram. Nah, menurut Hukum Lavoisier (Hukum Kekekalan Massa): “Jumlah massa zat sebelum dan sesudah reaksi itu pasti sama, selama nggak ada zat yang keluar atau masuk dari sistem”. Pada reaksi pembakaran: 10 g karbon dibakar dengan oksigen menghasilkan 36 g karbon dioksida (CO₂). Berapa gram oksigen yang bereaksi?",
+    "soal": "Kita bayangin kayak lagi bikin eksperimen kecil di laboratorium nih. <br>Misalnya kamu bakar 5 gram magnesium di dalam wadah tertutup bareng oksigen. Setelah selesai, total massa hasil reaksinya jadi 9 gram. Nah, menurut Hukum Lavoisier (Hukum Kekekalan Massa): <br>“Jumlah massa zat sebelum dan sesudah reaksi itu pasti sama, selama nggak ada zat yang keluar atau masuk dari sistem”. <br>Pada reaksi pembakaran: 10 g karbon dibakar dengan oksigen menghasilkan 36 g karbon dioksida (CO₂). Berapa gram oksigen yang bereaksi?",
     "pilihan": [
       "26 g",
       "28 g",
       "36 g",
       "10 g"
     ],
-    "jawaban": 1,
-    "penjelasan": "Berdasarkan Hukum Lavoisier, massa oksigen yang bereaksi = massa karbon dioksida - massa karbon = 36 g - 10 g = 28 g."
+    "jawaban": 0,
+    "penjelasan": "Berdasarkan Hukum Lavoisier, massa oksigen yang bereaksi = massa karbon dioksida - massa karbon = 36 g - 10 g = 26 g."
   },
   {
-    "soal": "Kita bayangin kamu lagi bikin air di lab nih. Air itu kan tersusun dari hidrogen dan oksigen. Nah, kata Hukum Proust (Hukum Perbandingan Tetap): “Perbandingan massa unsur-unsur dalam sebuah senyawa itu selalu tetap, nggak peduli dibikin di mana — di Indonesia, di Jepang, atau di Mars sekalipun”. Contoh: Misalnya, waktu bikin air, 2 gram hidrogen butuh 16 gram oksigen buat jadi air. Kalau kamu bikin lagi besok, perbandingannya harus tetap segitu juga, nggak boleh berubah. Nah sekarang coba soal ini: Jika dalam pembentukan air, 1 g hidrogen bereaksi dengan 8 g oksigen, kira-kira berapa banyak oksigen yang dibutuhkan kalau hidrogennya jadi 2 g?",
+    "soal": "Kita bayangin kamu lagi bikin air di lab nih. Air itu kan tersusun dari hidrogen dan oksigen. Nah, kata Hukum Proust (Hukum Perbandingan Tetap):<br> “Perbandingan massa unsur-unsur dalam sebuah senyawa itu selalu tetap, nggak peduli dibikin di mana — di Indonesia, di Jepang, atau di Mars sekalipun”. <br>Contoh: Misalnya, waktu bikin air, 2 gram hidrogen butuh 16 gram oksigen buat jadi air. Kalau kamu bikin lagi besok, perbandingannya harus tetap segitu juga, nggak boleh berubah. <br>Nah sekarang coba soal ini: Jika dalam pembentukan air, 1 g hidrogen bereaksi dengan 8 g oksigen, kira-kira berapa banyak oksigen yang dibutuhkan kalau hidrogennya jadi 2 g?",
     "pilihan": [
       "4 g",
       "8 g",
@@ -363,10 +362,10 @@ export class Board {
       "32 g"
     ],
     "jawaban": 2,
-    "penjelasan": "Menurut Hukum Proust, perbandingan massa unsur dalam senyawa tetap, jadi oksigen yang dibutuhkan adalah 16 g."
+    "penjelasan": "Menurut Hukum Proust, perbandingan massa unsur dalam senyawa tetap.<br>Kita tinggal ikutin perbandingan tetapnya aja.<br>Perbandingan awal:<br>1 g H : 8 g O<br>Kalau H-nya jadi 2 g, tinggal dikali 2:<br>2 g H : 16 g O<br>Jadi, oksigen yang dibutuhkan adalah 16 g."
   },
   {
-    "soal": "Coba bayangin kamu punya balon gede, isinya campuran beberapa gas — misal gas oksigen, gas nitrogen, sama gas helium. Nah, setiap gas di dalam balon itu kan nyumbang tekanan masing-masing. Nah, menurut Hukum Dalton tentang Tekanan Parsial: Tekanan total campuran gas itu tinggal dijumlahin aja tekanan masing-masing gas di dalam wadah. Rumus: P total = P1 + P2 + P3. Dengan: P total = tekanan total campuran gas, P1,P2,P3 = tekanan parsial masing-masing gas. Dalam sebuah wadah terdapat campuran gas A (2 atm) dan gas B (3 atm). Jika gas C memiliki tekanan parsial 1 atm, berapa tekanan total campuran gas tersebut?",
+    "soal": "Coba bayangin kamu punya balon gede, isinya campuran beberapa gas — <br>misal gas oksigen, gas nitrogen, sama gas helium. Nah, setiap gas di dalam balon itu kan nyumbang tekanan masing-masing. Nah, menurut Hukum Dalton tentang Tekanan Parsial: <br>Tekanan total campuran gas itu tinggal dijumlahin aja tekanan masing-masing gas di dalam wadah. <br>Rumus: <br>P total = P1 + P2 + P3. <br>Dengan: P total = tekanan total campuran gas, P1,P2,P3 = tekanan parsial masing-masing gas.<br>Dalam sebuah wadah terdapat campuran gas A (2 atm) dan gas B (3 atm). Jika gas C memiliki tekanan parsial 1 atm, berapa tekanan total campuran gas tersebut?",
     "pilihan": [
       "4 atm",
       "5 atm",
@@ -374,10 +373,10 @@ export class Board {
       "7 atm"
     ],
     "jawaban": 2,
-    "penjelasan": "Menurut Hukum Dalton, tekanan total campuran gas adalah jumlah tekanan parsial masing-masing gas, yaitu 6 atm."
+    "penjelasan": "Sesuai dengan Hukum Dalton, Ptotal = P(A) + P(B) + P(C).<br>Ptotal = 2 atm + 3 atm + 1 atm = 6 atm.<br>Jadi, tekanan total campuran gas adalah 6 atm."
   },
   {
-    "soal": "Bayangin kamu lagi tiup balon isinya bukan cuma udara biasa, tapi ada tiga jenis gas: gas oksigen, gas nitrogen, sama gas helium. Nah, masing-masing gas di balon itu punya “tekanan sendiri-sendiri” yang disebut tekanan parsial. Hukum Dalton bilang: Tekanan total campuran gas itu tinggal dijumlahin semua tekanan parsial gas yang ada di dalam wadah. Rumus: Ptotal = P1 + P2 + P3. Dengan: Ptotal = tekanan total campuran gas, P1,P2,P3= tekanan parsial masing-masing gas. Pada suatu wadah terdapat tiga gas: gas A (tekanan 3 atm), gas B (tekanan 2 atm), dan gas C (tekanan 1 atm). Berapa total tekanan campuran gas tersebut?",
+    "soal": "Bayangin kamu lagi tiup balon isinya bukan cuma udara biasa, tapi ada tiga jenis gas: gas oksigen, gas nitrogen, sama gas helium. Nah, masing-masing gas di balon itu punya “tekanan sendiri-sendiri” yang disebut tekanan parsial. <br>Hukum Dalton bilang: Tekanan total campuran gas itu tinggal dijumlahin semua tekanan parsial gas yang ada di dalam wadah. <br>Rumus: Ptotal = P1 + P2 + P3.<br>Dengan: Ptotal = tekanan total campuran gas, P1,P2,P3= tekanan parsial masing-masing gas.<br>Pada suatu wadah terdapat tiga gas: gas A (tekanan 3 atm), gas B (tekanan 2 atm), dan gas C (tekanan 1 atm). Berapa total tekanan campuran gas tersebut?",
     "pilihan": [
       "6 atm",
       "5 atm",
@@ -388,7 +387,7 @@ export class Board {
     "penjelasan": "Menurut Hukum Dalton, total tekanan campuran gas adalah 6 atm (3 + 2 + 1)."
   },
   {
-    "soal": "Bayangin kamu lagi manasin ban sepeda. Semakin panas bannya, tekanan udaranya makin gede. Nah, Hukum Gay-Lussac ini ngomongin soal hubungan tekanan gas sama suhu, asalkan volumenya nggak berubah. Intinya: Kalau suhu naik, tekanan ikut naik. Kalau suhu turun, tekanan ikut turun — pokoknya mereka jalan bareng. Rumus: P1/T1 = P2/T2. Dengan: P1 = tekanan awal, T1 = suhu awal, P2 = tekanan akhir, T2 = suhu akhir. Jika tekanan gas pada suhu 200 K adalah 3 atm, berapa tekanan gas tersebut jika suhu naik menjadi 400 K dengan volume tetap?",
+    "soal": "Bayangin kamu lagi manasin ban sepeda. Semakin panas bannya, tekanan udaranya makin gede. Nah, Hukum Gay-Lussac ini ngomongin soal hubungan tekanan gas sama suhu, asalkan volumenya nggak berubah.<br> Intinya: Kalau suhu naik, tekanan ikut naik. Kalau suhu turun, tekanan ikut turun — pokoknya mereka jalan bareng. <br>Rumus: P1/T1 = P2/T2. <br>Dengan: P1 = tekanan awal, T1 = suhu awal, P2 = tekanan akhir, T2 = suhu akhir. <br>Jika tekanan gas pada suhu 200 K adalah 3 atm, berapa tekanan gas tersebut jika suhu naik menjadi 400 K dengan volume tetap?",
     "pilihan": [
       "6 atm",
       "8 atm",
@@ -396,10 +395,10 @@ export class Board {
       "4 atm"
     ],
     "jawaban": 0,
-    "penjelasan": "Menurut Hukum Gay-Lussac, tekanan gas berbanding lurus dengan suhu dalam Kelvin jika volume tetap, sehingga tekanan menjadi 6 atm."
+    "penjelasan": "Menggunakan rumus Hukum Gay-Lussac: P1/T1 = P2/T2.<br>Substitusi nilai: (3 atm / 200 K) = P2 / 400 K.<br>P2 = (3 atm * 400 K) / 200 K = 6 atm."
   },
   {
-    "soal": "Materi: Coba kamu bayangin ada 3 balon kecil, masing-masing berisi gas berbeda. Nah, tiap balon itu punya tekanan sendiri-sendiri. Terus, kalau ketiga gas itu digabung dalam 1 wadah, maka tekanan totalnya tinggal dijumlahin aja. Nah, itulah yang disebut Hukum Dalton tentang Tekanan Parsial. Rumus: Ptotal = P1 + P2 + P3. Dalam campuran gas, gas A memiliki tekanan parsial 3 atm, gas B memiliki tekanan parsial 5 atm, dan gas C memiliki tekanan parsial 2 atm. Berapa tekanan total campuran gas tersebut?",
+    "soal": "Coba kamu bayangin ada 3 balon kecil, masing-masing berisi gas berbeda. Nah, tiap balon itu punya tekanan sendiri-sendiri. Terus, kalau ketiga gas itu digabung dalam 1 wadah, maka tekanan totalnya tinggal dijumlahin aja. <br>Nah, itulah yang disebut Hukum Dalton tentang Tekanan Parsial. <br>Rumus: Ptotal = P1 + P2 + P3. <br>Dalam campuran gas, gas A memiliki tekanan parsial 3 atm, gas B memiliki tekanan parsial 5 atm, dan gas C memiliki tekanan parsial 2 atm. Berapa tekanan total campuran gas tersebut?",
     "pilihan": [
       "5 atm",
       "7 atm",
@@ -407,10 +406,10 @@ export class Board {
       "15 atm"
     ],
     "jawaban": 2,
-    "penjelasan": "Berdasarkan Hukum Dalton, total tekanan campuran gas adalah jumlah dari tekanan parsial masing-masing gas. Jadi, tekanan total campuran gas adalah 10 atm."
+    "penjelasan": "Berdasarkan Hukum Dalton, total tekanan campuran gas adalah jumlah dari tekanan parsial masing-masing gas. Dapat kita gunakan rumus:<br>Ptotal= P(A) + P(B) + P(C) = 3 atm + 5 atm + 2 atm = 10 atm.<br>Jadi, tekanan total campuran gas adalah 10 atm."
   },
   {
-    "soal": "Gini ya, teman-teman — Hukum Kekekalan Massa atau Hukum Lavoisier itu intinya begini: Jumlah massa zat sebelum reaksi dan sesudah reaksi itu harus sama. Nggak boleh tiba-tiba nambah atau berkurang kayak sulap. Jadi kalau kita bakar sesuatu, jumlah massa bahan yang kita pakai ditambah massa gas yang masuk, hasilnya harus sama kayak massa zat hasil reaksi. ✏✅ Contoh: Misalnya nih: 10 g magnesium dibakar di udara, menghasilkan 16 g magnesium oksida. Berarti oksigen yang ikut bereaksi: 16 g−10 g=6 g. Jadi, massa sebelum = massa sesudah. Sebuah reaksi pembakaran karbon menghasilkan 44 g karbon dioksida. Jika massa karbon yang digunakan adalah 12 g, berapa massa oksigen yang bereaksi?",
+    "soal": "Gini ya, teman-teman — Hukum Kekekalan Massa atau Hukum Lavoisier itu intinya begini:<br>Jumlah massa zat sebelum reaksi dan sesudah reaksi itu harus sama. Nggak boleh tiba-tiba nambah atau berkurang kayak sulap.<br>Jadi kalau kita bakar sesuatu, jumlah massa bahan yang kita pakai ditambah massa gas yang masuk, hasilnya harus sama kayak massa zat hasil reaksi. <br>✏Contoh:<br>Misalnya nih: 10 g magnesium dibakar di udara, menghasilkan 16 g magnesium oksida. Berarti oksigen yang ikut bereaksi: 16 g - 10 g = 6 g. <br>Jadi, massa sebelum = massa sesudah.<br>Sebuah reaksi pembakaran karbon menghasilkan 44 g karbon dioksida. Jika massa karbon yang digunakan adalah 12 g, berapa massa oksigen yang bereaksi?",
     "pilihan": [
       "20 g",
       "32 g",
@@ -418,11 +417,10 @@ export class Board {
       "10 g"
     ],
     "jawaban": 1,
-    "penjelasan": "Berdasarkan Hukum Lavoisier, massa sebelum dan sesudah reaksi harus sama. Massa karbon = 12 g, Massa karbon dioksida = 44 g. Massa oksigen = Massa karbon dioksida - Massa karbon = 44 g - 12 g = 32 g. Jadi, massa oksigen yang bereaksi adalah 32 g."
+    "penjelasan": "Berdasarkan Hukum Lavoisier, massa sebelum dan sesudah reaksi harus sama.<br>Massa karbon = 12 g,<br>Massa karbon dioksida = 44 g.<br>Massa oksigen = Massa karbon dioksida - Massa karbon = 44 g - 12 g = 32 g. <br>Jadi, massa oksigen yang bereaksi adalah 32 g."
   },
-  // revisi --------------------------------------------------------------------------------
   {
-    "soal": "Kita bahas Hukum Gay-Lussac yuk. Hukum ini bilang: Kalau suhu gas dinaikkan, maka tekanannya juga naik, asalkan volumenya tetap. Ibaratnya kayak balon karet. Kalau balon itu diisi gas terus dipanaskan tanpa dibesarin, gas di dalamnya bakal makin “sumpek” dan tekanannya naik. Jika tekanan gas pada suhu 300 K adalah 3 atm, berapa tekanan gas tersebut pada suhu 600 K?",
+    "soal": "Hallo, teman-teman!<br>Kita bahas Hukum Gay-Lussac yuk. Hukum ini bilang: <br>Kalau suhu gas dinaikkan, maka tekanannya juga naik, asalkan volumenya tetap. <br>Ibaratnya kayak balon karet. Kalau balon itu diisi gas terus dipanaskan tanpa dibesarin, gas di dalamnya bakal makin “sumpek” dan tekanannya naik. <br>Rumus: P1/T1 = P2/T2<br>Jika tekanan gas pada suhu 300 K adalah 3 atm, berapa tekanan gas tersebut pada suhu 600 K?",
     "pilihan": [
       "6 atm",
       "9 atm",
@@ -430,7 +428,7 @@ export class Board {
       "18 atm"
     ],
     "jawaban": 0,
-    "penjelasan": "Berdasarkan Hukum Gay-Lussac, tekanan gas berbanding lurus dengan suhu. Menggunakan rumus P1/T1 = P2/T2. Jadi, tekanan gas pada suhu 600 K adalah 6 atm."
+    "penjelasan": "Berdasarkan Hukum Gay-Lussac, tekanan gas berbanding lurus dengan suhu. Menggunakan rumus P1/T1 = P2/T2. <br>Substitusi nilai yang diberikan:<br>3 atm / 300 K = P2 / 600 K<br>Solusi untuk P2:<br>P2 = (3 atm * 600 K) / 300 K = 6 atm<br>Jadi, tekanan gas pada suhu 600 K adalah 6 atm."
   },
   {
     "soal": "Hukum yang menyatakan perbandingan massa unsur dalam senyawa selalu tetap adalah…",
@@ -442,7 +440,7 @@ export class Board {
     "penjelasan": "Hukum Proust menyatakan bahwa perbandingan massa unsur dalam senyawa selalu tetap."
   },
   {
-    "soal": "Yuk kenalan sama Hukum Proust atau disebut juga Hukum Perbandingan Tetap. Jadi intinya hukum ini bilang: Kalau dua unsur membentuk senyawa, perbandingan massanya akan selalu tetap, berapa pun banyaknya senyawa yang dibikin. Misalnya nih, air itu selalu tersusun dari hidrogen dan oksigen. Nah, perbandingan massa antara oksigen dan hidrogen di dalam air itu selalu sama, meskipun kamu bikin sedikit atau segalon penuh! ✏Contoh: Misal: 2 gram hidrogen bereaksi dengan 16 gram oksigen buat jadi air. Berarti perbandingannya: Oksigen:Hidrogen=16:2=8:1. Artinya tiap 1 gram hidrogen butuh 8 gram oksigen buat jadi air. Jika 16 g oksigen bergabung dengan 2 g hidrogen untuk membentuk air, berapa banyak oksigen yang diperlukan untuk 6 g hidrogen?",
+    "soal": "Yuk kenalan sama Hukum Proust atau disebut juga Hukum Perbandingan Tetap. Jadi intinya hukum ini bilang: <br>Kalau dua unsur membentuk senyawa, perbandingan massanya akan selalu tetap, berapa pun banyaknya senyawa yang dibikin. <br>Misalnya nih, air itu selalu tersusun dari hidrogen dan oksigen. Nah, perbandingan massa antara oksigen dan hidrogen di dalam air itu selalu sama, meskipun kamu bikin sedikit atau segalon penuh! <br>✏Contoh: <br>Misal: 2 gram hidrogen bereaksi dengan 16 gram oksigen buat jadi air. <br>Berarti perbandingannya: Oksigen:Hidrogen=16:2=8:1. <br>Artinya tiap 1 gram hidrogen butuh 8 gram oksigen buat jadi air. <br>Jika 16 g oksigen bergabung dengan 2 g hidrogen untuk membentuk air, berapa banyak oksigen yang diperlukan untuk 6 g hidrogen?",
     "pilihan": [
       "48 g",
       "16 g",
@@ -450,10 +448,10 @@ export class Board {
       "32 g"
     ],
     "jawaban": 0,
-    "penjelasan": "Berdasarkan Hukum Proust, perbandingan massa hidrogen dan oksigen dalam air adalah 1:8. Jika 6 g hidrogen digunakan, oksigen yang diperlukan adalah 6 x 8 = 48 g."
+    "penjelasan": "Berdasarkan Hukum Proust, perbandingan massa hidrogen dan oksigen dalam air adalah 2:16 atau 1:8. Jika 6 g hidrogen digunakan, oksigen yang diperlukan adalah 6 x 8 = 48 g."
   },
   {
-    "soal": "Pernah lihat paku atau pagar besi berkarat? Nah, itu tuh terjadi karena besi di dalam paku bereaksi dengan oksigen dari udara, ditambah air atau kelembapan. Proses ini membentuk zat baru yang namanya karat (Fe₂O₃·xH₂O). Nah, kalau kita hitung-hitung nih, massa besi ditambah massa oksigen yang bereaksi akan jadi massa total karat. Sesuai Hukum Lavoisier: “Massa sebelum dan sesudah reaksi harus sama, asal sistemnya tertutup.” Kalau di udara terbuka gimana? Yuk analisis! Kalau sebuah paku dibiarkan di udara terbuka dan berkarat, menurut kamu apa yang terjadi dengan massa total paku dan oksigen yang bereaksi?",
+    "soal": "Pernah lihat paku atau pagar besi berkarat? Nah, itu tuh terjadi karena besi di dalam paku bereaksi dengan oksigen dari udara, ditambah air atau kelembapan. Proses ini membentuk zat baru yang namanya karat (Fe₂O₃·xH₂O).<br>Nah, kalau kita hitung-hitung nih, massa besi ditambah massa oksigen yang bereaksi akan jadi massa total karat. Sesuai Hukum Lavoisier: “<em>Massa sebelum dan sesudah reaksi harus sama, asal sistemnya tertutup</em>.” Kalau di udara terbuka gimana? Yuk analisis!<br>Kalau sebuah paku dibiarkan di udara terbuka dan berkarat, menurut kamu apa yang terjadi dengan massa total paku dan oksigen yang bereaksi?",
     "pilihan": [
       "Massa total bertambah karena besi menyerap oksigen",
       "Massa total berkurang karena karat lebih ringan",
@@ -464,7 +462,7 @@ export class Board {
     "penjelasan": "Saat besi berkarat, massa paku bertambah karena besi bereaksi dengan oksigen di udara, membentuk senyawa karat. Jadi total massanya nambah gara-gara oksigen ikut masuk ke dalam reaksi."
   },
   {
-    "soal": "Coba bayangin kamu nyalain lilin kecil di dalam toples kaca yang ditutup rapat. Lama-lama apinya mati, kan? Itu karena oksigen habis. Nah, selama proses pembakaran itu, gas-gas hasil pembakaran (seperti karbon dioksida dan uap air) nggak bisa keluar ke mana-mana karena ruangnya tertutup rapat. Menurut Hukum Lavoisier nih, dalam sistem tertutup, massa sebelum dan sesudah reaksi harus tetap sama. Kenapa? Karena nggak ada zat yang keluar atau masuk. Kalau lilin dibakar di dalam toples tertutup, kenapa massa total sistem (lilin + udara + gas hasil pembakaran) tetap sama sebelum dan sesudah pembakaran?",
+    "soal": "Coba bayangin kamu nyalain lilin kecil di dalam toples kaca yang ditutup rapat. Lama-lama apinya mati, kan? Itu karena oksigen habis. Nah, selama proses pembakaran itu, gas-gas hasil pembakaran (seperti karbon dioksida dan uap air) nggak bisa keluar ke mana-mana karena ruangnya tertutup rapat. <br>Menurut Hukum Lavoisier nih, dalam sistem tertutup, massa sebelum dan sesudah reaksi harus tetap sama. Kenapa? Karena nggak ada zat yang keluar atau masuk. <br>Kalau lilin dibakar di dalam toples tertutup, kenapa massa total sistem (lilin + udara + gas hasil pembakaran) tetap sama sebelum dan sesudah pembakaran?",
     "pilihan": [
       "Karena semua gas hasil pembakaran tetap di dalam toples",
       "Karena gas keluar lewat celah",
@@ -486,7 +484,7 @@ export class Board {
     "penjelasan": "Pernyataan tersebut adalah isi dari Hukum Gay-Lussac yang menyatakan bahwa volume gas-gas yang bereaksi berbanding dengan bilangan bulat sederhana pada suhu dan tekanan sama."
   },
   {
-    "soal": "Hai teman-teman, kita bahas bareng yuk soal Hukum Proust atau disebut juga Hukum Perbandingan Tetap. Jadi, hukum ini bilang: Kalau dua unsur bergabung membentuk senyawa, perbandingan massanya selalu tetap, berapa pun banyaknya senyawa yang dibikin. Jadi meskipun kamu bikin air cuma setetes atau seember penuh, perbandingan massa antara hidrogen dan oksigen di dalamnya pasti sama. ✏Contoh: Misalnya nih: 2 gram hidrogen + 16 gram oksigen; 4 gram hidrogen + 32 gram oksigen; 6 gram hidrogen + 48 gram oksigen. Kalau kita hitung: Jadi perbandingannya selalu 8:1. Nah, ini yang dimaksud Hukum Proust — perbandingan tetap, walaupun jumlahnya beda. Analisislah perbandingan massa H:O di setiap sampel dan tentukan hukum yang sesuai dengan data pembuatan air berikut: 2 g hidrogen + 16 g oksigen, 4 g hidrogen + 32 g oksigen, 6 g hidrogen + 48 g oksigen.",
+    "soal": "Hai teman-teman, kita bahas bareng yuk soal Hukum Proust atau disebut juga Hukum Perbandingan Tetap. <br>Jadi, hukum ini bilang: Kalau dua unsur bergabung membentuk senyawa, perbandingan massanya selalu tetap, berapa pun banyaknya senyawa yang dibikin. Jadi meskipun kamu bikin air cuma setetes atau seember penuh, perbandingan massa antara hidrogen dan oksigen di dalamnya pasti sama. <br>✏Contoh: <br>Misalnya nih:<br> 2 gram hidrogen + 16 gram oksigen; <br>4 gram hidrogen + 32 gram oksigen;<br> 6 gram hidrogen + 48 gram oksigen. <br>Kalau kita hitung:<br>Hidrogen:Oksigen=2:16;4:32;6:48=1:8<br>Jadi perbandingannya selalu 1:8. Nah, ini yang dimaksud Hukum Proust — perbandingan tetap, walaupun jumlahnya beda. <br>Analisislah perbandingan massa H:O di setiap sampel dan tentukan hukum yang sesuai dengan data pembuatan air berikut: 2 g hidrogen + 16 g oksigen, 4 g hidrogen + 32 g oksigen, 6 g hidrogen + 48 g oksigen.",
     "pilihan": [
       "Hukum Lavoisier",
       "Hukum Dalton",
@@ -497,18 +495,18 @@ export class Board {
     "penjelasan": "Perbandingan massa H:O selalu 1:8 di setiap sampel, sesuai hukum Proust tentang perbandingan tetap."
   },
   {
-    "soal": "Berdasarkan data di atas, analisislah perbandingan massa hidrogen dan oksigen di kedua sampel tersebut. Apakah perbandingannya tetap atau berubah?",
+    "soal": "Halo teman-teman!<br>Pernah gak waktu masak mie instan, kamu liat airnya mendidih keluar uap? Nah, ternyata kalau gas-gas kayak uap air, oksigen, dan hidrogen bereaksi di kondisi suhu dan tekanan yang sama, volumenya bakal berbanding dalam bilangan bulat sederhana. <br>Itu namanya Hukum perbandingan volume gas. <br>Contohnya, kalau 2 liter hidrogen bereaksi dengan 1 liter oksigen, bakal menghasilkan 2 liter uap air. Lihat deh: 2 : 1 : 2 → bilangan bulat sederhana, kan? <br>Contoh Kasus:<br>2 L gas H₂ + 1 L gas O₂ → 2 L uap air. <br>Perbandingan volumenya: 2 : 1 : 2. <br>Perhatikan reaksi gas berikut ini: 2 liter gas A bereaksi dengan 3 liter gas B menghasilkan 4 liter gas C. Coba analisis perbandingan volume gas-gas tersebut. Apakah perbandingannya memenuhi hukum perbandingan volume dalam bilangan bulat sederhana? Jika iya, hukum dasar kimia apa yang berlaku di sini?",
     "pilihan": [
-      "Tidak tetap",
-      "Sama",
-      "Berubah",
-      "Acak"
+      "Hukum Dalton",
+      "Hukum Gay-Lussac",
+      "Hukum Lavoisier",
+      "Hukum Proust"
     ],
     "jawaban": 1,
-    "penjelasan": "Kita cek dulu perbandingan massanya: Sampel 1: 1/8=1:8. Sampel 2: 2/16=1:8. Ternyata perbandingannya sama, yaitu 1 : 8 di kedua percobaan. Jadi jawabannya: B. Sama"
+    "penjelasan": "Perbandingan volumenya: 2 : 3 : 4. Nah 2, 3, dan 4 itu bilangan bulat sederhana. Sesuai Hukum Gay-Lussac yang menyatakan bahwa gas-gas yang bereaksi pada suhu dan tekanan sama volumenya berbanding sebagai bilangan bulat sederhana. Jadi jawabannya: B. Hukum Gay-Lussac"
   },
   {
-    "soal": "Coba bayangin kalau kita masuk ke ruangan yang isinya udara campur uap parfum dan gas dari pengharum ruangan. Nah, ternyata tekanan udara di ruangan itu sebenarnya hasil dari jumlah tekanan masing-masing gas yang ada di situ. ✅ Itulah yang disebut Hukum Dalton tentang Tekanan Parsial. Tekanan parsial itu maksudnya tekanan yang diberikan oleh masing-masing jenis gas kalau dia sendirian di wadah itu. Rumusnya simpel: ✅ Tekanan total = Tekanan gas A + Tekanan gas B + ... ✅ Contoh Kasus: Di sebuah balon udara, ada gas helium tekanannya 400 mmHg dan oksigen 300 mmHg. Berarti, tekanan total di dalam balon itu: 400 mmHg + 300 mmHg = 700 mmHg. Soal: Di sebuah laboratorium, dilakukan percobaan pencampuran gas dalam tabung tertutup. Data hasil pengukuran: Gas Tekanan Parsial (mmHg) A 300 B 500. Coba analisis, berapakah tekanan total di dalam tabung tersebut? Dan hukum dasar kimia apa yang sesuai dengan peristiwa ini?",
+    "soal": "Coba bayangin kalau kita masuk ke ruangan yang isinya udara campur uap parfum dan gas dari pengharum ruangan. Nah, ternyata tekanan udara di ruangan itu sebenarnya hasil dari jumlah tekanan masing-masing gas yang ada di situ. <br>Itulah yang disebut Hukum Dalton tentang Tekanan Parsial. Tekanan parsial itu maksudnya tekanan yang diberikan oleh masing-masing jenis gas kalau dia sendirian di wadah itu. <br>Rumusnya simpel: ✅ Tekanan total = Tekanan gas A + Tekanan gas B + ... ✅ <br>Contoh Kasus: Di sebuah balon udara, ada gas helium tekanannya 400 mmHg dan oksigen 300 mmHg. <br>Berarti, tekanan total di dalam balon itu: <br>400 mmHg + 300 mmHg = 700 mmHg.<br>Soal: Di sebuah laboratorium, dilakukan percobaan pencampuran gas dalam tabung tertutup. Data hasil pengukuran: Gas Tekanan Parsial (mmHg) A:300; B:500. Coba analisis, berapakah tekanan total di dalam tabung tersebut? Dan hukum dasar kimia apa yang sesuai dengan peristiwa ini?",
     "pilihan": [
       "800 mmHg, Hukum Dalton",
       "500 mmHg, Hukum Gay-Lussac",
@@ -519,19 +517,7 @@ export class Board {
     "penjelasan": "Kita tinggal jumlahkan aja tekanannya: 300 mmHg + 500 mmHg = 800 mmHg. Karena tekanan total dihasilkan dari penjumlahan tekanan masing-masing gas yang gak saling bereaksi, ini sesuai Hukum Dalton tentang Tekanan Parsial. Jadi jawabannya: A. 800 mmHg, Hukum Dalton"
   },
   {
-    "soal": "Halo semua! Pernah gak waktu masak mie instan, kamu liat airnya mendidih keluar uap? Nah, ternyata kalau gas-gas kayak uap air, oksigen, dan hidrogen bereaksi di kondisi suhu dan tekanan yang sama, volumenya bakal berbanding dalam bilangan bulat sederhana. ✅ Itu namanya Hukum perbandingan volume gas. Contohnya, kalau 2 liter hidrogen bereaksi dengan 1 liter oksigen, bakal menghasilkan 2 liter uap air. Lihat deh: 2 : 1 : 2 → bilangan bulat sederhana, kan? ✅ Contoh Kasus: 2 L gas H₂ + 1 L gas O₂ → 2 L uap air. Perbandingan volumenya: 2 : 1 : 2. Perhatikan reaksi gas berikut ini: 2 liter gas A bereaksi dengan 3 liter gas B menghasilkan 4 liter gas C. Coba analisis perbandingan volume gas-gas tersebut. Apakah perbandingannya memenuhi hukum perbandingan volume dalam bilangan bulat sederhana? Jika iya, hukum dasar kimia apa yang berlaku di sini?",
-    "pilihan": [
-      "Hukum Dalton",
-      "Hukum Gay-Lussac",
-      "Hukum Lavoisier",
-      "Hukum Proust"
-    ],
-    "jawaban": 1,
-    "penjelasan": "Perbandingan volumenya: 2 : 3 : 4. 2, 3, dan 4 itu bilangan bulat sederhana. Sesuai Hukum Gay-Lussac yang menyatakan bahwa gas-gas yang bereaksi pada suhu dan tekanan sama volumenya berbanding sebagai bilangan bulat sederhana. Jadi jawabannya: B. Hukum Gay-Lussac"
-  },
-  // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  {
-    "soal": "Hai teman-teman! Coba bayangin deh… kalau kamu punya balon berisi gas, terus balon itu kamu panaskan. Kira-kira apa yang terjadi? ✅ Balonnya bakal ngembang! Kenapa? Karena volume gas di dalam balon itu bertambah seiring suhu naik, asalkan tekanannya tetap. Nah, ini nih yang disebut Hukum Gay-Lussac. Intinya: ✅ Volume gas berbanding lurus sama suhu mutlak (Kelvin). Rumusnya: V1/T1 = V2/T2. Contoh kasus: Di laboratorium, ada gas dalam tabung 4 liter pada suhu 200 K. Kalau tabung dipanaskan sampai 400 K, berapa volume gasnya kalau tekanannya gak berubah? Jawab: Karena suhunya naik 2× (200 K → 400 K), maka volumenya juga 2×. Jadi: Di sebuah percobaan digital, sebuah gas memiliki volume 2 liter pada suhu 300 K. Ketika suhu dinaikkan jadi 600 K tanpa mengubah tekanan, berapakah volume gas itu sekarang? Selain menghitung, tentukan juga hukum dasar kimia yang berlaku di peristiwa ini.",
+    "soal": "Hai teman-teman! <br>Coba bayangin deh… kalau kamu punya balon berisi gas, terus balon itu kamu panaskan. Kira-kira apa yang terjadi? <br>Balonnya bakal ngembang! <br>Kenapa? Karena volume gas di dalam balon itu bertambah seiring suhu naik, asalkan tekanannya tetap. <br>Nah, ini nih yang disebut Hukum Gay-Lussac. Intinya: Volume gas berbanding lurus sama suhu mutlak (Kelvin). <br>Rumusnya: V1/T1 = V2/T2. <br>Contoh kasus: Di laboratorium, ada gas dalam tabung 2 liter pada suhu 200 K. Kalau tabung dipanaskan sampai 400 K, berapa volume gasnya kalau tekanannya gak berubah? <br>Jawab: Karena suhunya naik 2× (200 K → 400 K), maka volumenya juga 2×. <br>Jadi: 2 liter x (400 K / 200 K) = 4 liter. <br>Di sebuah percobaan digital, sebuah gas memiliki volume 2 liter pada suhu 300 K. Ketika suhu dinaikkan jadi 600 K tanpa mengubah tekanan, berapakah volume gas itu sekarang? Selain menghitung, tentukan juga hukum dasar kimia yang berlaku di peristiwa ini.",
     "pilihan": [
       "1 liter, Hukum Dalton",
       "2 liter, Hukum Lavoisier",
@@ -539,23 +525,21 @@ export class Board {
       "4 liter, Hukum Gay-Lussac"
     ],
     "jawaban": 3,
-    "penjelasan": "Suhu naik 2× (300 K → 600 K), volume gas di tekanan tetap ikut naik 2×. Karena volume gas berubah sebanding dengan suhu mutlak saat tekanan tetap, ini sesuai Hukum Gay-Lussac. Jawaban: D. 4 liter, Hukum Gay-Lussac."
+    "penjelasan": "Suhu naik 2× (300 K → 600 K), volume gas di tekanan tetap ikut naik 2× (2 L menjadi 4 L). Karena volume gas berubah sebanding dengan suhu mutlak saat tekanan tetap, ini sesuai Hukum Gay-Lussac. Jawaban: D. 4 liter, Hukum Gay-Lussac."
   },
   {
-    "soal": "Dalam sebuah wadah tertutup, terdapat gas A dengan tekanan parsial 180 mmHg, gas B dengan 220 mmHg, dan gas C dengan 150 mmHg. Tekanan total gas tersebut adalah …",
+    "soal": "Hai teman-teman, coba bayangin nih…<br>Kamu punya tiga balon kecil, masing-masing isinya gas A, gas B, dan gas C. Terus ketiga gas itu kamu masukin bareng-bareng ke dalam satu wadah tertutup. Nah, setiap gas itu tetap “nyumbang” tekanan ke dalam wadah sesuai tekanannya masing-masing. <br>Inilah yang disebut Hukum Dalton.<br>Intinya:<br>Tekanan total dalam campuran gas yang gak saling bereaksi = jumlah dari tekanan parsial masing-masing gas.<br>Rumusnya: <br>Ptotal = P1 + P2 + P3<br>Dengan:<br>Ptotal = tekanan total campuran gas<br>P1,P2,P3= tekanan parsial masing-masing gas<br>Dalam sebuah wadah tertutup, terdapat gas A dengan tekanan parsial 180 mmHg, gas B dengan 220 mmHg, dan gas C dengan 150 mmHg. Tekanan total gas tersebut adalah …",
     "pilihan": [
       "550 mmHg",
       "600 mmHg",
       "650 mmHg",
       "500 mmHg"
     ],
-
-    // revisi
     "jawaban": 0,
-    "penjelasan": "Berdasarkan Hukum Dalton, tekanan total gas campuran adalah jumlah tekanan parsialnya. Tekanan total = 180 mmHg + 220 mmHg + 150 mmHg = 600 mmHg."
+    "penjelasan": "Berdasarkan Hukum Dalton, tekanan total gas campuran adalah jumlah tekanan parsialnya. Tekanan total = 180 mmHg + 220 mmHg + 150 mmHg = 550 mmHg."
   },
   {
-    "soal": "Ada dua percobaan pembuatan senyawa AB: Percobaan 1 terdiri dari 3 g unsur A dan 9 g unsur B, Percobaan 2 terdiri dari 6 g unsur A dan 18 g unsur B. Maka perbandingan massa A dan B pada kedua percobaan tersebut adalah …",
+    "soal": "Halo teman-teman!<br>Coba bayangin kamu bikin sirup manis di dua gelas. Di gelas pertama kamu pakai 3 sendok gula dan 9 sendok air.<br>Di gelas kedua kamu pakai 6 sendok gula dan 18 sendok air.<br>Nah, rasanya kira-kira bakal sama gak?<br>Pasti sama dong! Karena perbandingan gulanya ke air tetap, yaitu 1:3.<br>Nah di dunia kimia juga gitu. Kalau kamu bikin senyawa yang sama, kayak air atau garam, perbandingan massa unsur penyusunnya bakal selalu tetap — itulah yang disebut Hukum Proust.<br>Intinya:<br>Dalam senyawa yang sama, perbandingan massa unsur-unsurnya gak bakal berubah meskipun jumlah senyawanya beda.<br> Contoh Kasus:<br>Misal:<br>4 g hidrogen bereaksi dengan 32 g oksigen → perbandingan 4:32 = 1:8<br>8 g hidrogen dengan 64 g oksigen → 8:64 = 1:8<br>Perbandingannya tetap 1:8 kan?<br>Nah, inilah Hukum Proust!<br>Ada dua percobaan pembuatan senyawa AB: Percobaan 1 terdiri dari 3 g unsur A dan 9 g unsur B, Percobaan 2 terdiri dari 6 g unsur A dan 18 g unsur B. Maka perbandingan massa A dan B pada kedua percobaan tersebut adalah …",
     "pilihan": [
       "Tidak tetap",
       "Sama",
@@ -563,10 +547,10 @@ export class Board {
       "Acak"
     ],
     "jawaban": 1,
-    "penjelasan": "Perbandingan massa A:B pada percobaan pertama = 3:9 = 1:3. Perbandingan massa A:B pada percobaan kedua = 6:18 = 1:3. Karena perbandingan massa tetap, ini membuktikan Hukum Proust."
+    "penjelasan": "Perbandingan massa A:B <br>pada percobaan pertama = 3:9 = 1:3. <br>Perbandingan massa A:B pada percobaan kedua = 6:18 = 1:3. <br>Karena perbandingan massa tetap, ini membuktikan Hukum Proust."
   },
   {
-    "soal": "Bayangin kamu bakar 100 gram kayu di ruang tertutup. Hasilnya, keluar 80 gram gas dan 20 gram abu. Supaya Hukum Kekekalan Massa tetap berlaku, apa yang seharusnya dipastikan dari hasil pembakaran itu?",
+    "soal": "Hukum Kekekalan Massa bilang begini: dalam reaksi kimia di ruang tertutup, jumlah massa sebelum dan sesudah reaksi itu tetap. Jadi, kalau kamu bakar sesuatu di ruang tertutup, massa gas + abu + sisa apapun setelahnya harus sama kayak massa semua bahan di awal.<br>Bayangin kamu bakar 100 gram kayu di ruang tertutup. Hasilnya, keluar 80 gram gas dan 20 gram abu. Supaya Hukum Kekekalan Massa tetap berlaku, apa yang seharusnya dipastikan dari hasil pembakaran itu?",
     "pilihan": [
       "Massa gas yang terbentuk lebih besar dari massa bahan bakar",
       "Massa total gas dan abu sama dengan massa bahan bakar",
@@ -577,7 +561,7 @@ export class Board {
     "penjelasan": "Hukum Kekekalan Massa menyatakan bahwa jumlah massa tidak boleh berkurang atau bertambah. Di soal ini, 80 g gas + 20 g abu = 100 g, artinya sama seperti massa bahan bakar awal. Jadi hukum ini berlaku."
   },
   {
-    "soal": "Seorang siswa bernama Fikri menyimpulkan bahwa data berikut ini tidak mendukung Hukum Proust karena massa total di tiap percobaan berbeda. Percobaan 1: Massa A = 4 g, Massa B = 8 g. Percobaan 2: Massa A = 6 g, Massa B = 12 g. Menurut pendapat kamu, apakah kesimpulan Fikri sudah tepat? Pilih alasan yang paling benar di bawah ini!",
+    "soal": "Halo teman-teman!<br>Pernah nggak sih kalian bikin sirup? Misalnya 2 sendok sirup dicampur 4 sendok air, jadinya manisnya pas. Kalau mau bikin lebih banyak, tinggal bikin 4 sendok sirup + 8 sendok air. Nah, rasa manisnya tetap sama kan? Karena perbandingan sirup dan airnya nggak berubah.<br>Nah di kimia juga gitu lho.<br>Kalau kita gabungkan dua unsur buat bikin senyawa, perbandingan massanya bakal selalu tetap, meskipun jumlahnya bisa beda-beda.<br>Misal 4 g unsur A + 8 g unsur B = senyawa AB<br>6 g unsur A + 12 g unsur B = senyawa AB<br>Perbandingan A : B-nya tetap 1 : 2 di kedua percobaan.<br>Inilah yang disebut Hukum Proust atau Hukum Perbandingan Tetap.<br>Soal Seorang siswa bernama Fikri menyimpulkan bahwa data berikut ini tidak mendukung Hukum Proust karena massa total di tiap percobaan berbeda. Percobaan 1: Massa A = 4 g, Massa B = 8 g. Percobaan 2: Massa A = 6 g, Massa B = 12 g. Menurut pendapat kamu, apakah kesimpulan Fikri sudah tepat? Pilih alasan yang paling benar di bawah ini!",
     "pilihan": [
       "Tepat, karena jumlah massa total di tiap percobaan memang harus sama menurut Hukum Proust.",
       "Tidak tepat, karena yang penting perbandingan massa A dan B di tiap percobaan tetap sama.",
@@ -588,7 +572,7 @@ export class Board {
     "penjelasan": "Hukum Proust fokusnya bukan pada jumlah total massa, tapi pada perbandingan massa antar unsur penyusun senyawa. Selama perbandingan A:B tetap, hukum ini tetap berlaku. Fikri keliru karena salah paham terhadap konsep perbandingan."
   },
   {
-    "soal": "Dina melakukan percobaan sebagai berikut: Wadah 1: 1 liter gas di suhu 300 K. Wadah 2: 2 liter gas di suhu 600 K. Dina bilang: “Kayaknya hasil ini nggak sesuai Hukum Gay-Lussac deh, soalnya volumenya beda.” Menurut kamu gimana?",
+    "soal": "Kenalan Yuk Sama Hukum Gay-Lussac!<br>“Eh teman-teman, tahu nggak? Kalau gas dipanaskan, volumenya bisa membesar loh, asal tekanannya nggak diubah. Nah, aturan itu disebut Hukum Gay-Lussac. Intinya sih, volume gas itu berbanding lurus sama suhu mutlaknya (pakai Kelvin ya, bukan Celsius!). Jadi makin tinggi suhunya, makin gede volumenya. Tapi inget, syaratnya tekanan harus tetap!”<br>Contoh:<br>Bayangin kamu punya balon gas 1 liter di suhu 300 K. Kalau balon itu dipanasin sampai 600 K, kira-kira volumenya jadi berapa? Yup, dua kali lipat dong jadi 2 liter!<br>Soal Dina melakukan percobaan sebagai berikut: Wadah 1= 1 liter gas di suhu 300 K. Wadah 2= 2 liter gas di suhu 600 K. Dina bilang: “Kayaknya hasil ini nggak sesuai Hukum Gay-Lussac deh, soalnya volumenya beda.” Menurut kamu gimana?",
     "pilihan": [
       "Dina benar, harusnya volumenya selalu sama.",
       "Dina salah, karena perbandingan volume dan suhu harus sebanding.",
@@ -599,7 +583,7 @@ export class Board {
     "penjelasan": "Sesuai Hukum Gay-Lussac, jika suhu gas dinaikkan 2× (300 K ke 600 K) dan tekanan tetap, maka volume juga naik 2× (1 liter jadi 2 liter). Dina keliru. Maka jawabannya B."
   },
   {
-    "soal": "Data percobaan gas: Wadah 1: Suhu = 300 K, Volume = 3 L. Wadah 2: Suhu = 600 K, Volume = 6 L. Bagaimana hasil percobaan ini menurut Hukum Gay-Lussac?",
+    "soal": "Hai teman-teman!<br>Kalau gas dipanaskan, volumenya bisa bertambah, tapi hanya kalau tekanannya tetap ya. Nah, hukum yang ngatur soal ini namanya Hukum Gay-Lussac.Bunyi sederhananya:<br>\"Kalau tekanan tetap, volume gas itu sebanding sama suhu mutlaknya (dalam Kelvin).\"Jadi, kalau suhu naik 2× lipat, volumenya juga harus naik 2× lipat.<br>Kalau suhu turun setengah, ya volumenya ikut turun setengah.<br>Soal Data percobaan gas: Wadah 1: Suhu = 300 K, Volume = 3 L. Wadah 2: Suhu = 600 K, Volume = 6 L. Bagaimana hasil percobaan ini menurut Hukum Gay-Lussac?",
     "pilihan": [
       "Sesuai, karena perbandingan volume dan suhu sebanding.",
       "Tidak sesuai, karena volume tidak berubah.",
@@ -610,7 +594,7 @@ export class Board {
     "penjelasan": "Coba cek perbandingan volume dan suhu: V1/T1 = 3/300 = 0.01, V2/T2 = 6/600 = 0.01. Sama, berarti sesuai dengan Hukum Gay-Lussac."
   },
   {
-    "soal": "Data percobaan gas: Wadah 1: Suhu = 300 K, Volume = 3 L. Wadah 2: Suhu = 600 K, Volume = 4 L. Bagaimana hasil percobaan ini menurut Hukum Gay-Lussac?",
+    "soal": "Hai teman-teman!<br>Kalau gas dipanaskan, volumenya bisa bertambah, tapi hanya kalau tekanannya tetap ya. Nah, hukum yang ngatur soal ini namanya Hukum Gay-Lussac.Bunyi sederhananya:<br>\"Kalau tekanan tetap, volume gas itu sebanding sama suhu mutlaknya (dalam Kelvin).\"Jadi, kalau suhu naik 2× lipat, volumenya juga harus naik 2× lipat.<br>Kalau suhu turun setengah, ya volumenya ikut turun setengah.<br>saol Data percobaan gas: Wadah 1: Suhu = 300 K, Volume = 3 L. Wadah 2: Suhu = 600 K, Volume = 4 L. Bagaimana hasil percobaan ini menurut Hukum Gay-Lussac?",
     "pilihan": [
       "Sesuai, karena perbandingan volume dan suhu sebanding.",
       "Tidak sesuai, karena volume tidak bertambah sesuai kenaikan suhu.",
@@ -621,7 +605,7 @@ export class Board {
     "penjelasan": "Jika suhu naik 2×, volume juga seharusnya naik 2× agar sesuai hukum Gay-Lussac. Tapi dari 3 L ke 4 L tidak sesuai. Jadi jawabannya B."
   },
   {
-    "soal": "Halo penjelajah gas di Laboratorium Ular Tangga! Kalau kamu punya beberapa jenis gas dalam satu wadah, tapi gas-gas itu nggak saling bereaksi, kira-kira berapa total tekanannya? Nah, Hukum Dalton bilang: \"Tekanan total campuran gas = jumlah tekanan parsial masing-masing gas.\" Tapi ini cuma berlaku kalau gas-gas tersebut tidak bereaksi, wadah tertutup, dan suhu serta volumenya tetap.\nDi percobaan, gas A tekanannya 120 mmHg, gas B 200 mmHg, dan gas C 80 mmHg. Ketiga gas itu tidak bereaksi dan berada di wadah tertutup. Apakah Hukum Dalton bisa digunakan untuk menentukan tekanan total campuran gas ini?",
+    "soal": "Halo penjelajah gas di Laboratorium Ular Tangga!<br>Coba bayangkan deh…<br>Kalau kamu punya beberapa jenis gas dalam satu wadah, tapi gas-gas itu nggak saling bereaksi, kira-kira berapa total tekanannya? Nah, di sinilah Hukum Dalton beraksi!<br>Hukum Dalton bilang begini:<br>\"Tekanan total campuran gas = jumlah tekanan parsial masing-masing gas.\"<br>Tapi hati-hati ya! Hukum ini cuma berlaku kalau:<br>Gas-gas itu tidak saling bereaksi<br>Berada di wadah tertutup<br>Dalam kondisi suhu dan volume tertentu<br>Jadi, sebelum kamu asal jumlahin tekanannya, kamu harus pastikan dulu situasinya sesuai dengan syarat hukum Dalton<br>Soal, Dalam percobaan laboratorium, gas A punya tekanan 120 mmHg, gas B 200 mmHg, dan gas C 80 mmHg dalam wadah tertutup, dan ketiga gas tersebut tidak saling bereaksi.<br>Menurut analisis kamu, apakah Hukum Dalton bisa digunakan untuk menentukan tekanan total campuran gas ini?",
     "pilihan": [
       "Ya, hukum Dalton bisa dipakai karena tekanan total = jumlah tekanan parsial, syaratnya gas tidak bereaksi.",
       "Tidak, karena tekanan gas A paling rendah.",
@@ -632,7 +616,7 @@ export class Board {
     "penjelasan": "Semua gas ada di wadah tertutup dan tidak bereaksi, jadi syarat Hukum Dalton terpenuhi. Tekanan total = 120 + 200 + 80 = 400 mmHg. Hukum Dalton berlaku untuk semua gas dalam wadah, bukan hanya yang tekanannya besar."
   },
   {
-    "soal": "Hukum Proust menyatakan bahwa perbandingan massa unsur dalam senyawa selalu tetap, apapun jumlah senyawanya.\nTiga percobaan menghasilkan senyawa AB sebagai berikut:\nPercobaan 1: 3 g A dan 9 g B\nPercobaan 2: 6 g A dan 18 g B\nPercobaan 3: 9 g A dan 27 g B\nApakah hasil percobaan ini sesuai dengan Hukum Proust?",
+    "soal": "Hukum Proust menyatakan bahwa perbandingan massa unsur dalam senyawa selalu tetap, apapun jumlah senyawa yang terbentuk.<br>Soal:Tiga percobaan menghasilkan senyawa AB dengan hasil sebagai berikut: <br>Percobaan 1: 3 g A dan 9 g B<br>Percobaan 2: 6 g A dan 18 g B <br>Percobaan 3: 9 g A dan 27 g B<br>Apakah hasil percobaan ini sesuai dengan Hukum Proust?",
     "pilihan": [
       "Ya, karena perbandingan massa A dan B tetap.",
       "Tidak, karena perbandingan massa A dan B tidak tetap.",
@@ -644,7 +628,7 @@ export class Board {
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Halo, Sahabat Ular Tangga Kimia! Bayangkan kamu punya balon gas di ruangan tertutup. Ketika dipanaskan, partikel gas bergerak makin cepat karena suhu naik. Kalau volumenya tetap (balon nggak mengembang), energi tambahan itu ke mana?\nYup, tekanannya naik karena partikel makin sering dan kuat menabrak dinding balon. Itu inti Hukum Gay-Lussac: \"Pada volume tetap, tekanan gas berbanding lurus dengan suhu mutlak (Kelvin).\"\nDi percobaan, suhu gas dinaikkan dari 300 K ke 600 K, volume tetap. Apa yang terjadi pada tekanannya?",
+    "soal": "Halo, Sahabat Ular Tangga Kimia!<br>Bayangin kamu punya balon gas di ruangan tertutup. Kalau balon itu dipanaskan, apa yang bakal terjadi di dalamnya? Yup — partikel gas bakal bergerak makin cepat karena suhu naik. Tapi kalau balonnya nggak boleh mengembang (volumenya tetap), ke mana energi tambahan itu lari?<br>Tentu saja ke tekanan! Partikel gas makin sering dan makin keras nabrak dinding balon. Nah, itulah inti dari Hukum Gay-Lussac: \"Pada volume tetap, tekanan gas berbanding lurus dengan suhu mutlak (dalam Kelvin).\" Jadi, makin panas → makin tinggi tekanannya Tapi ingat ya:<br>Berlaku kalau volume tidak berubah<br>Berlaku di suhu dalam Kelvin, bukan Celsius Soal, Di sebuah percobaan laboratorium, suhu gas dalam tabung tertutup dinaikkan dari 300 K menjadi 600 K, sementara volumenya tidak berubah.<br>Menurut hasil analisis kamu, apa yang akan terjadi pada tekanan gas tersebut??",
     "pilihan": [
       "Tekanan gas menurun karena partikel jadi jarang bertabrakan.",
       "Tekanan gas tetap karena volumenya tidak berubah.",
@@ -656,7 +640,7 @@ export class Board {
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Eh, teman-teman… tahu nggak? Hukum Lavoisier bilang: \"Dalam reaksi kimia di sistem tertutup, massa zat sebelum dan sesudah reaksi harus sama.\" Kalau massanya beda, bisa jadi ada zat yang keluar/masuk, alat ukur nggak pas, atau data salah catat.\nContoh: Kalau kamu bakar 10 g kayu di wadah tertutup, massa sisa arang + gas tetap 10 g.\nDi sebuah eksperimen, massa bahan bakar sebelum dibakar 20 g. Setelah dibakar di wadah tertutup, massa total sisa dan hasil pembakaran jadi 22 g. Bagaimana analisisnya menurut Hukum Lavoisier?",
+    "soal": "Eh, teman-teman… tau nggak sih?<br>Hukum Lavoisier bilang:<br> “Dalam reaksi kimia yang dilakukan di sistem tertutup, massa zat sebelum dan sesudah reaksi harus tetap sama.”<br>Kalau tiba-tiba massanya beda, bisa jadi:<br>Ada zat yang keluar/masuk sistem (kayak gas yang bocor atau masuk)<br>Atau alat ukurnya nggak pas<br>Atau datanya salah catat<br>✨ Contoh santai:<br>Kalau kamu bakar 10 g kayu di wadah tertutup, total massa sisa arang + gas hasil pembakaran di dalam wadah tetap 10 g juga.<br> Di sebuah eksperimen, massa bahan bakar sebelum dibakar adalah 20 g. Setelah dibakar di wadah tertutup, massa total sisa dan hasil pembakarannya jadi 22 g.Menurut kamu, berdasarkan konsep Hukum Lavoisier, bagaimana analisisnya?",
     "pilihan": [
       "Ya, massa produk lebih besar karena adanya gas yang dilepaskan.",
       "Tidak, karena massa produk lebih besar dari massa reaktan.",
@@ -668,7 +652,7 @@ export class Board {
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Pernah dengar Hukum Proust? Intinya: \"Dalam senyawa yang sama, perbandingan massa unsur-unsur penyusunnya selalu tetap, berapapun jumlah senyawanya.\"\nContoh: Dalam senyawa AB, perbandingan A:B = 1:2.\nPercobaan 1: 5 g A dan 10 g B\nPercobaan 2: 10 g A dan 20 g B\nApakah percobaan ini sesuai dengan Hukum Proust?",
+    "soal": "Pernah dengar Hukum Proust?<br>Gampang kok — intinya gini:<br>“Dalam senyawa yang sama, perbandingan massa unsur-unsur penyusunnya selalu tetap, berapa pun jumlah senyawanya.”<br>✨ Contoh ringan:<br>Misal, dalam senyawa AB, perbandingan A:B = 1:2.<br>Kalau di percobaan pertama kamu pakai 5 g A dan 10 g B, terus di percobaan kedua pakai 10 g A dan 20 g B…<br>Selama perbandingannya tetap 1:2, berarti hasilnya sesuai sama Hukum Proust. <br>Nah, di sebuah eksperimen:<br>Percobaan 1: 5 g unsur A dicampur 10 g unsur B<br>Percobaan 2: 10 g unsur A dicampur 20 g unsur B<br>Coba kamu perhatikan, apakah percobaan ini sesuai sama Hukum Proust?",
     "pilihan": [
       "Ya, karena perbandingan massa A:B selalu tetap 1:2.",
       "Tidak, karena perbandingan massa tidak konsisten.",
@@ -676,11 +660,11 @@ export class Board {
       "Tidak, karena massa unsur B lebih banyak."
     ],
     "jawaban": 0,
-    "penjelasan": "Perbandingan massa A:B pada kedua percobaan adalah 1:2, sehingga sesuai dengan Hukum Proust.",
+    "penjelasan": " Perbandingan massa A:B pada kedua percobaan adalah 5:10 = 1:2 dan 10:20 = 1:2, yang berarti perbandingan massa tetap sama dan sesuai dengan Hukum Proust.",
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Ada gas di dalam tabung dengan volume tetap. Mula-mula suhunya 300 K, lalu dipanaskan sampai 600 K. Menurutmu, bagaimana perubahan tekanan gas di dalamnya?",
+    "soal": "Halo, Sobat Kimia!<br>Pernah nggak kamu perhatikan kalau ban sepeda motor yang dipompa saat siang hari terasa lebih keras daripada pagi? Nah, itu salah satu contoh nyata dari Hukum Gay-Lussac.<br>Hukum Gay-Lussac bilang:<br>“Jika gas berada dalam ruang (volume) yang nggak berubah, maka makin tinggi suhu gasnya (dalam Kelvin), makin besar juga tekanannya.”<br>Gampangnya:<br>Suhu naik → Tekanan ikut naik.<br>Suhu turun → Tekanan ikut turun.<br>Tapi yang perlu diingat:<br>Hukum ini cuma berlaku kalau volumenya tetap ya, jangan dibolak-balik!Ada gas di dalam tabung dengan volume tetap. Mula-mula suhunya 300 K, lalu dipanaskan sampai 600 K. Menurutmu, bagaimana perubahan tekanan gas di dalamnya?",
     "pilihan": [
       "Tekanan berkurang karena suhunya naik.",
       "Tekanan tetap saja meski suhu berubah.",
@@ -692,7 +676,7 @@ export class Board {
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Dalam eksperimen pembakaran di laboratorium: Massa bahan bakar sebelum dibakar = 50 g Massa gas oksigen yang dipakai = 80 g Massa produk hasil pembakaran = 120 g Menurut kamu, apakah hasil percobaan ini sudah sesuai sama Hukum Lavoisier?",
+    "soal": "Yuk kenalan lagi sama Hukum Lavoisier!<br>Hukum ini ngomong begini:<br>“Massa zat sebelum dan sesudah reaksi dalam sistem tertutup itu harus sama.”<br>Atau gampangnya:<br>Massa masuk = Massa keluar<br>Kalau jumlah massanya beda, berarti:<br>Ada zat yang belum dihitung (misal gas yang lolos)<br>Atau ada kesalahan saat nimbang atau catat data<br>Jadi, kamu harus kritis kalau dapat hasil kayak gitu ya!<br>Dalam eksperimen pembakaran di laboratorium: Massa bahan bakar sebelum dibakar = 50 g Massa gas oksigen yang dipakai = 80 g Massa produk hasil pembakaran = 120 g Menurut kamu, apakah hasil percobaan ini sudah sesuai sama Hukum Lavoisier?",
     "pilihan": [
       "Ya, karena massa sebelum dan sesudah reaksi sama.",
       "Tidak, karena massa produk lebih kecil dari massa reaktan.",
@@ -704,7 +688,7 @@ export class Board {
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   },
   {
-    "soal": "Ada dua senyawa: Senyawa AB Senyawa AB₂ Keduanya tersusun dari unsur A dan unsur B. Menurut kamu, gimana nih perbandingan massa unsur A di kedua senyawa itu?",
+    "soal": "Yuk kita ingat bareng Hukum Proust!<br>Hukum ini ngomong gini:<br>“Dalam senyawa yang sama, perbandingan massa unsur-unsur penyusunnya selalu tetap, berapapun jumlah senyawa yang terbentuk.”<br>Tapi kalau senyawanya beda — misalnya AB dan AB₂, perbandingan massanya juga beda dong, soalnya jumlah atom unsur B-nya beda.<br>Jadi, di sini kamu harus bisa menganalisis perbandingan massanya berdasarkan rumus senyawa.<br>Ada dua senyawa: <br>Senyawa AB <br>Senyawa AB₂ <br>Keduanya tersusun dari unsur A dan unsur B. Menurut kamu, gimana nih perbandingan massa unsur A di kedua senyawa itu?",
     "pilihan": [
       "Massa unsur A lebih banyak di AB.",
       "Massa unsur A lebih banyak di AB₂.",
@@ -716,6 +700,7 @@ export class Board {
     "sumber": "Chang, R. (2005). Chemistry (9th ed). McGraw-Hill."
   }
 ]
+
   }
 
   isQuestionTile(tile) {
