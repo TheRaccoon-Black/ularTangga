@@ -1,4 +1,4 @@
-import data from './data.json';
+
 export class Player {
   constructor(name, color, image, id) {
     this.name = name;
