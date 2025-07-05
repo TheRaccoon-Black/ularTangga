@@ -313,11 +313,19 @@ export class Game {
         : "";
 
       // Pick a random question from board's soalJawabPilihan
+      // const questions = this.board.soalJawabPilihan;
+      // const questionObj =
+      //   questions[Math.floor(Math.random() * questions.length)];
+
+      // questionTextEl.textContent = questionObj.soal;
+
+      // questionObj.pilihan.forEach((option, index) => {
       const questions = this.board.soalJawabPilihan;
       const questionObj =
         questions[Math.floor(Math.random() * questions.length)];
 
-      questionTextEl.textContent = questionObj.soal;
+      // Menggunakan innerHTML agar tag <br> dapat dirender
+      questionTextEl.innerHTML = questionObj.soal;
 
       questionObj.pilihan.forEach((option, index) => {
         const input = document.createElement("input");
@@ -620,6 +628,7 @@ export class Game {
     document.querySelector(".in-game-container").style.display = "none";
     document.querySelector(".game_fisrt_interface").style.display = "block";
     document.querySelector(".close-restart-btns").style.display = "none";
+    document.querySelector(".background_image").src = "./images/boardawal.jpg";
     for (let i = 1; i <= 4; i++) {
       const playerInLobyEl = document.getElementById(`dice-player${i}`);
       playerInLobyEl.classList.add("remove");

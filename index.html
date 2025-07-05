@@ -2,21 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>SNAKES & LADDERS</title>
     <link rel="shortcut icon" href="./images/snake.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
+    
+   
   </head>
   <body>
-    <div class="main-container game_home">
+    <!-- 
+      KITA MENAMBAHKAN "id" DI SINI. 
+      Semua elemen game Anda sudah berada di dalam div ini, jadi ini sempurna.
+    -->
+    <div id="game-container" class="main-container game_home">
       <!-- <button onclick="new Audio('assets/sounds/bonus.mp3').play()">Tes Suara Ular</button> -->
       <div class="close-restart-btns">
         <button class="home-btn">Home</button>
@@ -44,7 +50,7 @@
         </div>
       </div>
 
-      <img src="./images/newBg.jpg" class="background_image" />
+      <img src="./images/boardawal.jpg" class="background_image" />
 
       <div class="circle">
         <i class="fa-solid fa-info"></i>
@@ -57,10 +63,10 @@
       </div>
 
       <div class="game_fisrt_interface">
-        <img
+        <!-- <img
           src="./images/snakesnladders-header-thumbnail.png"
           class="logo_game"
-        />
+        /> -->
         <img
           src="./images/Green-play-button-icon-on-transparent-background-PNG.png"
           class="play_button_img start-button"
@@ -307,7 +313,6 @@
       /> -->
     </div>
     <!-- Final Score Modal -->
-     <!-- Final Score Modal -->
 <div
   id="finalScoreModal"
   class="modal"
@@ -514,5 +519,77 @@
         </div>
       </div>
     </div>
+
+    <!-- === BAGIAN JAVASCRIPT YANG DITAMBAHKAN === -->
+    <!-- <script>
+        // --- SKRIP UNTUK PENSKALAAN DINAMIS ---
+
+        // Fungsi ini akan dipanggil saat halaman dimuat dan saat jendela diubah ukurannya.
+        function scaleGame() {
+            // Ambil elemen kontainer game
+            const gameContainer = document.getElementById('game-container');
+            if (!gameContainer) return; // Hentikan jika kontainer tidak ditemukan
+
+            // === PENTING: SESUAIKAN UKURAN INI ===
+            // Atur angka-angka ini agar sesuai dengan dimensi desain asli game Anda.
+            // Contohnya menggunakan resolusi umum 1366x768.
+            const gameWidth = 1366;
+            const gameHeight = 768;
+
+            // Dapatkan ukuran jendela browser saat ini
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            // Hitung rasio skala
+            // Kita hitung rasio untuk lebar dan tinggi, lalu ambil yang paling kecil
+            // agar seluruh game pas di layar (teknik "letterboxing").
+            const scaleX = screenWidth / gameWidth;
+            const scaleY = screenHeight / gameHeight;
+            const scale = Math.min(scaleX, scaleY);
+
+            // Terapkan skala menggunakan CSS transform
+            gameContainer.style.transform = `scale(${scale})`;
+
+            // Pusatkan game di tengah layar setelah diskalakan
+            const newWidth = gameWidth * scale;
+            const newHeight = gameHeight * scale;
+            
+            gameContainer.style.left = `${(screenWidth - newWidth) / 2}px`;
+            gameContainer.style.top = `${(screenHeight - newHeight) / 2}px`;
+        }
+
+        // Jalankan fungsi saat konten halaman selesai dimuat
+        // Menggunakan 'deviceready' adalah praktik terbaik untuk Cordova, dengan fallback ke DOMContentLoaded
+        document.addEventListener('deviceready', scaleGame, false);
+        window.addEventListener('DOMContentLoaded', scaleGame);
+        
+        // Jalankan juga fungsi saat orientasi layar berubah (window di-resize)
+        window.addEventListener('resize', scaleGame);
+    </script> -->
+    <script>
+      function scaleGame() {
+        const gameContainer = document.getElementById('game-container');
+        if (!gameContainer) return;
+
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        
+        // Logika penskalaan ini sekarang berlaku untuk semua orientasi
+        const gameWidth = 1366;
+        const gameHeight = 768;
+        const scaleX = screenWidth / gameWidth;
+        const scaleY = screenHeight / gameHeight;
+        const scale = Math.min(scaleX, scaleY);
+
+        gameContainer.style.transform = `scale(${scale})`;
+        const newWidth = gameWidth * scale;
+        const newHeight = gameHeight * scale;
+        gameContainer.style.left = `${(screenWidth - newWidth) / 2}px`;
+        gameContainer.style.top = `${(screenHeight - newHeight) / 2}px`;
+      }
+
+      window.addEventListener('DOMContentLoaded', scaleGame);
+      window.addEventListener('resize', scaleGame);
+    </script>
   </body>
 </html>

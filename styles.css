@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
@@ -21,6 +21,34 @@ body {
   box-shadow: 0 0 15px rgba(52, 52, 52, 0.8),
     inset 0 0 20px rgba(44, 43, 43, 0.3);
   z-index: 10;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(220, 228, 228);
+  
+  overflow: hidden; /* Mencegah scrollbar muncul */
+}
+
+.game_home {
+  position: absolute; /* Diubah agar pemosisian oleh JS berfungsi */
+  width: 1366px; /* Lebar tetap untuk skala */
+  height: 768px; /* Tinggi tetap untuk skala */
+  left: 0;
+  top: 0;
+  transform-origin: top left; /* Mengatur titik acuan untuk transformasi skala */
+  border: 15px solid #313131;
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(52, 52, 52, 0.8),
+    inset 0 0 20px rgba(44, 43, 43, 0.3);
+  z-index: 10;
 }
 
 .game_home .background_image {
@@ -29,7 +57,7 @@ body {
   border-radius: 27px;
   position: absolute;
   z-index: 5;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   top: 0;
   left: 0;
   margin: 0;
@@ -816,7 +844,7 @@ input[type="text"] {
   display: none;
 }
 /* Responsive untuk mobile landscape */
-@media screen and (max-width: 767px) and (orientation: landscape) {
+/* @ screen and (max-width: 767px) and (orientation: landscape) {
   .game_home {
     width: 100%;
     height: 100vh;
@@ -919,8 +947,8 @@ input[type="text"] {
     top: 20px;
     left: 20px;
   }
-}
-/* Sesuaikan ukuran font untuk mobile landscape */
+} */
+/* Sesuaikan ukuran font untuk mobile landscape
 @media screen and (max-width: 767px) and (orientation: landscape) {
   .game_selectmode_interface h2,
   .game_username_interface h2,
@@ -963,9 +991,9 @@ input[type="text"] {
     font-size: 20px;
     margin-left: 80px;
   }
-}
+} */
 /* Sesuaikan layout untuk layar kecil */
-@media screen and (max-width: 767px) and (orientation: landscape) {
+/* @media screen and (max-width: 767px) and (orientation: landscape) {
   .board {
     flex-wrap: wrap;
     justify-content: center;
@@ -1009,7 +1037,7 @@ input[type="text"] {
   .player-in-game p {
     font-size: 14px;
   }
-}
+} */
 /* Modal backdrop */
 #questionModal {
   position: fixed;
@@ -1134,7 +1162,7 @@ input[type="text"] {
 /* Dim and disable background when modal open */
 .modal-open .in-game-container {
   filter: brightness(0.5);
-  pointer-events: none; /* prevent clicks */
+  pointer-events: none; /* pmediarevent clicks */
   user-select: none; /* prevent text selection */
 }
 

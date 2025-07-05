@@ -46,6 +46,9 @@ startButton.addEventListener("click", () => {
 });
 
 function startTheGame() {
+
+  document.querySelector(".background_image").src = "./images/testing.jpg";
+
   board = new Board();
   ciclefooter[0].classList.add("active");
 
