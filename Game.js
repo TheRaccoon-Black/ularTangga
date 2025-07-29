@@ -7,6 +7,7 @@ const turunSound = new Audio("assets/sounds/turun.mp3");
 const correctSound = new Audio("assets/sounds/correct.mp3");
 const wrongSound = new Audio("assets/sounds/wrong.mp3");
 const finishSound = new Audio("assets/sounds/finish100.mp3");
+const diceRollSound = new Audio("assets/sounds/dice-role.mp3");
 export class Game {
   players = [];
 
@@ -134,6 +135,7 @@ export class Game {
       this.resetPlayers();
       alert("game restart");
     }
+    diceRollSound.play().catch(error => console.error("Gagal memutar suara dadu:", error));
 
     const player = this.players[this.currentPlayerNumber - 1];
 
@@ -251,11 +253,15 @@ export class Game {
             }
           }
         } else {
-          console.log(`${player.name} answered question on normal tile.`);
-          // correctSound.loop = true;
-          correctSound.play().catch((error) => {
-            console.error("Gagal memutar suara:", error);
-          });
+          if (correct) {
+            correctSound.play().catch((error) => {
+              console.error("Gagal memutar suara benar:", error);
+            });
+          } else {
+            wrongSound.play().catch((error) => {
+              console.error("Gagal memutar suara salah:", error);
+            });
+          }
         }
       }
 
@@ -365,54 +371,53 @@ export class Game {
   }
 
   showFeedbackModal(isCorrect, explanation) {
-    return new Promise((resolve) => {
-      const feedbackModal = document.getElementById("feedbackModal");
-      const feedbackTitle = document.getElementById("feedbackTitle");
-      const feedbackExplanation = document.getElementById(
-        "feedbackExplanation"
-      );
-      const closeBtn = document.getElementById("closeFeedback");
-      const okBtn = document.getElementById("okFeedbackBtn");
+  return new Promise((resolve) => {
+    const feedbackModal = document.getElementById("feedbackModal");
+    const modalContent = feedbackModal.querySelector('.modal-content');
+    const feedbackTitle = document.getElementById("feedbackTitle");
+    const feedbackExplanation = document.getElementById("feedbackExplanation");
+    const closeBtn = document.getElementById("closeFeedback");
+    const okBtn = document.getElementById("okFeedbackBtn");
 
-      feedbackTitle.textContent = isCorrect
-        ? "Jawaban Benar!"
-        : "Jawaban Salah!";
-      feedbackExplanation.textContent = explanation;
+    // Atur teks judul dan penjelasan
+    feedbackTitle.textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
+    feedbackExplanation.textContent = explanation;
 
-      // Clear previous classes
-      feedbackTitle.classList.remove("correct", "incorrect");
-      feedbackModal.classList.remove("correct-bg", "incorrect-bg");
-      okBtn.classList.remove("correct", "incorrect");
+    // 1. Hapus kelas warna sebelumnya dari elemen konten modal
+    modalContent.classList.remove("correct", "wrong");
 
-      // Add styles based on correctness
-      if (isCorrect) {
-        feedbackTitle.classList.add("correct");
-        feedbackModal.classList.add("correct-bg");
-        okBtn.classList.add("correct");
-      } else {
-        feedbackTitle.classList.add("incorrect");
-        feedbackModal.classList.add("incorrect-bg");
-        okBtn.classList.add("incorrect");
+    // 2. Tambahkan kelas yang benar berdasarkan jawaban
+    if (isCorrect) {
+      modalContent.classList.add("correct");
+    } else {
+      modalContent.classList.add("wrong");
+    }
+
+    // Tampilkan modal
+    feedbackModal.style.display = "flex";
+
+    // Fungsi untuk menutup modal dan membersihkan event listener
+    const closeModal = () => {
+      feedbackModal.style.display = "none";
+      // Hapus event listener agar tidak menumpuk setiap kali modal muncul
+      closeBtn.onclick = null;
+      okBtn.onclick = null;
+      window.onclick = null;
+      resolve();
+    };
+
+    // Pasang event listener untuk tombol
+    closeBtn.onclick = closeModal;
+    okBtn.onclick = closeModal;
+
+    // Pasang event listener untuk klik di luar modal
+    window.onclick = (event) => {
+      if (event.target === feedbackModal) {
+        closeModal();
       }
-
-      feedbackModal.style.display = "flex";
-
-      const closeModal = () => {
-        feedbackModal.style.display = "none";
-        resolve();
-      };
-
-      closeBtn.onclick = closeModal;
-      okBtn.onclick = closeModal;
-
-      window.onclick = (event) => {
-        if (event.target === feedbackModal) {
-          closeModal();
-        }
-      };
-    });
-  }
-
+    };
+  });
+}
   showFinalScores() {
     return new Promise((resolve) => {
       const finalScoreModal = document.getElementById("finalScoreModal");
@@ -590,7 +595,10 @@ export class Game {
     this.players.forEach((player) => {
       player.position = 0;
       player.rolledNumber = 0;
+      player.score = 0;
     });
+
+    this.updatePlayerScores(this.players);
     this.currentPlayerNumber = 1;
     const imgDice = document.querySelector(".dice-img");
     imgDice.src = diceData[1];

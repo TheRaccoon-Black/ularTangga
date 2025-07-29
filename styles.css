@@ -486,10 +486,12 @@ input[type="text"] {
 
 .board-img {
   object-fit: cover;
-  width: 580px;
-  height: 580px;
+  width: 605px;
+  height: 605px;
   position: absolute;
   z-index: 12;
+  top: -11px;  
+  left: -12px;
 }
 
 .board-border-image {
@@ -741,6 +743,7 @@ input[type="text"] {
 
 .close-button {
   position: absolute;
+  z-index: 9999;
   right: 20px;
   top: 15px;
   font-size: 28px;
@@ -1185,12 +1188,26 @@ input[type="text"] {
 }
 
 /* Optional: modal background or border color */
-#feedbackModal.correct-bg .modal-content {
+/* #feedbackModal.correct-bg .modal-content {
   border: 3px solid #007bff;
 }
 
 #feedbackModal.incorrect-bg .modal-content {
   border: 3px solid #dc3545;
+} */
+/* Style untuk modal hasil jawaban */
+
+#feedbackModal .modal-content.correct {
+  background-color: #d4edda !important; /* Hijau muda */
+  color: #155724 !important; /* Teks hijau tua */
+  border: 2px solid #155724 !important;
+}
+
+#feedbackModal .modal-content.wrong {
+  background-color: #f8d7da !important; /* Merah muda */
+  color: #971320 !important; /* Teks merah tua */
+  text-shadow: red 1px 0 1px;
+  border: 4px solid #721c24 !important;
 }
 
 #finalScoreModal .modal-content {

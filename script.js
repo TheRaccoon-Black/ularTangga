@@ -1,29 +1,31 @@
 import { Board, Player } from "./BoardPlayer.js";
 import { Game } from "./Game.js";
 
+// --- Elemen DOM ---
+const startButton = document.querySelector(".start-button");
+// DIKEMBALIKAN: Variabel ini penting untuk alur permainan
+const selectModePanel = document.querySelector(".game_selectmode_interface");
+const selectModeForm = document.querySelector(".select-mode-form");
+const playerDetailsPanel = document.querySelector(".game_username_interface");
+const playerDetailsForm = document.querySelector(".player-details-form");
+const diceRollBtn = document.querySelector(".dice-roll-btn");
+const restartBtn = document.querySelector(".restart-btn");
+const homeBtn = document.querySelector(".home-btn");
+const threeCircle = document.querySelector(".circle_for_select_options");
+const image = document.querySelector(".attachment_image_ani");
+const circleFooter = document.querySelectorAll(".circle_footer");
+const infoModal = document.getElementById("infoModal");
+const openModalBtn = document.querySelector(".circle");
+const closeModalBtn = document.querySelector("#infoModal .close-button");
+
+// --- Audio ---
 const backsound = new Audio("assets/sounds/backsound.mp3");
 backsound.volume = 0.05;
 backsound.loop = true;
 
-const startButton = document.querySelector(".start-button");
-const selectModePanel = document.querySelector(".game_selectmode_interface");
-const selectModeForm = document.querySelector(".select-mode-form");
-const diceRollBtn1 = document.querySelector(".dice-roll-btn");
-const playerDetailsPanel = document.querySelector(".game_username_interface");
-const playerDetailsForm = document.querySelector(".player-details-form");
-const selectLevelPanel = document.querySelector(
-  ".game_userlevel_select_interface"
-);
-const selectLevelForm = document.querySelector(".select-level-form");
-// const image = document.querySelector(".attachment_image_ani");
-const thrree_circle = document.querySelector(".circle_for_select_options");
-const restartBtn = document.querySelector(".restart-btn");
-const colseBtn = document.querySelector(".home-btn");
-const ciclefooter = document.querySelectorAll(".circle_footer");
-
+// --- Variabel Game ---
 let game;
 let board;
-
 const playerColors = [
   "rgb(40, 255, 2)",
   "rgb(1, 247, 255)",
@@ -31,80 +33,33 @@ const playerColors = [
   "rgb(0, 103, 229)",
 ];
 
+// --- Event Listeners ---
+
+// Memulai game
 startButton.addEventListener("click", () => {
   backsound
     .play()
-    .then(() => {
-      console.log("Backsound diputar");
-      startTheGame(); // Setelah audio bisa diputar, baru mulai game
-    })
     .catch((error) => {
       console.error("Gagal memutar backsound:", error);
-      startTheGame(); // Lanjutkan game meskipun audio gagal
     });
+  // DIPERBAIKI: Hanya panggil startTheGame() sekali saja
   startTheGame();
 });
 
-function startTheGame() {
-
-  document.querySelector(".background_image").src = "./images/testing.jpg";
-
-  board = new Board();
-  ciclefooter[0].classList.add("active");
-
-  for (let i = 1; i <= 100; i++) {
-    board.handleInsertSquare(i);
-  }
-  game = new Game(board);
-  selectMode();
-}
-
+// Mengirim form mode permainan
 selectModeForm.addEventListener("submit", function (event) {
   event.preventDefault();
-
   const formData = new FormData(selectModeForm);
   const mode = formData.get("mode");
   game.mode = Number(mode);
   getPlayerDetails(game.mode);
 });
 
-function selectMode() {
-  const home = document.querySelector(".game_fisrt_interface");
-  home.style.display = "none";
-  selectModePanel.style.display = "block";
-
-  thrree_circle.style.display = "flex";
-  image.style.display = "block";
-
-  const resetCloseBtns = document.querySelector(".close-restart-btns");
-  resetCloseBtns.style.display = "none";
-}
-
-function getPlayerDetails(mode) {
-  ciclefooter[1].classList.add("active");
-  selectModePanel.style.display = "none";
-  playerDetailsPanel.style.display = "block";
-
-  const inputFields = document.querySelectorAll(".player-details-form .user1");
-  inputFields.forEach((inputEl) => {
-    inputEl.classList.remove("active");
-  });
-
-  for (let i = 1; i <= mode; i++) {
-    if (mode != 1) {
-      inputFields[i - 1].classList.add("active");
-    } else {
-      inputFields[0].classList.add("active");
-    }
-  }
-}
-
+// Mengirim form detail pemain
 playerDetailsForm.addEventListener("submit", function (event) {
   event.preventDefault();
-
   const formData = new FormData(playerDetailsForm);
   let players = [];
-
   const playerImages = [
     "https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_CharacterDimensio_Bomb_Movie-300x300.png",
     "https://www.angrybirds.com/wp-content/uploads/2022/05/ABCOM_202203_350x350_CharacterDimensio_Courtney_Movie-300x300.png",
@@ -134,121 +89,121 @@ playerDetailsForm.addEventListener("submit", function (event) {
   }
 
   game.createPlayers(players);
-  selectLevel();
-});
-
-function selectLevel() {
-  ciclefooter[2].classList.add("active");
-  playerDetailsPanel.style.display = "none";
-  selectLevelPanel.style.display = "block";
-}
-
-selectLevelForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  ciclefooter.forEach((footer) => {
+  
+  circleFooter.forEach((footer) => {
     footer.classList.remove("active");
   });
+  setupInGameUI();
+});
 
-  const formData = new FormData(selectLevelForm);
-  const level = formData.get("level");
-  game.level = level;
+// Mengocok dadu
+diceRollBtn.addEventListener("click", () => {
+  game.handlePlayerMove();
+});
 
-  for (let i = 0; i < 4; i++) {
-    const discs = document.querySelectorAll(`.square .playerDisc${i}`);
-    discs.forEach((disc) => {
-      disc.style.background = playerColors[i];
-    });
+// Me-restart game
+restartBtn.addEventListener("click", () => {
+  game.restartGame();
+});
+
+// Kembali ke halaman utama/keluar dari game
+homeBtn.addEventListener("click", () => {
+  game.existGame();
+});
+
+// --- Logika Modal ---
+openModalBtn.addEventListener("click", () => {
+  infoModal.style.display = "block";
+});
+
+closeModalBtn.addEventListener("click", () => {
+  infoModal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === infoModal) {
+    infoModal.style.display = "none";
   }
+});
 
-  selectLevelPanel.style.display = "none";
-  thrree_circle.style.display = "none";
-  const inGameContainer = document.querySelector(".in-game-container");
-  inGameContainer.style.display = "flex";
-  // const image = document.querySelector(".attachment_image_ani");
-  // image.style.display = "none";
-  const resetCloseBtns = document.querySelector(".close-restart-btns");
-  resetCloseBtns.style.display = "flex";
+// --- Fungsi Alur Game ---
+
+function startTheGame() {
+  document.querySelector(".background_image").src = "./images/testing.jpg";
+  board = new Board();
+  circleFooter[0].classList.add("active");
+
+  for (let i = 1; i <= 100; i++) {
+    board.handleInsertSquare(i);
+  }
+  game = new Game(board);
+  selectMode();
+}
+
+function selectMode() {
+  document.querySelector(".game_fisrt_interface").style.display = "none";
+  selectModePanel.style.display = "block";
+  threeCircle.style.display = "flex";
+  if (image) image.style.display = "block";
+  document.querySelector(".close-restart-btns").style.display = "none";
+}
+
+function getPlayerDetails(mode) {
+  circleFooter[1].classList.add("active");
+  selectModePanel.style.display = "none";
+  playerDetailsPanel.style.display = "block";
+
+  const inputFields = document.querySelectorAll(".player-details-form .user1");
+  inputFields.forEach((inputEl) => {
+    inputEl.classList.remove("active");
+  });
+
+  const fieldsToShow = mode != 1 ? mode : 1;
+  for (let i = 0; i < fieldsToShow; i++) {
+    inputFields[i].classList.add("active");
+  }
+}
+
+function setupInGameUI() {
+  // Sembunyikan panel input nama pemain
+  playerDetailsPanel.style.display = "none";
+  threeCircle.style.display = "none";
+  if (image) image.style.display = "none";
+
+  // Tampilkan UI dalam game
+  document.querySelector(".in-game-container").style.display = "flex";
+  document.querySelector(".close-restart-btns").style.display = "flex";
+
   game.createGameBoard();
 
+  // Buat tampilan info pemain
   const playersDiv = document.querySelector(
     ".player-container .players-in-game"
   );
+  playersDiv.innerHTML = ""; // Membersihkan kontainer
 
-  while (playersDiv.firstChild) {
-    playersDiv.removeChild(playersDiv.firstChild);
-  }
-
-  for (let i = 0; i < game.players.length; i++) {
+  game.players.forEach((player) => {
     const playerDiv = document.createElement("div");
     playerDiv.classList.add("player-in-game");
     playerDiv.style.display = "flex";
     playerDiv.style.alignItems = "center";
     playerDiv.style.marginBottom = "10px";
 
-    // Player image with rounded border
-    const playerImage = document.createElement("img");
-    playerImage.src = game.players[i].image;
-    playerImage.classList.add("playerImage");
-    playerImage.style.width = "40px";
-    playerImage.style.height = "40px";
-    playerImage.style.borderRadius = "50%";
-    playerImage.style.objectFit = "cover";
-    playerImage.style.marginRight = "12px";
-    playerImage.style.border = `3px solid ${game.players[i].color}`; // border color matches player color
-
-    playerDiv.appendChild(playerImage);
-
-    // Name and score container
-    const nameScoreContainer = document.createElement("div");
-    nameScoreContainer.style.display = "inline-block";
-
-    const playerNameEl = document.createElement("p");
-    playerNameEl.textContent = game.players[i].name;
-    playerNameEl.style.margin = "0";
-
-    const playerScoreEl = document.createElement("span");
-    playerScoreEl.classList.add("player-score");
-    playerScoreEl.id = `player-score-${game.players[i].id}`;
-    playerScoreEl.textContent = ` - Score: 0`;
-
-    playerNameEl.appendChild(playerScoreEl);
-    nameScoreContainer.appendChild(playerNameEl);
-    playerDiv.appendChild(nameScoreContainer);
-
+    playerDiv.innerHTML = `
+      <img src="${player.image}" class="playerImage" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-right: 12px; border: 3px solid ${player.color};">
+      <div style="display: inline-block;">
+          <p style="margin: 0;">
+              ${player.name}
+              <span class="player-score" id="player-score-${player.id}"> - Score: 0</span>
+          </p>
+      </div>
+    `;
     playersDiv.appendChild(playerDiv);
-  }
 
-  game.players.forEach((player) => {
-    const playerInLobyEl = document.getElementById(`dice-player${player.id}`);
-    playerInLobyEl.classList.remove("remove");
-    playerInLobyEl.style.background = player.color;
+    const playerInLobbyEl = document.getElementById(`dice-player${player.id}`);
+    if (playerInLobbyEl) {
+      playerInLobbyEl.classList.remove("remove");
+      playerInLobbyEl.style.background = player.color;
+    }
   });
-});
-
-diceRollBtn1.addEventListener("click", () => {
-  game.handlePlayerMove();
-});
-
-restartBtn.addEventListener("click", () => {
-  game.restartGame();
-});
-
-colseBtn.addEventListener("click", () => {
-  game.existGame();
-});
-// ------------------------------------------------------------------------------------------------------------
-// Modal open and close logic
-document.querySelector(".circle").addEventListener("click", () => {
-  document.getElementById("infoModal").style.display = "block";
-});
-
-document.querySelector(".close-button").addEventListener("click", () => {
-  document.getElementById("infoModal").style.display = "none";
-});
-
-window.addEventListener("click", function (e) {
-  const modal = document.getElementById("infoModal");
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
+}
