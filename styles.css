@@ -486,12 +486,12 @@ input[type="text"] {
 
 .board-img {
   object-fit: cover;
-  width: 605px;
-  height: 605px;
+  width: 635px;
+  height: 635px;
   position: absolute;
   z-index: 12;
-  top: -11px;  
-  left: -12px;
+  top: -14px;  
+  left: -15px;
 }
 
 .board-border-image {
