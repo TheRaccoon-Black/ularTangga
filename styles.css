@@ -486,22 +486,21 @@ input[type="text"] {
 
 .board-img {
   object-fit: cover;
-  width: 635px;
-  height: 635px;
   position: absolute;
-  z-index: 12;
-  top: -14px;  
-  left: -15px;
+  width: 625px;
+  height: 625px;
+  z-index: 11;
+
 }
 
 .board-border-image {
   position: absolute;
-  width: 110%;
-  height: 110%;
+  width: 105%;
+  height: 105%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 11;
+  z-index: 12;
   box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.882);
 }
 
